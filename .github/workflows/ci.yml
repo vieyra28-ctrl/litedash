@@ -1,7 +1,7 @@
 name: CI
-
 # Solo en pull requests o a mano (Irving, 2026-11-06: GitHub cobra los minutos de Linux; cada push
 # ya se compila, se revisa con lint y se prueba en la Mac antes de subirlo).
+
 on:
   pull_request:
   workflow_dispatch:
@@ -35,6 +35,13 @@ jobs:
             echo "::error::El APK pesa $((size / 1024)) KB y el presupuesto es 8 MB"
             exit 1
           fi
+
+      - name: Subir APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: litedash-github-release
+          path: app/build/outputs/apk/github/release/app-github-release.apk
+          if-no-files-found: error
 
       - name: Reportes de lint
         if: failure()
