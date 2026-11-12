@@ -32,7 +32,7 @@ jobs:
           cat ~/.gradle/gradle.properties
 
       - name: Compilar, lint y pruebas
-        run: ./gradlew assemblePlayDebug assembleGithubRelease :benchmark:assembleBenchmark lint test --console=plain  -Pcatalog=https://github.com/vieyra28-ctrl/litedash/releases/download/catalogo/catalogo.json
+        run: ./gradlew assemblePlayDebug assembleGithubRelease :benchmark:assembleBenchmark lint test --console=plain  -Pcatalog=https://github.com/vieyra28-ctrl/litedash/releases/download/catalogo/catalogo-rio.json
 
       - name: Presupuesto de tamaño
         run: |
