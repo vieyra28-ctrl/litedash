@@ -73,6 +73,7 @@ import com.irvingguerra.litedash.core.ui.Icons
 import com.irvingguerra.litedash.core.ui.Label
 import com.irvingguerra.litedash.core.ui.LiteDashTheme
 import com.irvingguerra.litedash.core.ui.LocalColors
+import com.irvingguerra.litedash.core.ui.LocalWidgetAlpha
 import com.irvingguerra.litedash.core.ui.Radius
 import com.irvingguerra.litedash.core.ui.Typography
 import com.irvingguerra.litedash.core.vehicle.Signal
@@ -570,6 +571,8 @@ fun Home(d: Dependencies, revision: Int, homePressed: Int) {
     ) {
         // Tu imagen de fondo (Inicio y apariencia → Inicio → Fondo de pantalla), detrás de todo.
         if (panel == null) HomeWallpaper()
+        // La decoración de temporada (guirnalda y motivo) colgando del borde de arriba.
+        if (panel == null) SeasonalDecoration(d.prefs.seasonTheme.resolve())
         // Los paneles tapan todo el inicio: mientras hay uno abierto no se dibuja ni se
         // pinta nada debajo (el auto del tablero no se tiñe dos veces al cambiar el color).
         if (panel == null) BoxWithConstraints(Modifier.fillMaxSize().safeDrawingPadding()) {
@@ -627,7 +630,7 @@ fun Home(d: Dependencies, revision: Int, homePressed: Int) {
                 }
                 // Con la barra al costado no hay dock abajo: el tablero lleva su propio aire inferior
                 // (en pantallas sin barra de gestos las piezas quedaban pegadas al borde).
-                BoxWithConstraints(Modifier.weight(1f).fillMaxWidth().padding(start = 10.dp, end = 10.dp, bottom = if (rail) 10.dp else 0.dp)) {
+                BoxWithConstraints(Modifier.weight(1f).fillMaxWidth().padding(start = 12.dp, end = 12.dp, bottom = if (rail) 12.dp else 0.dp)) {
                     // La cuadrícula se calcula siempre como si la barra estuviera: si dependiera
                     // de ella, un reloj en el acomodo la oculta, la cuadrícula crece, se carga
                     // otro acomodo sin reloj, vuelve la barra... y el inicio parpadea sin parar.
@@ -645,7 +648,11 @@ fun Home(d: Dependencies, revision: Int, homePressed: Int) {
                     // La pantalla Música ocupa media pantalla; en la otra mitad, el auto como en la
                     // pantalla dividida (auto 3D o carretera, según se eligió ahí), o tu imagen.
                     // Con algo a pantalla completa encima, lo que gasta en los widgets (GPS, mapa) descansa.
-                    CompositionLocalProvider(LocalHomeCovered provides (carShown || tiresShown || parked)) {
+                    CompositionLocalProvider(
+                        LocalHomeCovered provides (carShown || tiresShown || parked),
+                        // La transparencia de los widgets (Ajustes → Interfaz) solo aquí: los paneles quedan opacos.
+                        LocalWidgetAlpha provides d.prefs.widgetOpacity,
+                    ) {
                         if (musicBig) HalfScreen(
                             side = {
                                 val shown = d.dashboard.shown
@@ -784,7 +791,7 @@ private fun Parked(d: Dependencies, onWake: () -> Unit) {
         val hello = greeting(d.prefs.driverName)
         Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
             // Siempre en colores oscuros: de noche no deslumbra.
-            LiteDashTheme(dark = true, scale = 1f, accent = d.prefs.accentColor) {
+            LiteDashTheme(dark = true, scale = 1f, accent = d.prefs.seasonAccent() ?: d.prefs.accentColor) {
                 BigTime(clock, Typography.clock.copy(fontSize = 120.sp))
                 Label(hello?.let { "$it · ${clock.date}" } ?: clock.date, Typography.subtitle, LocalColors.current.textMuted, maxLines = 1)
                 Box(Modifier.padding(top = 12.dp)) { WeatherChip(d.weather) }
