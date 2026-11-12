@@ -13,4 +13,17 @@
     <string name="accent_title">Color de la interfaz</string>
     <string name="accent_help">Interruptores, botones, play y barras de avance. Las tarjetas y el fondo no cambian; Natural es el de fábrica.</string>
     <string name="accent_natural">Natural</string>
+    <string name="widget_opacity_title">Transparencia de los widgets</string>
+    <string name="widget_opacity_help">Qué tan sólido es el fondo de las tarjetas del inicio. Al bajarlo, el fondo de pantalla se asoma detrás de los widgets; en 0 % solo flota el contenido.</string>
+    <string name="season_title">Decoración de temporada</string>
+    <string name="season_help">Colores y adornos del inicio según la fecha: una guirnalda arriba y el color de la temporada en toda la interfaz. Automática sigue el calendario.</string>
+    <string name="season_auto">Automática</string>
+    <string name="season_none">Ninguna</string>
+    <string name="season_christmas">Navidad</string>
+    <string name="season_halloween">Halloween</string>
+    <string name="season_day_of_dead">Día de Muertos</string>
+    <string name="season_new_year">Año Nuevo</string>
+    <string name="season_valentine">San Valentín</string>
+    <string name="season_independence">Independencia</string>
+    <string name="season_auto_now">Ahora: %1$s</string>
 </resources>
