@@ -46,7 +46,7 @@ import com.irvingguerra.litedash.core.ui.Radius
 import kotlin.math.roundToInt
 import kotlinx.coroutines.withTimeoutOrNull
 
-private val GAP = 6.dp
+private val GAP = 8.dp
 
 /** Los botones redondos de arriba de la pieza elegida en el modo edición (✕, sin tarjeta, ajustes). */
 private val EDIT_BUTTON = 40.dp
