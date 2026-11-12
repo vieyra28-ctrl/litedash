@@ -13,7 +13,7 @@
     <string name="accent_help">Switches, buttons, play and progress bars. Cards and background stay the same; Natural is the original look.</string>
     <string name="accent_natural">Natural</string>
     <string name="widget_opacity_title">Widget transparency</string>
-    <string name="widget_opacity_help">How solid the home cards look. Lower it and the wallpaper shows through behind the widgets; at 0% only the content floats.</string>
+    <string name="widget_opacity_help">How solid the home cards look. Lower it and the wallpaper shows through behind the widgets; at 0%% only the content floats.</string>
     <string name="season_title">Seasonal decoration</string>
     <string name="season_help">Home colors and decorations for the season: a garland up top and the season color across the interface. Automatic follows the calendar.</string>
     <string name="season_auto">Automatic</string>
