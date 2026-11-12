@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.map
+package com.vieyra28.litekia.feature.map
 
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals

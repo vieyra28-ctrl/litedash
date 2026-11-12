@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.obd
+package com.vieyra28.litekia.feature.obd
 
 /** Algo del motor que el conductor debe saber ya; [holdMs] = cuánto debe durar para avisar. */
 enum class EngineAlert(val holdMs: Long = 60_000) {

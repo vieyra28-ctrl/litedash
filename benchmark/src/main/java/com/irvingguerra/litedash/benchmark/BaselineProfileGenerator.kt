@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.benchmark
+package com.vieyra28.litekia.benchmark
 
 import androidx.benchmark.macro.junit4.BaselineProfileRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -12,7 +12,7 @@ import org.junit.runner.RunWith
  * Genera el Baseline Profile (app/src/main/baseline-prof.txt): las clases y métodos que
  * se usan al arrancar y en el inicio, para que Android los compile al instalar y el
  * arranque en frío no interprete código. Correr en un emulador API 33+ (sin root):
- *   ./gradlew :benchmark:connectedBenchmarkAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.irvingguerra.litedash.benchmark.BaselineProfileGenerator
+ *   ./gradlew :benchmark:connectedBenchmarkAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.vieyra28.litekia.benchmark.BaselineProfileGenerator
  * y luego copiar el .txt que deja en benchmark/build/outputs/connected_android_test_additional_output/.
  */
 @RunWith(AndroidJUnit4::class)

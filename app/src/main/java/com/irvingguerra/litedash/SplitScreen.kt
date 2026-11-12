@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -27,13 +27,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.content.IntentCompat
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Segmented
-import com.irvingguerra.litedash.core.ui.SwitchRow
-import com.irvingguerra.litedash.core.ui.Typography
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Segmented
+import com.vieyra28.litekia.core.ui.SwitchRow
+import com.vieyra28.litekia.core.ui.Typography
 
 /**
  * Pantalla dividida real del sistema: la app de mapa o de música en una mitad y el auto
@@ -72,7 +72,7 @@ object SplitScreen {
 
     /** Abre [intent] dividida si toca; false = que se abra normal. */
     fun open(context: Context, intent: Intent, pkg: String): Boolean {
-        val d = (context.applicationContext as LiteDashApp).dependencies
+        val d = (context.applicationContext as LiteKiaApp).dependencies
         // Android solo divide la pantalla así desde la 12L: antes, la app se abre normal.
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S_V2 || !d.prefs.splitScreen || !supported()) return false
         if (context.resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) return false
@@ -146,7 +146,7 @@ object SplitScreen {
     @RequiresApi(Build.VERSION_CODES.S_V2)
     internal fun swap(activity: SplitActivity, app: Intent?) {
         app ?: return
-        val prefs = (activity.application as LiteDashApp).dependencies.prefs
+        val prefs = (activity.application as LiteKiaApp).dependencies.prefs
         prefs.splitCarLeft = !prefs.splitCarLeft
         val step = Intent(activity, SplitStartActivity::class.java)
             .putExtra(EXTRA_APP, app)
@@ -171,13 +171,13 @@ private fun ComponentActivity.onSide(left: Boolean): Boolean {
 /** El auto solo, para la mitad de la pantalla dividida, con cambiar de lado y salir. */
 @RequiresApi(Build.VERSION_CODES.S_V2)
 class SplitActivity : ComponentActivity() {
-    private val dependencies get() = (application as LiteDashApp).dependencies
+    private val dependencies get() = (application as LiteKiaApp).dependencies
     private val revision = mutableIntStateOf(0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            LiteDashContent(dependencies, revision.intValue) { SplitBoard(dependencies, onSwap = { SplitScreen.swap(this, SplitScreen.appOf(intent)) }, onExit = { finishAndRemoveTask() }) }
+            LiteKiaContent(dependencies, revision.intValue) { SplitBoard(dependencies, onSwap = { SplitScreen.swap(this, SplitScreen.appOf(intent)) }, onExit = { finishAndRemoveTask() }) }
         }
         if (savedInstanceState == null) openAppIfNeeded()
     }

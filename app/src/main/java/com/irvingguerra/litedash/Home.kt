@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.Context
 import android.content.Intent
@@ -67,38 +67,38 @@ import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.LifecycleResumeEffect
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LiteDashTheme
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.LocalWidgetAlpha
-import com.irvingguerra.litedash.core.ui.Radius
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.core.vehicle.Signal
-import com.irvingguerra.litedash.core.vehicle.VehicleBus
-import com.irvingguerra.litedash.feature.apps.App
-import com.irvingguerra.litedash.feature.apps.AppRepository
-import com.irvingguerra.litedash.feature.apps.rememberApps
-import com.irvingguerra.litedash.feature.car.CarPackage
-import com.irvingguerra.litedash.feature.car.CarRepository
-import com.irvingguerra.litedash.feature.dashboard.Dashboard
-import com.irvingguerra.litedash.feature.dashboard.DashboardState
-import com.irvingguerra.litedash.feature.dashboard.Grid
-import com.irvingguerra.litedash.feature.dashboard.Tile
-import com.irvingguerra.litedash.feature.dashboard.TileTypes
-import com.irvingguerra.litedash.feature.dashboard.cardless
-import com.irvingguerra.litedash.feature.link.PhoneLink
-import com.irvingguerra.litedash.feature.music.MusicMode
-import com.irvingguerra.litedash.feature.music.MusicRepository
-import com.irvingguerra.litedash.feature.music.MusicTile
-import com.irvingguerra.litedash.feature.music.OnFilesEmpty
-import com.irvingguerra.litedash.feature.music.RadioTile
-import com.irvingguerra.litedash.feature.navigation.NavigationRepository
-import com.irvingguerra.litedash.feature.obd.ObdRepository
-import com.irvingguerra.litedash.feature.tpms.TpmsRepository
-import com.irvingguerra.litedash.feature.updater.Updater
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LiteKiaTheme
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.LocalWidgetAlpha
+import com.vieyra28.litekia.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.core.vehicle.Signal
+import com.vieyra28.litekia.core.vehicle.VehicleBus
+import com.vieyra28.litekia.feature.apps.App
+import com.vieyra28.litekia.feature.apps.AppRepository
+import com.vieyra28.litekia.feature.apps.rememberApps
+import com.vieyra28.litekia.feature.car.CarPackage
+import com.vieyra28.litekia.feature.car.CarRepository
+import com.vieyra28.litekia.feature.dashboard.Dashboard
+import com.vieyra28.litekia.feature.dashboard.DashboardState
+import com.vieyra28.litekia.feature.dashboard.Grid
+import com.vieyra28.litekia.feature.dashboard.Tile
+import com.vieyra28.litekia.feature.dashboard.TileTypes
+import com.vieyra28.litekia.feature.dashboard.cardless
+import com.vieyra28.litekia.feature.link.PhoneLink
+import com.vieyra28.litekia.feature.music.MusicMode
+import com.vieyra28.litekia.feature.music.MusicRepository
+import com.vieyra28.litekia.feature.music.MusicTile
+import com.vieyra28.litekia.feature.music.OnFilesEmpty
+import com.vieyra28.litekia.feature.music.RadioTile
+import com.vieyra28.litekia.feature.navigation.NavigationRepository
+import com.vieyra28.litekia.feature.obd.ObdRepository
+import com.vieyra28.litekia.feature.tpms.TpmsRepository
+import com.vieyra28.litekia.feature.updater.Updater
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.filterNotNull
@@ -152,7 +152,7 @@ class Dependencies(
     val reminders: ReminderRepository,
     val wheel: WheelKeys,
     val stats: Stats,
-    /** LiteDash Pro (en prueba): [ProAccess.isPro] lo leen las funciones Pro. */
+    /** LiteKia Pro (en prueba): [ProAccess.isPro] lo leen las funciones Pro. */
     val pro: ProAccess,
     /** Señales del auto (OBD, GPS…): el tablero solo lee de aquí. */
     val bus: VehicleBus,
@@ -190,7 +190,7 @@ class Dependencies(
     fun obdIfCreated(): ObdRepository? = if (obdCreated.value) obdLazy.value else null
 
     /**
-     * El enlace con LiteDash Connect (Ajustes → Cuenta). Siempre disponible, pero sin celular vinculado
+     * El enlace con LiteKia Connect (Ajustes → Cuenta). Siempre disponible, pero sin celular vinculado
      * no escucha la red ni busca nada: solo trabaja con la sección abierta (el QR) o ya vinculado.
      */
     val phone: PhoneLink get() = phoneLazy.value
@@ -375,7 +375,7 @@ fun Home(d: Dependencies, revision: Int, homePressed: Int) {
     val car = d.cars.pkg(d.prefs.carModel)
     var panel by remember { mutableStateOf<Panel?>(null) }
     var editing by remember { mutableStateOf(false) }
-    // LiteDash puede estar abierto dos veces (como inicio y como app) y el acomodo es uno solo: la
+    // LiteKia puede estar abierto dos veces (como inicio y como app) y el acomodo es uno solo: la
     // cuadrícula la decide la ventana que se está usando. Si no, la de atrás (que no se vuelve a medir
     // y se queda con la escala de antes) recargaba su acomodo en cada cambio y deshacía lo que se movía.
     var inFront by remember { mutableStateOf(false) }
@@ -496,7 +496,7 @@ fun Home(d: Dependencies, revision: Int, homePressed: Int) {
     // Versión nueva de la app (a lo más cada 12 h, al volver al inicio) y modelo 3D nuevo del auto (cada hora).
     LaunchedEffect(revision) { d.updater.checkQuietly() }
     LaunchedEffect(d.prefs.carModel) { d.cars.checkQuietly(d.prefs.carModel) }
-    // Cuántas pantallas usan LiteDash: a lo más una vez al día.
+    // Cuántas pantallas usan LiteKia: a lo más una vez al día.
     LaunchedEffect(revision) { d.stats.pingDaily() }
     // Pro: lee lo guardado y revisa el código a lo más cada 12 h (sin código guardado, nada de red).
     LaunchedEffect(revision) { d.pro.refresh() }
@@ -762,7 +762,7 @@ fun Home(d: Dependencies, revision: Int, homePressed: Int) {
 
         if (parked) Parked(d, onWake = { parked = false; touched++ })
 
-        // Animación de entrada con tu imagen, una vez por cada vez que se abre LiteDash (no al cambiar de idioma).
+        // Animación de entrada con tu imagen, una vez por cada vez que se abre LiteKia (no al cambiar de idioma).
         var intro by rememberSaveable { mutableStateOf(!MainActivity.takeRestarted() && d.prefs.logoIntro && d.prefs.welcomeSeen) }
         if (intro) LogoIntro { intro = false }
 
@@ -791,7 +791,7 @@ private fun Parked(d: Dependencies, onWake: () -> Unit) {
         val hello = greeting(d.prefs.driverName)
         Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
             // Siempre en colores oscuros: de noche no deslumbra.
-            LiteDashTheme(dark = true, scale = 1f, accent = d.prefs.seasonAccent() ?: d.prefs.accentColor) {
+            LiteKiaTheme(dark = true, scale = 1f, accent = d.prefs.seasonAccent() ?: d.prefs.accentColor) {
                 BigTime(clock, Typography.clock.copy(fontSize = 120.sp))
                 Label(hello?.let { "$it · ${clock.date}" } ?: clock.date, Typography.subtitle, LocalColors.current.textMuted, maxLines = 1)
                 Box(Modifier.padding(top = 12.dp)) { WeatherChip(d.weather) }
@@ -868,7 +868,7 @@ private fun TopBar(
     }
 }
 
-/** Versión nueva encontrada al abrir LiteDash: verla en Ajustes o dejarla para después. */
+/** Versión nueva encontrada al abrir LiteKia: verla en Ajustes o dejarla para después. */
 @Composable
 private fun UpdateBanner(updater: Updater, onOpen: () -> Unit) {
     val v = updater.notice ?: return
@@ -878,7 +878,7 @@ private fun UpdateBanner(updater: Updater, onOpen: () -> Unit) {
     }
 }
 
-/** Aviso cuando LiteDash no es la pantalla de inicio: un toque para arreglarlo, o no volver a preguntar. */
+/** Aviso cuando LiteKia no es la pantalla de inicio: un toque para arreglarlo, o no volver a preguntar. */
 @Composable
 private fun HomePrompt(prefs: Preferences, revision: Int) {
     val context = LocalContext.current

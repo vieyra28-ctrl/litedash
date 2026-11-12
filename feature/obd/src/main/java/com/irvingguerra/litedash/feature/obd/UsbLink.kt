@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.obd
+package com.vieyra28.litekia.feature.obd
 
 import android.hardware.usb.UsbConstants
 import android.hardware.usb.UsbDevice

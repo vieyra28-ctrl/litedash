@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.dashboard
+package com.vieyra28.litekia.feature.dashboard
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

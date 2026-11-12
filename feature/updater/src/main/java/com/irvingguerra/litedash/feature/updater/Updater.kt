@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.updater
+package com.vieyra28.litekia.feature.updater
 
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
@@ -21,7 +21,7 @@ import org.json.JSONObject
 import java.io.File
 import androidx.core.content.FileProvider
 import androidx.core.content.IntentCompat
-import com.irvingguerra.litedash.core.ui.Https
+import com.vieyra28.litekia.core.ui.Https
 
 /** Una versión publicada en GitHub Releases, más nueva que la instalada. */
 @Immutable
@@ -37,7 +37,7 @@ data class Version(
 /**
  * Busca, baja e instala versiones nuevas desde GitHub Releases. Solo existe en la
  * variante `github` (Play prohíbe que una app se actualice por fuera de la tienda):
- * con [apiUrl] vacío está apagado. Revisa solo al volver a LiteDash (a lo más cada
+ * con [apiUrl] vacío está apagado. Revisa solo al volver a LiteKia (a lo más cada
  * [QUIET_EVERY_MS], sin polling) y cuando el usuario toca "Buscar actualizaciones".
  * La descarga corre en su propio scope: sigue aunque se cierre Ajustes ([progress]).
  */
@@ -98,7 +98,7 @@ class Updater(
     }
 
     /**
-     * Revisión al volver a LiteDash, si pasaron [QUIET_EVERY_MS] desde la última.
+     * Revisión al volver a LiteKia, si pasaron [QUIET_EVERY_MS] desde la última.
      * Sin red o con error no pasa nada: se intenta la próxima vez.
      */
     suspend fun checkQuietly() {
@@ -168,7 +168,7 @@ class Updater(
     }
 
     /**
-     * ¿El usuario ya permitió que LiteDash instale apps? Android 8+ lo pide por app; en
+     * ¿El usuario ya permitió que LiteKia instale apps? Android 8+ lo pide por app; en
      * Android 6 y 7 es un solo interruptor para todo el equipo ("Orígenes desconocidos").
      */
     @Suppress("DEPRECATION")
@@ -195,7 +195,7 @@ class Updater(
         val id = installer.createSession(params)
         try {
             installer.openSession(id).use { session ->
-                session.openWrite("litedash.apk", 0, apk.length()).use { output ->
+                session.openWrite("litekia.apk", 0, apk.length()).use { output ->
                     apk.inputStream().use { it.copyTo(output) }
                     session.fsync(output)
                 }

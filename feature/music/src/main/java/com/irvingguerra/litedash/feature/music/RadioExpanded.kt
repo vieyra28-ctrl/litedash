@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.music
+package com.vieyra28.litekia.feature.music
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,15 +18,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Icon
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Typography
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Icon
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Typography
 
 /**
- * La radio en grande: la FM de la pantalla o la radio por internet de LiteDash (la que esté
+ * La radio en grande: la FM de la pantalla o la radio por internet de LiteKia (la que esté
  * escogida en Ajustes → Apps → Radio). Carátula, estación y controles, sin barra de avance (la
  * radio no tiene). [browser] es la lista de estaciones por internet (null = solo FM): se
  * abre con el botón de lista, o sola si la pieza está en internet y no suena nada.

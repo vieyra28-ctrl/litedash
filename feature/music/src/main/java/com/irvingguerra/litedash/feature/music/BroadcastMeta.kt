@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.music
+package com.vieyra28.litekia.feature.music
 
 /**
  * Lo que suena según un aviso (broadcast) de otra app: las de Bluetooth de muchas pantallas

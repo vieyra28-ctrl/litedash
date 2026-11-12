@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.car
+package com.vieyra28.litekia.feature.car
 
 // Nombres que vienen del catálogo publicado (catalogo.json) y de los paquetes de
 // autos (auto.json, giro/ y sus capas) van en español porque así están publicados:

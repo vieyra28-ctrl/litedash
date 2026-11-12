@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.core.vehicle
+package com.vieyra28.litekia.core.vehicle
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

@@ -1,9 +1,9 @@
 // Ajustes → Inicio y apariencia: inicio, interfaz, día y noche, unidades y widgets.
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import com.irvingguerra.litedash.feature.apps.rememberApps
-import com.irvingguerra.litedash.feature.apps.AppIcon
+import com.vieyra28.litekia.feature.apps.rememberApps
+import com.vieyra28.litekia.feature.apps.AppIcon
 import android.app.Activity
 import android.hardware.Sensor
 import android.hardware.SensorManager
@@ -35,22 +35,22 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleResumeEffect
-import com.irvingguerra.litedash.core.ui.Brand
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.DarkColors
-import com.irvingguerra.litedash.core.ui.Icon
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LightColors
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Radius
-import com.irvingguerra.litedash.core.ui.Segmented
-import com.irvingguerra.litedash.core.ui.SwitchRow
-import com.irvingguerra.litedash.core.ui.TextInput
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.dashboard.TileTypes
-import com.irvingguerra.litedash.feature.tpms.PressureUnit
+import com.vieyra28.litekia.core.ui.Brand
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.DarkColors
+import com.vieyra28.litekia.core.ui.Icon
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LightColors
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Segmented
+import com.vieyra28.litekia.core.ui.SwitchRow
+import com.vieyra28.litekia.core.ui.TextInput
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.dashboard.TileTypes
+import com.vieyra28.litekia.feature.tpms.PressureUnit
 import kotlin.math.round
 
 /** Los temas a elegir, en Inicio y apariencia y en la bienvenida: oscuro, claro, día y noche y el del sistema. */
@@ -230,7 +230,7 @@ private fun UnitsSettings(d: Dependencies) {
 }
 
 /**
- * Inicio: acomodo y plantillas, la barra de apps (de LiteDash) junto a la de Android (la de arriba),
+ * Inicio: acomodo y plantillas, la barra de apps (de LiteKia) junto a la de Android (la de arriba),
  * el fondo, la animación de entrada y hacerlo tu pantalla de inicio.
  */
 @Composable
@@ -266,7 +266,7 @@ private fun HomeSettings(d: Dependencies, revision: Int, onEdit: () -> Unit, onT
 /** Las favoritas de la barra, en su orden: un toque en la x la quita; el buscador de abajo agrega. */
 @OptIn(ExperimentalLayoutApi::class)
 /**
- * "Abrir LiteDash al encender": para pantallas que regresan su launcher de fábrica al encender. Desde
+ * "Abrir LiteKia al encender": para pantallas que regresan su launcher de fábrica al encender. Desde
  * Android 10 necesita "Mostrar sobre otras apps"; si falta, se pide al prender y se avisa.
  */
 @Composable

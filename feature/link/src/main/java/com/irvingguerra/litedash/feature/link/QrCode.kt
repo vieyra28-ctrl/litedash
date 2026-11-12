@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.link
+package com.vieyra28.litekia.feature.link
 
 import kotlin.math.abs
 import kotlin.math.max

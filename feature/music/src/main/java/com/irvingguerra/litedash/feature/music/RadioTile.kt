@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.music
+package com.vieyra28.litekia.feature.music
 
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.runtime.Composable
@@ -9,16 +9,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.core.ui.fitFont
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.core.ui.fitFont
 
 /**
  * Tarjeta de radio (ver [MediaTile]): la FM de la pantalla (la app de la marca, enlazada en
- * Ajustes) o la radio por internet de LiteDash. Play sin nada con qué sonar llama [onIdle]
+ * Ajustes) o la radio por internet de LiteKia. Play sin nada con qué sonar llama [onIdle]
  * (abre los ajustes de la radio para enlazarla). [revision] cambia al
  * volver a la app, para notar si el usuario acaba de dar el permiso. Las estaciones por internet no se
  * eligen aquí: [onIdle] lleva a la pantalla Música (o a los ajustes, sin radio enlazada).

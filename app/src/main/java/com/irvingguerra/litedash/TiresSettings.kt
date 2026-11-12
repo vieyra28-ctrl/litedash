@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -51,26 +51,26 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Card
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Radius
-import com.irvingguerra.litedash.core.ui.Segmented
-import com.irvingguerra.litedash.core.ui.SwitchRow
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.dashboard.TileTypes
-import com.irvingguerra.litedash.feature.tpms.BleProblem
-import com.irvingguerra.litedash.feature.tpms.PairState
-import com.irvingguerra.litedash.feature.tpms.PressureUnit
-import com.irvingguerra.litedash.feature.tpms.TireReading
-import com.irvingguerra.litedash.feature.tpms.TpmsError
-import com.irvingguerra.litedash.feature.tpms.TpmsRepository
-import com.irvingguerra.litedash.feature.tpms.TpmsSource
-import com.irvingguerra.litedash.feature.tpms.TpmsStatus
-import com.irvingguerra.litedash.feature.tpms.Wheel
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Card
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Segmented
+import com.vieyra28.litekia.core.ui.SwitchRow
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.dashboard.TileTypes
+import com.vieyra28.litekia.feature.tpms.BleProblem
+import com.vieyra28.litekia.feature.tpms.PairState
+import com.vieyra28.litekia.feature.tpms.PressureUnit
+import com.vieyra28.litekia.feature.tpms.TireReading
+import com.vieyra28.litekia.feature.tpms.TpmsError
+import com.vieyra28.litekia.feature.tpms.TpmsRepository
+import com.vieyra28.litekia.feature.tpms.TpmsSource
+import com.vieyra28.litekia.feature.tpms.TpmsStatus
+import com.vieyra28.litekia.feature.tpms.Wheel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -566,8 +566,8 @@ private fun DiagnosticsCard(repo: TpmsRepository) {
             for (l in lines.takeLast(40)) Label(l, Typography.small.copy(fontFamily = FontFamily.Monospace), c.textMuted, maxLines = 2)
         }
         Button(stringResource(R.string.tires_copy), {
-            val text = "LiteDash ${BuildConfig.VERSION_NAME} · ${repo.source?.key}\n" + lines.joinToString("\n")
-            context.getSystemService(ClipboardManager::class.java).setPrimaryClip(ClipData.newPlainText("LiteDash", text))
+            val text = "LiteKia ${BuildConfig.VERSION_NAME} · ${repo.source?.key}\n" + lines.joinToString("\n")
+            context.getSystemService(ClipboardManager::class.java).setPrimaryClip(ClipData.newPlainText("LiteKia", text))
         })
     }
 }

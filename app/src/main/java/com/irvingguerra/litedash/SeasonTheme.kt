@@ -1,5 +1,5 @@
 // Decoración de temporada: qué fecha es qué, sus colores y el adorno del inicio.
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxWidth

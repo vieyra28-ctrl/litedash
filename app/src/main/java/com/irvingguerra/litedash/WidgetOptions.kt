@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.layout.Arrangement
@@ -26,15 +26,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.LocalPlainCard
-import com.irvingguerra.litedash.core.ui.SwitchRow
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.apps.App
-import com.irvingguerra.litedash.feature.dashboard.Tile
-import com.irvingguerra.litedash.feature.dashboard.TileTypes
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.LocalPlainCard
+import com.vieyra28.litekia.core.ui.SwitchRow
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.apps.App
+import com.vieyra28.litekia.feature.dashboard.Tile
+import com.vieyra28.litekia.feature.dashboard.TileTypes
 
 /**
  * Las opciones de un widget en su [Tile.data]: "clave=off" apaga una que de fábrica está prendida (lo de

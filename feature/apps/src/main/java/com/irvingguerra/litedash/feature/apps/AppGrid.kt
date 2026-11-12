@@ -1,6 +1,6 @@
-package com.irvingguerra.litedash.feature.apps
+package com.vieyra28.litekia.feature.apps
 
-import com.irvingguerra.litedash.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Radius
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -31,9 +31,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleStartEffect
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Typography
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Typography
 import java.text.Normalizer
 
 private val ICON_SIZE = 56.dp

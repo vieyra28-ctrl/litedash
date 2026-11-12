@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.map
+package com.vieyra28.litekia.feature.map
 
 import androidx.compose.runtime.Immutable
 
@@ -11,7 +11,7 @@ enum class MapView(val stored: String) { FLAT("flat"), TILTED("tilted") }
 /** Según la velocidad, o fijo (cerca = calles, lejos = colonias). */
 enum class MapZoom(val stored: String, val level: Int?) { AUTO("auto", null), NEAR("near", 17), MID("mid", 16), FAR("far", 15) }
 
-/** Los colores: como el tema de LiteDash (día y noche), o siempre claros u oscuros. */
+/** Los colores: como el tema de LiteKia (día y noche), o siempre claros u oscuros. */
 enum class MapStyle(val stored: String) { THEME("theme"), LIGHT("light"), DARK("dark") }
 
 /** Minimalista (solo calles, agua y parques; de fábrica desde la 1.4.71) o todo lo de OpenStreetMap (calles, negocios, nombres). */
@@ -29,7 +29,7 @@ data class MapLook(
     val style: MapStyle = MapStyle.THEME,
     val detail: MapDetail = MapDetail.MINIMAL,
 ) {
-    /** ¿Se ve oscuro? Con [MapStyle.THEME], lo que diga el tema de LiteDash ([themeDark]). */
+    /** ¿Se ve oscuro? Con [MapStyle.THEME], lo que diga el tema de LiteKia ([themeDark]). */
     fun dark(themeDark: Boolean) = when (style) {
         MapStyle.THEME -> themeDark
         MapStyle.LIGHT -> false

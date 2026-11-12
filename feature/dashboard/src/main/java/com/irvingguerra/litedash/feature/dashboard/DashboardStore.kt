@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.dashboard
+package com.vieyra28.litekia.feature.dashboard
 
 import android.content.Context
 

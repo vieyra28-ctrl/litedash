@@ -1,7 +1,7 @@
 // Ajustes → Tu auto: el auto elegido, sus modelos descargados y el catálogo.
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
-import com.irvingguerra.litedash.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Radius
 import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -37,22 +37,22 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Icon
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.TextInput
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.apps.normalize
-import com.irvingguerra.litedash.feature.car.CAR_ASPECT
-import com.irvingguerra.litedash.feature.car.CarDrawing
-import com.irvingguerra.litedash.feature.car.CarPackage
-import com.irvingguerra.litedash.feature.car.CarRepository
-import com.irvingguerra.litedash.feature.car.CarStill
-import com.irvingguerra.litedash.feature.car.CarTurntable
-import com.irvingguerra.litedash.feature.car.CatalogEntry
-import com.irvingguerra.litedash.feature.car.PaintFinish
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Icon
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.TextInput
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.apps.normalize
+import com.vieyra28.litekia.feature.car.CAR_ASPECT
+import com.vieyra28.litekia.feature.car.CarDrawing
+import com.vieyra28.litekia.feature.car.CarPackage
+import com.vieyra28.litekia.feature.car.CarRepository
+import com.vieyra28.litekia.feature.car.CarStill
+import com.vieyra28.litekia.feature.car.CarTurntable
+import com.vieyra28.litekia.feature.car.CatalogEntry
+import com.vieyra28.litekia.feature.car.PaintFinish
 
 /**
  * Ajustes → Tu auto, en tarjetas: el auto (nombre y color), las opciones del modelo

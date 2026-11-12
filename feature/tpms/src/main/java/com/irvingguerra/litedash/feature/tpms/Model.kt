@@ -1,6 +1,6 @@
-package com.irvingguerra.litedash.feature.tpms
+package com.vieyra28.litekia.feature.tpms
 
-import com.irvingguerra.litedash.core.vehicle.Source
+import com.vieyra28.litekia.core.vehicle.Source
 
 /** Una llanta del auto; [key] se guarda en preferencias y en el bus (no se traduce). */
 enum class Wheel(val key: String) {

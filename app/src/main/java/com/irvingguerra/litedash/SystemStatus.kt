@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.app.Instrumentation
 import android.content.BroadcastReceiver
@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.window.Popup
 import androidx.compose.ui.window.PopupPositionProvider
 import androidx.compose.ui.window.PopupProperties
-import com.irvingguerra.litedash.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Radius
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
@@ -69,15 +69,15 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.LifecycleStartEffect
-import com.irvingguerra.litedash.core.ui.Icon
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Typography
+import com.vieyra28.litekia.core.ui.Icon
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Typography
 import kotlin.concurrent.thread
 
-/** Avisos del sistema para LiteDash: escucha solo mientras se ve (con otra app al frente, nada). */
+/** Avisos del sistema para LiteKia: escucha solo mientras se ve (con otra app al frente, nada). */
 private fun Context.listen(receiver: BroadcastReceiver, action: String) =
     ContextCompat.registerReceiver(this, receiver, IntentFilter(action), ContextCompat.RECEIVER_NOT_EXPORTED)
 
@@ -157,7 +157,7 @@ fun Volume(buttonSize: Dp, vertical: Boolean = false) {
     }
     // Flota encima de la barra (o a un lado de la lateral): no le quita lugar a las apps. Cubre toda la
     // ventana con un fondo transparente: tocar fuera solo la cierra (no abre lo que haya abajo). No
-    // toma el enfoque: las teclas del volante siguen llegando a LiteDash.
+    // toma el enfoque: las teclas del volante siguen llegando a LiteKia.
     if (open) Popup(popupPositionProvider = WholeWindow, properties = PopupProperties(focusable = false)) {
         Box(Modifier.fillMaxSize().pointerInput(Unit) { detectTapGestures { open = false } }) {
             Column(
@@ -240,7 +240,7 @@ private val VOLUME_BAR_LENGTH = 160.dp
 
 
 /**
- * Aprieta la tecla de volumen dentro de la ventana de LiteDash (se permite sin permisos porque es la
+ * Aprieta la tecla de volumen dentro de la ventana de LiteKia (se permite sin permisos porque es la
  * propia app): el sistema la intercepta antes, como la del volante o la del panel. En otro hilo:
  * Instrumentation no se puede usar en el principal.
  */

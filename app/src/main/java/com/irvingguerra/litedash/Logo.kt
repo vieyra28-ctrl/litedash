@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.Manifest
 import android.content.Context
@@ -52,20 +52,20 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.FileBrowser
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.MORSE_ASPECT
-import com.irvingguerra.litedash.core.ui.MORSE_INTRO_MS
-import com.irvingguerra.litedash.core.ui.MorseMark
-import com.irvingguerra.litedash.core.ui.MorseMarkIntro
-import com.irvingguerra.litedash.core.ui.Segmented
-import com.irvingguerra.litedash.core.ui.SwitchRow
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.core.ui.scaledDecode
-import com.irvingguerra.litedash.feature.dashboard.Tile
-import com.irvingguerra.litedash.feature.dashboard.TileTypes
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.FileBrowser
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.MORSE_ASPECT
+import com.vieyra28.litekia.core.ui.MORSE_INTRO_MS
+import com.vieyra28.litekia.core.ui.MorseMark
+import com.vieyra28.litekia.core.ui.MorseMarkIntro
+import com.vieyra28.litekia.core.ui.Segmented
+import com.vieyra28.litekia.core.ui.SwitchRow
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.core.ui.scaledDecode
+import com.vieyra28.litekia.feature.dashboard.Tile
+import com.vieyra28.litekia.feature.dashboard.TileTypes
 import java.io.File
 import kotlin.math.ceil
 import kotlin.math.roundToInt
@@ -81,7 +81,7 @@ import kotlinx.coroutines.withContext
 
 /**
  * Una imagen que eliges de tu galería: la de un widget Imagen (p. ej. el logo de tu marca;
- * LiteDash no trae logos de marcas), la de la animación de entrada, el fondo del inicio o
+ * LiteKia no trae logos de marcas), la de la animación de entrada, el fondo del inicio o
  * la del modo estacionado. Se guarda una copia reducida a [maxPx] en la app y se decodifica una sola
  * vez por [version]: cada imagen lleva la suya, así cambiar una no vuelve a leer las demás.
  * Al mostrarla se lee al tamaño en que se ve: [screenShare] = fracción del lado largo de la pantalla
@@ -263,7 +263,7 @@ private fun rememberImage(target: SavedImage): LoadedImage {
 }
 
 /**
- * Pieza Imagen: tu foto [name] centrada o, sin foto, el logo de LiteDash (nada si [placeholder] es
+ * Pieza Imagen: tu foto [name] centrada o, sin foto, el logo de LiteKia (nada si [placeholder] es
  * false); un toque hace [onClick].
  */
 @Composable
@@ -289,7 +289,7 @@ fun SavedTileImage(name: String, modifier: Modifier = Modifier) {
 }
 
 /**
- * Animación de entrada al abrir LiteDash. Sin imagen propia, la marca —·· se arma (el guion
+ * Animación de entrada al abrir LiteKia. Sin imagen propia, la marca —·· se arma (el guion
  * entra y los puntos caen saltando); con tu imagen, aparece desde el fondo y crece un poco.
  * Al final se desvanece hacia el inicio. Un toque la salta.
  */
@@ -332,7 +332,7 @@ fun LogoIntro(onDone: () -> Unit) {
             .clickable(remember { MutableInteractionSource() }, indication = null, onClick = onDone),
         contentAlignment = Alignment.Center,
     ) {
-        // Con tu imagen, la tuya; sin ella, la marca de LiteDash armándose.
+        // Con tu imagen, la tuya; sin ella, la marca de LiteKia armándose.
         val image = logo.image
         when {
             image != null -> Box(
@@ -407,7 +407,7 @@ private fun imageButtons(target: SavedImage, onPicked: (Uri) -> Unit = {}, onRem
     // Un solo camino por versión. Android 13+: el selector de fotos del sistema (siempre viene, no pide permisos y el
     // explorador propio ya no puede ver fotos sin un permiso que Play no da a un launcher). Hasta 12: el explorador
     // propio, porque los selectores de las pantallas de auto fallan (sin "Archivos", o el de Google Play Services, que
-    // se baja de Play: "No es posible acceder" y LiteDash trabado).
+    // se baja de Play: "No es posible acceder" y LiteKia trabado).
     val open: () -> Unit = {
         when {
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ->
@@ -492,7 +492,7 @@ fun CustomizeImagePanel(d: Dependencies, tileId: String, close: () -> Unit) {
  * Elegir, cambiar o quitar una foto guardada como files/images/[current].png, con vista previa y
  * "quitar fondo". [key] identifica a quien la usa (la pieza); sin foto todavía ([current] vacío) se le
  * da un nombre nuevo y se avisa con [onNamed] al elegirla; [onRemoved] avisa al quitarla. [empty] dice
- * qué pasa sin foto y [placeholder], si la vista previa sin foto lleva el logo de LiteDash. Va dentro de una columna.
+ * qué pasa sin foto y [placeholder], si la vista previa sin foto lleva el logo de LiteKia. Va dentro de una columna.
  */
 @Composable
 fun ImageEditor(

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull

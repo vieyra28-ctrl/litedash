@@ -27,7 +27,7 @@
         </intent>
     </queries>
 
-    <!-- "Abrir LiteDash al encender" (apagado de fábrica): saber que la pantalla encendió y, desde
+    <!-- "Abrir LiteKia al encender" (apagado de fábrica): saber que la pantalla encendió y, desde
          Android 10, poder ponerse al frente sola ("Mostrar sobre otras apps", lo da el usuario). -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -47,7 +47,7 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" tools:ignore="ProtectedPermissions" />
 
     <application
-        android:name=".LiteDashApp"
+        android:name=".LiteKiaApp"
         android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_rules"
@@ -58,7 +58,7 @@
         android:supportsRtl="true"
         android:localeConfig="@xml/locales_config"
         tools:targetApi="33"
-        android:theme="@style/Theme.LiteDash">
+        android:theme="@style/Theme.LiteKia">
 
         <!-- Para medir con Macrobenchmark y adb en compilaciones release/benchmark. -->
         <profileable android:shell="true" tools:targetApi="29" />
@@ -81,13 +81,13 @@
             android:theme="@android:style/Theme.Material.NoActionBar" />
 
         <!--
-            Receptor de llantas o cable OBD conectado: Android ofrece "usar siempre LiteDash" y el
+            Receptor de llantas o cable OBD conectado: Android ofrece "usar siempre LiteKia" y el
             permiso queda dado (no se pide en cada encendido). Sin pantalla y en su propia tarea:
-            no toca el inicio ni lo trae al frente. Apagada de fábrica: LiteDashApp la prende solo
+            no toca el inicio ni lo trae al frente. Apagada de fábrica: LiteKiaApp la prende solo
             con llantas por USB o un cable OBD USB guardado (UsbAttachActivity.offer).
         -->
         <activity
-            android:name="com.irvingguerra.litedash.feature.tpms.UsbAttachActivity"
+            android:name="com.vieyra28.litekia.feature.tpms.UsbAttachActivity"
             android:enabled="false"
             android:exported="true"
             android:taskAffinity="${applicationId}.usb"
@@ -102,7 +102,7 @@
                 android:resource="@xml/usb_devices" />
         </activity>
 
-        <!-- Apagado: solo se prende con "Abrir LiteDash al encender" (BootLaunch.sync). -->
+        <!-- Apagado: solo se prende con "Abrir LiteKia al encender" (BootLaunch.sync). -->
         <receiver
             android:name=".BootReceiver"
             android:enabled="false"

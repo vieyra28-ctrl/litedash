@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.Context
 import android.database.ContentObserver
@@ -19,10 +19,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Typography
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Typography
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -30,7 +30,7 @@ import kotlinx.coroutines.withContext
 /**
  * Las luces del auto como señal de noche. Android no tiene un aviso estándar de faros:
  * cada pantalla (FYT, SYU, SRNUBI…) lo escribe en un ajuste del sistema con su propio
- * nombre y valor. LiteDash lo aprende: toma una foto de los ajustes con las luces
+ * nombre y valor. LiteKia lo aprende: toma una foto de los ajustes con las luces
  * apagadas, otra con las luces prendidas, y el que cambió es el de los faros. Después
  * solo escucha ese ajuste (sin permisos: los ajustes del sistema se leen libremente).
  */

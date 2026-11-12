@@ -1,21 +1,21 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
-import com.irvingguerra.litedash.feature.music.MusicRepository
-import com.irvingguerra.litedash.feature.music.SourceKind
-import com.irvingguerra.litedash.feature.player.Library
-import com.irvingguerra.litedash.feature.player.Player
-import com.irvingguerra.litedash.feature.player.PlayerSource
-import com.irvingguerra.litedash.feature.player.PlayerStore
+import com.vieyra28.litekia.feature.music.MusicRepository
+import com.vieyra28.litekia.feature.music.SourceKind
+import com.vieyra28.litekia.feature.player.Library
+import com.vieyra28.litekia.feature.player.Player
+import com.vieyra28.litekia.feature.player.PlayerSource
+import com.vieyra28.litekia.feature.player.PlayerStore
 
 /** Lo que se espera a que MediaStore indexe una memoria recién conectada antes de rendirse. */
 private const val SCAN_WAIT_MS = 4_000L
 
 /**
  * Une el reproductor propio ([Player]) con la música y la radio: Archivos (el método de música con
- * el reproductor de LiteDash) y la radio por internet cuando es la escogida en Ajustes → Apps →
+ * el reproductor de LiteKia) y la radio por internet cuando es la escogida en Ajustes → Apps →
  * Radio. Al dar play sigue con lo último que sonó; si no hay nada, la vista abre la biblioteca.
  */
 object OwnPlayer {

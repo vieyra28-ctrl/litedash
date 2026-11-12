@@ -29,11 +29,11 @@ class TWUtil(type: Int) {
                 send(1025, 1, 0)
                 send(1025, 2, frequency)
             }
-            what == 1028 && a1 == 255 -> send(1028, 0, 0, "LiteDash FM $frequency")
+            what == 1028 && a1 == 255 -> send(1028, 0, 0, "LiteKia FM $frequency")
             what == 1025 && a1 == 1 -> {
                 frequency += if (a2 == 0) 20 else -20
                 send(1025, 2, frequency)
-                send(1028, 0, 0, "LiteDash FM $frequency")
+                send(1028, 0, 0, "LiteKia FM $frequency")
             }
             what == 0x9E00 -> {
                 on = a1 == 0x0A

@@ -1,6 +1,6 @@
-package com.irvingguerra.litedash.feature.obd
+package com.vieyra28.litekia.feature.obd
 
-import com.irvingguerra.litedash.core.vehicle.Signal
+import com.vieyra28.litekia.core.vehicle.Signal
 
 /** Un dato en vivo del modo 01: qué señal llena, cada cuánto y cómo se calcula. */
 class Pid(val code: Int, val signal: String, val fast: Boolean, val decode: (IntArray) -> Float?)
@@ -8,7 +8,7 @@ class Pid(val code: Int, val signal: String, val fast: Boolean, val decode: (Int
 private fun IntArray.a() = getOrNull(0)
 private fun IntArray.ab() = if (size >= 2) this[0] * 256 + this[1] else null
 
-/** Los PIDs estándar que usa LiteDash (SAE J1979). */
+/** Los PIDs estándar que usa LiteKia (SAE J1979). */
 val Pids = listOf(
     Pid(0x0D, Signal.SPEED, fast = true) { it.a()?.toFloat() },
     Pid(0x0C, Signal.RPM, fast = true) { it.ab()?.div(4f) },

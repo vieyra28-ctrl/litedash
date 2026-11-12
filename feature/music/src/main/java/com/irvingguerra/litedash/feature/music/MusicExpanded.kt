@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.music
+package com.vieyra28.litekia.feature.music
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -30,13 +30,13 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Typography
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Typography
 
 /**
- * La música en grande, sin salir de LiteDash: el método elegido en Ajustes (Archivos, Bluetooth o
+ * La música en grande, sin salir de LiteKia: el método elegido en Ajustes (Archivos, Bluetooth o
  * App, uno solo), carátula, barra para adelantar, y los botones propios de la app (en Spotify: me
  * gusta, aleatorio, repetir). Ancha pone la carátula a un lado; angosta, arriba. [browser] es la
  * biblioteca de Archivos del reproductor propio: se abre con el botón de lista o al dar play sin

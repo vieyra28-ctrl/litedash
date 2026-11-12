@@ -1,8 +1,8 @@
-package com.irvingguerra.litedash.feature.obd
+package com.vieyra28.litekia.feature.obd
 
 /*
  * Las recetas de esta tabla son derivadas de OBDb (https://github.com/OBDb), CC BY-SA 4.0,
- * adaptadas (compatible en un solo sentido con la GPL-3.0 de LiteDash). Solo las confirmadas con
+ * adaptadas (compatible en un solo sentido con la GPL-3.0 de LiteKia). Solo las confirmadas con
  * capturas reales y en CAN de 11 bits; la investigación completa está en lo interno
  * (docs/tpms/OBD_TPMS.md).
  */

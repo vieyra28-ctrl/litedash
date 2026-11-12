@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -35,14 +35,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.LocalPlainCard
-import com.irvingguerra.litedash.core.ui.Segmented
-import com.irvingguerra.litedash.core.ui.SwitchRow
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.dashboard.TileTypes
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.LocalPlainCard
+import com.vieyra28.litekia.core.ui.Segmented
+import com.vieyra28.litekia.core.ui.SwitchRow
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.dashboard.TileTypes
 import kotlinx.coroutines.delay
 
 /** Valores de muestra para la vista previa: sube, baja y llega a la zona roja. */

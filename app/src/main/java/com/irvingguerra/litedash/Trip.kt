@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -36,18 +36,18 @@ import androidx.compose.ui.unit.sp
 import androidx.core.location.LocationListenerCompat
 import kotlin.concurrent.thread
 import androidx.lifecycle.compose.LifecycleStartEffect
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Card
-import com.irvingguerra.litedash.core.ui.Icon
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.TilePadding
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.core.ui.fitFont
-import com.irvingguerra.litedash.core.vehicle.Signal
-import com.irvingguerra.litedash.core.vehicle.Source
-import com.irvingguerra.litedash.core.vehicle.VehicleBus
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Card
+import com.vieyra28.litekia.core.ui.Icon
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.TilePadding
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.core.ui.fitFont
+import com.vieyra28.litekia.core.vehicle.Signal
+import com.vieyra28.litekia.core.vehicle.Source
+import com.vieyra28.litekia.core.vehicle.VehicleBus
 import kotlinx.coroutines.delay
 
 /** Un punto del GPS de hace menos que esto manda sobre la red. */

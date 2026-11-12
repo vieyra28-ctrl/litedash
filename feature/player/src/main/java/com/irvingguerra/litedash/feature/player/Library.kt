@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.player
+package com.vieyra28.litekia.feature.player
 
 import android.Manifest
 import android.content.ContentUris
@@ -11,8 +11,8 @@ import android.provider.DocumentsContract
 import android.provider.MediaStore
 import androidx.core.net.toUri
 import java.io.File
-import com.irvingguerra.litedash.feature.music.Drive
-import com.irvingguerra.litedash.feature.music.Drives
+import com.vieyra28.litekia.feature.music.Drive
+import com.vieyra28.litekia.feature.music.Drives
 
 /** Una canción de la memoria (dos con los mismos datos son la misma: tocar USB otra vez no la reinicia). */
 data class Track(
@@ -101,7 +101,7 @@ object Library {
         PlayerStore(context).musicFolder = uri.toString()
     }
 
-    /** Guarda la carpeta elegida con el explorador propio ([com.irvingguerra.litedash.core.ui.FileBrowser]): se lee con [File]. */
+    /** Guarda la carpeta elegida con el explorador propio ([com.vieyra28.litekia.core.ui.FileBrowser]): se lee con [File]. */
     fun setFolder(context: Context, dir: File) {
         clearFolder(context)
         PlayerStore(context).musicFolder = Uri.fromFile(dir).toString()

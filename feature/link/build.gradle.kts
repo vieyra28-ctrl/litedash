@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.irvingguerra.litedash.feature.link"
+    namespace = "com.vieyra28.litekia.feature.link"
     compileSdk = 37
     defaultConfig { minSdk = 23 }
     compileOptions {

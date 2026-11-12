@@ -1,5 +1,5 @@
 // Ajustes: secciones, menú, pestañas y la tarjeta compartida.
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -37,14 +37,14 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.irvingguerra.litedash.core.ui.Card
-import com.irvingguerra.litedash.core.ui.Icon
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Radius
-import com.irvingguerra.litedash.core.ui.Segmented
-import com.irvingguerra.litedash.core.ui.Typography
+import com.vieyra28.litekia.core.ui.Card
+import com.vieyra28.litekia.core.ui.Icon
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Segmented
+import com.vieyra28.litekia.core.ui.Typography
 
 /** Secciones de Ajustes en el orden del menú: cada cosa vive en un solo lugar. */
 enum class SettingsSection(val title: Int) {
@@ -136,7 +136,7 @@ fun SettingsPanel(
 
 /**
  * Pestañas de una sección con muchas partes (para no hacer tanto scroll). Devuelve la
- * elegida; se recuerda por sección ([key]) mientras LiteDash siga abierto (solo en memoria).
+ * elegida; se recuerda por sección ([key]) mientras LiteKia siga abierto (solo en memoria).
  */
 @Composable
 internal fun tabs(titles: List<Int>, key: String): Int {

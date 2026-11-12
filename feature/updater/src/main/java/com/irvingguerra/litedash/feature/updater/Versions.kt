@@ -1,9 +1,9 @@
-package com.irvingguerra.litedash.feature.updater
+package com.vieyra28.litekia.feature.updater
 
 /**
  * El mismo cálculo que app/build.gradle.kts: X.Y.Z-beta.N → versionCode.
  * Así se compara una etiqueta de GitHub con la versión instalada.
- * Devuelve null si la etiqueta no es una versión de LiteDash.
+ * Devuelve null si la etiqueta no es una versión de LiteKia.
  */
 fun versionCode(tag: String): Long? {
     val m = Regex("""^v?(\d+)\.(\d+)\.(\d+)(?:-(beta|rc)\.(\d+))?$""").matchEntire(tag.trim()) ?: return null

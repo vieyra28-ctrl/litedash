@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 /*
  * Quitar el fondo de la foto del auto, sin ML: relleno desde los bordes por píxeles parecidos

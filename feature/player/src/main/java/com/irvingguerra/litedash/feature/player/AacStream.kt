@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.player
+package com.vieyra28.litekia.feature.player
 
 import android.content.Context
 import android.media.AudioAttributes
@@ -6,7 +6,7 @@ import android.media.AudioFormat
 import android.media.AudioTrack
 import android.media.MediaCodec
 import android.media.MediaFormat
-import com.irvingguerra.litedash.core.ui.Https
+import com.vieyra28.litekia.core.ui.Https
 import java.io.IOException
 import java.io.InputStream
 import java.nio.ByteBuffer
@@ -69,7 +69,7 @@ class AacStream(private val context: Context, private val url: String, private v
                 connectTimeout = 8_000
                 readTimeout = 12_000
                 setRequestProperty("Icy-MetaData", "0")
-                setRequestProperty("User-Agent", "LiteDash")
+                setRequestProperty("User-Agent", "LiteKia")
             }
             if (connection.responseCode !in 200..299) throw IOException("HTTP ${connection.responseCode}")
             val type = connection.contentType.orEmpty().lowercase()

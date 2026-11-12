@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.link
+package com.vieyra28.litekia.feature.link
 
 import java.io.IOException
 import java.io.InputStream
@@ -16,7 +16,7 @@ import javax.crypto.spec.SecretKeySpec
 internal object LinkProtocol {
     const val VERSION = 1
     const val PORT = 47600
-    const val SERVICE_TYPE = "_litedash-link._tcp"
+    const val SERVICE_TYPE = "_litekia-link._tcp"
     const val KEY_BYTES = 32
     const val NONCE_BYTES = 16
 
@@ -63,7 +63,7 @@ internal object LinkProtocol {
      * su máximo y, si con ellos no cabe en el QR, se quita primero la pantalla y luego el auto.
      */
     fun qrText(screenId: String, key: ByteArray, car: String, screen: String): String {
-        val base = "litedash://link?v=$VERSION&id=$screenId&k=${Base64.url(key)}"
+        val base = "litekia://link?v=$VERSION&id=$screenId&k=${Base64.url(key)}"
         val n = percent(car.take(CAR_MAX)).let { if (it.isEmpty()) "" else "&n=$it" }
         val s = percent(screen.take(SCREEN_MAX)).let { if (it.isEmpty()) "" else "&s=$it" }
         return listOf(base + n + s, base + n, base).first { it.length <= QrCode.MAX_BYTES }

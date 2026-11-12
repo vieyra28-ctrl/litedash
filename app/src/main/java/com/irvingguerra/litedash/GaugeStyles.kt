@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
@@ -41,13 +41,13 @@ import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.irvingguerra.litedash.core.ui.Card
-import com.irvingguerra.litedash.core.ui.Colors
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.TilePadding
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.car.CAR_ASPECT
+import com.vieyra28.litekia.core.ui.Card
+import com.vieyra28.litekia.core.ui.Colors
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.TilePadding
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.car.CAR_ASPECT
 import kotlin.math.cos
 import kotlin.math.roundToInt
 import kotlin.math.sin
@@ -115,7 +115,7 @@ fun GaugeLook.suggestedColor(): GaugeColor? = when {
 }
 
 /**
- * Cómo se ve un medidor; cada pieza guarda el suyo en su [com.irvingguerra.litedash.feature.dashboard.Tile.data]
+ * Cómo se ve un medidor; cada pieza guarda el suyo en su [com.vieyra28.litekia.feature.dashboard.Tile.data]
  * ("rpm;style=needle;color=dynamic"). Lo que queda como de fábrica no se escribe, así los
  * acomodos de antes (solo la señal) se leen igual.
  */
@@ -245,7 +245,7 @@ private val DEFAULT_TRIP = setOf(RoadTrip.DISTANCE)
 
 /**
  * Si la carretera o el auto 3D llevan la presión de las llantas: "tires=on" u "tires=off" en su
- * [com.irvingguerra.litedash.feature.dashboard.Tile.data]. Sin guardar (null), lo de Ajustes → Llantas.
+ * [com.vieyra28.litekia.feature.dashboard.Tile.data]. Sin guardar (null), lo de Ajustes → Llantas.
  */
 object TileTires {
     private const val KEY = "tires="
@@ -266,7 +266,7 @@ object ImageData {
 }
 
 /**
- * Cómo se ve la carretera; se guarda en su [com.irvingguerra.litedash.feature.dashboard.Tile.data]
+ * Cómo se ve la carretera; se guarda en su [com.vieyra28.litekia.feature.dashboard.Tile.data]
  * como un velocímetro ([gauge]) más "speed=…" ([speed]), "trip=…" ([trip]) y "tires=…" ([tires],
  * ver [TileTires]). Lo de fábrica no se escribe.
  */

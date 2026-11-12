@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.irvingguerra.litedash.feature.tpms"
+    namespace = "com.vieyra28.litekia.feature.tpms"
     compileSdk = 37
     defaultConfig { minSdk = 23 }
     compileOptions {

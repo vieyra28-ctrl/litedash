@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.map
+package com.vieyra28.litekia.feature.map
 
 import android.content.Context
 import android.util.LruCache
@@ -7,7 +7,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asAndroidBitmap
-import com.irvingguerra.litedash.core.ui.Https
+import com.vieyra28.litekia.core.ui.Https
 import java.io.File
 import java.net.HttpURLConnection
 import kotlinx.coroutines.CoroutineScope
@@ -240,7 +240,7 @@ class TileStore(context: Context, private val userAgent: String, val source: Til
 }
 
 /**
- * Un GET con el User-Agent de LiteDash: [setup] pone encabezados y [read] lee la respuesta con su código.
+ * Un GET con el User-Agent de LiteKia: [setup] pone encabezados y [read] lee la respuesta con su código.
  * Sin `disconnect()`: al cerrar el stream la conexión queda viva (keep-alive) para la siguiente.
  */
 internal inline fun <T> httpGet(

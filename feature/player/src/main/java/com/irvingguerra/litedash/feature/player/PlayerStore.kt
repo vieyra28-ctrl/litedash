@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.player
+package com.vieyra28.litekia.feature.player
 
 import android.content.Context
 import androidx.core.content.edit

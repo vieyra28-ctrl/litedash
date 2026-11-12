@@ -24,5 +24,5 @@
     <string name="map_detail_full">Full</string>
     <string name="map_detail_minimal">Minimal</string>
     <string name="map_detail_full_help">Everything from OpenStreetMap: streets, places, names and icons.</string>
-    <string name="map_detail_minimal_help">Just streets, water and parks, clean and in LiteDash colors (data from OpenFreeMap).</string>
+    <string name="map_detail_minimal_help">Just streets, water and parks, clean and in LiteKia colors (data from OpenFreeMap).</string>
 </resources>

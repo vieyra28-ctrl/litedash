@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.Context
 import android.media.AudioManager
@@ -19,11 +19,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.music.MusicRepository
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.music.MusicRepository
 
 /**
  * Qué hace un botón del volante. [stored] es como se guarda (no cambiarlo).
@@ -52,7 +52,7 @@ enum class WheelAction(val stored: String, val title: Int) {
 /**
  * Mandos al volante con el estándar de Android: casi todas las pantallas de auto
  * convierten los botones del volante en teclas normales (siguiente, anterior,
- * play, volumen, voz…). LiteDash las recibe mientras está al frente; con otra app
+ * play, volumen, voz…). LiteKia las recibe mientras está al frente; con otra app
  * al frente siguen yendo a Android como siempre.
  */
 class WheelKeys(private val context: Context, private val prefs: Preferences) {
@@ -72,7 +72,7 @@ class WheelKeys(private val context: Context, private val prefs: Preferences) {
         request = null
     }
 
-    /** true si LiteDash se quedó con la tecla (no se le pasa a Android). */
+    /** true si LiteKia se quedó con la tecla (no se le pasa a Android). */
     fun onKey(event: KeyEvent, music: MusicRepository): Boolean {
         val code = event.keyCode
         if (code in IGNORED) return false

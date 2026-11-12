@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.core.ui
+package com.vieyra28.litekia.core.ui
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.core.animateDpAsState
@@ -154,7 +154,7 @@ object Radius {
  * [scale] agranda o achica toda la interfaz (pantallas que mienten con su dpi); [accent], el color elegido.
  */
 @Composable
-fun LiteDashTheme(dark: Boolean = true, scale: Float = 1f, accent: Color? = null, content: @Composable () -> Unit) {
+fun LiteKiaTheme(dark: Boolean = true, scale: Float = 1f, accent: Color? = null, content: @Composable () -> Unit) {
     val d = LocalDensity.current
     val colors = remember(dark, accent) { (if (dark) DarkColors else LightColors).withAccent(accent) }
     CompositionLocalProvider(

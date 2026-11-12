@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.car
+package com.vieyra28.litekia.feature.car
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color

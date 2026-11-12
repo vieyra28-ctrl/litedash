@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.core.ui
+package com.vieyra28.litekia.core.ui
 
 import android.content.Context
 import android.graphics.Bitmap

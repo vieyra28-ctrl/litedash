@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.music
+package com.vieyra28.litekia.feature.music
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory
 import android.os.Handler
 import android.os.Looper
 import android.util.LruCache
-import com.irvingguerra.litedash.core.ui.Https
+import com.vieyra28.litekia.core.ui.Https
 import org.json.JSONObject
 import java.io.File
 import java.net.URLEncoder

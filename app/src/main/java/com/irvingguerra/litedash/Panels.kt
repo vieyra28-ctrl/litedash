@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.Intent
 import android.provider.Settings
@@ -37,19 +37,19 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Card
-import com.irvingguerra.litedash.core.ui.Icon
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.TextInput
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.apps.App
-import com.irvingguerra.litedash.feature.apps.AppGrid
-import com.irvingguerra.litedash.feature.dashboard.TileTypes
-import com.irvingguerra.litedash.feature.obd.ObdState
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Card
+import com.vieyra28.litekia.core.ui.Icon
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.TextInput
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.apps.App
+import com.vieyra28.litekia.feature.apps.AppGrid
+import com.vieyra28.litekia.feature.dashboard.TileTypes
+import com.vieyra28.litekia.feature.obd.ObdState
 
 /** Panel a pantalla completa sobre el inicio, con título y botón para cerrar. */
 @Composable

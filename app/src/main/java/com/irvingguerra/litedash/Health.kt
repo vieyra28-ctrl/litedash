@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -34,26 +34,26 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Card
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.TilePadding
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.core.ui.fitFont
-import com.irvingguerra.litedash.core.vehicle.Signal
-import com.irvingguerra.litedash.core.vehicle.watch
-import com.irvingguerra.litedash.feature.car.CAR_TOP_ASPECT
-import com.irvingguerra.litedash.feature.car.CarPackage
-import com.irvingguerra.litedash.feature.car.CarTop
-import com.irvingguerra.litedash.feature.obd.EngineReport
-import com.irvingguerra.litedash.feature.obd.HealthLevel
-import com.irvingguerra.litedash.feature.obd.ObdState
-import com.irvingguerra.litedash.feature.obd.SystemHealth
-import com.irvingguerra.litedash.feature.obd.Zone
-import com.irvingguerra.litedash.feature.obd.engineAlert
-import com.irvingguerra.litedash.feature.obd.healthOf
-import com.irvingguerra.litedash.feature.obd.issues
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Card
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.TilePadding
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.core.ui.fitFont
+import com.vieyra28.litekia.core.vehicle.Signal
+import com.vieyra28.litekia.core.vehicle.watch
+import com.vieyra28.litekia.feature.car.CAR_TOP_ASPECT
+import com.vieyra28.litekia.feature.car.CarPackage
+import com.vieyra28.litekia.feature.car.CarTop
+import com.vieyra28.litekia.feature.obd.EngineReport
+import com.vieyra28.litekia.feature.obd.HealthLevel
+import com.vieyra28.litekia.feature.obd.ObdState
+import com.vieyra28.litekia.feature.obd.SystemHealth
+import com.vieyra28.litekia.feature.obd.Zone
+import com.vieyra28.litekia.feature.obd.engineAlert
+import com.vieyra28.litekia.feature.obd.healthOf
+import com.vieyra28.litekia.feature.obd.issues
 import kotlin.math.roundToInt
 
 /** Las partes que siempre se listan; ruedas y carrocería solo cuando algo las señala. */

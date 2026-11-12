@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.link
+package com.vieyra28.litekia.feature.link
 
 import java.math.BigInteger
 import org.junit.Assert.assertEquals
@@ -21,7 +21,7 @@ class QrCodeTest {
     private val capacity = intArrayOf(14, 26, 42, 62, 84, 106, 122, 152, 180, 213)
 
     private val inputs: Map<String, ByteArray> = mapOf(
-        "hello" to "LiteDash".toByteArray(),
+        "hello" to "LiteKia".toByteArray(),
         "link" to LINK.toByteArray(),
         "utf8" to "Señor Ñandú çé 日本".toByteArray(),
     ) + capacity.mapIndexed { i, n -> "v${i + 1}" to filler(n) }
@@ -75,6 +75,6 @@ class QrCodeTest {
     )
 
     private companion object {
-        const val LINK = "litedash://link?v=1&id=0011223344556677&k=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8&n=Lancer%20Evolution%20X&s=SRNUBI"
+        const val LINK = "litekia://link?v=1&id=0011223344556677&k=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8&n=Lancer%20Evolution%20X&s=SRNUBI"
     }
 }

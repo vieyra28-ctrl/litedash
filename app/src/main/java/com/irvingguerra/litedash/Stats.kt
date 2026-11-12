@@ -1,10 +1,10 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Build
 import androidx.core.content.edit
-import com.irvingguerra.litedash.core.ui.Https
+import com.vieyra28.litekia.core.ui.Https
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
@@ -13,9 +13,9 @@ import java.io.IOException
 import java.security.SecureRandom
 
 /**
- * Cuántas pantallas usan LiteDash, sin cuentas ni SDK de Firebase: a lo más una vez al día,
+ * Cuántas pantallas usan LiteKia, sin cuentas ni SDK de Firebase: a lo más una vez al día,
  * al abrir el inicio, escribe `screens/{id}` en Firestore por REST (nombres de la nube en inglés). El id es un número al
- * azar de esta instalación; se manda solo la versión, el canal (GitHub o Play), Android, el idioma de LiteDash,
+ * azar de esta instalación; se manda solo la versión, el canal (GitHub o Play), Android, el idioma de LiteKia,
  * el tamaño de pantalla y desde qué día se usa (nada de ubicación ni del usuario). Las reglas de Firestore solo dejan escribir
  * esos campos y nadie puede leerlos desde la app. Se apaga en Ajustes → Sistema → Estadísticas.
  */
@@ -63,7 +63,7 @@ class Stats(private val context: Context, private val enabled: () -> Boolean) {
 
 /** Firestore por REST (documents:commit y lectura de un documento), sin SDK; lo comparten [Stats], los reportes y [ProAccess]. */
 internal object Firestore {
-    private const val PROJECT = "litedash"
+    private const val PROJECT = "litekia"
     private const val DOCUMENTS = "projects/$PROJECT/databases/(default)/documents"
     private const val API = "https://firestore.googleapis.com/v1"
     private const val COMMIT_URL = "$API/$DOCUMENTS:commit"
@@ -87,7 +87,7 @@ internal object Firestore {
             readTimeout = 15_000
             doOutput = true
             setRequestProperty("Content-Type", "application/json")
-            setRequestProperty("User-Agent", "LiteDash")
+            setRequestProperty("User-Agent", "LiteKia")
         }
         try {
             connection.outputStream.use { it.write(body) }
@@ -105,7 +105,7 @@ internal object Firestore {
         val connection = Https.open(context, "$API/${document(path)}").apply {
             connectTimeout = 10_000
             readTimeout = 15_000
-            setRequestProperty("User-Agent", "LiteDash")
+            setRequestProperty("User-Agent", "LiteKia")
         }
         try {
             return when (val code = connection.responseCode) {

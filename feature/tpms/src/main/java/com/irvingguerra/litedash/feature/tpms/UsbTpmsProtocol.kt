@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.tpms
+package com.vieyra28.litekia.feature.tpms
 
 /** Algo que mandó el receptor USB (ya validado: `55 AA`, largo y XOR correctos). */
 sealed interface UsbFrame {

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.player
+package com.vieyra28.litekia.feature.player
 
 import android.annotation.SuppressLint
 import android.app.Notification
@@ -91,7 +91,7 @@ class PlaybackService : Service() {
             }
             foreground = true
         } catch (e: Exception) {
-            Log.w("LiteDash", "Reproductor sin primer plano", e)
+            Log.w("LiteKia", "Reproductor sin primer plano", e)
             post(this)
         }
     }
@@ -115,7 +115,7 @@ class PlaybackService : Service() {
     }
 
     override fun onTaskRemoved(rootIntent: Intent?) {
-        // Si cierran LiteDash desde recientes, la música se queda (como cualquier reproductor).
+        // Si cierran LiteKia desde recientes, la música se queda (como cualquier reproductor).
     }
 
     companion object {
@@ -141,7 +141,7 @@ class PlaybackService : Service() {
                         ContextCompat.startForegroundService(context, Intent(context, PlaybackService::class.java))
                     } catch (e: Exception) {
                         // Android 12+ no deja arrancarlo desde segundo plano: suena con su aviso igual.
-                        Log.w("LiteDash", "Reproductor sin primer plano", e)
+                        Log.w("LiteKia", "Reproductor sin primer plano", e)
                         post(context)
                     }
                 }

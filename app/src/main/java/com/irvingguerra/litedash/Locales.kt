@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable

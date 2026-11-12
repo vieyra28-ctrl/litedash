@@ -1,5 +1,5 @@
 // Ajustes → Sistema y Módulos: actualizaciones, Android, tu pantalla, módulos y permisos.
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.Context
 import android.content.Intent
@@ -41,22 +41,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Card
-import com.irvingguerra.litedash.core.ui.Icon
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Radius
-import com.irvingguerra.litedash.core.ui.Switch
-import com.irvingguerra.litedash.core.ui.SwitchRow
-import com.irvingguerra.litedash.core.ui.TextInput
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.car.CAR_ASPECT
-import com.irvingguerra.litedash.feature.car.CarStill
-import com.irvingguerra.litedash.feature.updater.Updater
-import com.irvingguerra.litedash.feature.updater.Version
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Card
+import com.vieyra28.litekia.core.ui.Icon
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Switch
+import com.vieyra28.litekia.core.ui.SwitchRow
+import com.vieyra28.litekia.core.ui.TextInput
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.car.CAR_ASPECT
+import com.vieyra28.litekia.feature.car.CarStill
+import com.vieyra28.litekia.feature.updater.Updater
+import com.vieyra28.litekia.feature.updater.Version
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -66,7 +66,7 @@ internal enum class SystemTab(val title: Int) {
 }
 
 /**
- * Sistema: lo de LiteDash y de la pantalla en pestañas. Actualizaciones (la versión con sus
+ * Sistema: lo de LiteKia y de la pantalla en pestañas. Actualizaciones (la versión con sus
  * novedades y, en la de GitHub, buscar la siguiente), atajos a Ajustes de Android, estadísticas
  * anónimas e info de tu pantalla.
  */
@@ -85,7 +85,7 @@ internal fun SystemSettings(d: Dependencies) {
     }
 }
 
-/** La pantalla en unas líneas, LiteDash Pro ([ProCard]) y "Enviar un reporte" ([SendReport]). */
+/** La pantalla en unas líneas, LiteKia Pro ([ProCard]) y "Enviar un reporte" ([SendReport]). */
 @Composable
 private fun ScreenInfo(d: Dependencies) {
     val context = LocalContext.current
@@ -97,7 +97,7 @@ private fun ScreenInfo(d: Dependencies) {
     SendReport(d.music, d.pro, d.dashboard, d::obdIfCreated) { d.phone.describe() }
 }
 
-/** LiteDash Pro en prueba: activarlo con un código o, si ya está, quitarlo de esta pantalla (solo lo local). */
+/** LiteKia Pro en prueba: activarlo con un código o, si ya está, quitarlo de esta pantalla (solo lo local). */
 @Composable
 private fun ProCard(pro: ProAccess) {
     val c = LocalColors.current
@@ -155,7 +155,7 @@ private fun About(d: Dependencies) {
                 CarStill(d.cars, pkg, d.prefs.carPaint, Modifier.fillMaxWidth(0.46f).aspectRatio(CAR_ASPECT))
             }
             Column(Modifier.padding(22.dp).fillMaxWidth(if (pkg != null && wide) 0.56f else 1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                Label("LiteDash ${BuildConfig.VERSION_NAME}", Typography.title.copy(fontSize = 30.sp), maxLines = 1)
+                Label("LiteKia ${BuildConfig.VERSION_NAME}", Typography.title.copy(fontSize = 30.sp), maxLines = 1)
                 Label(BuildConfig.CHANNEL, Typography.small, c.textMuted)
                 if (BuildConfig.RELEASE_NOTES.isNotBlank()) {
                     Label(stringResource(R.string.release_notes), Typography.label, c.textMuted)
@@ -210,7 +210,7 @@ private fun Permissions(d: Dependencies, revision: Int) {
 
 /**
  * Atajos a los ajustes del sistema: muchas pantallas de auto esconden sus ajustes detrás
- * del launcher de la marca, y al poner LiteDash de inicio ya no se encuentran.
+ * del launcher de la marca, y al poner LiteKia de inicio ya no se encuentran.
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -241,7 +241,7 @@ private fun AndroidSettings() {
     }
 }
 
-/** Los permisos de LiteDash en Ajustes de Android (para dar o quitar ubicación). */
+/** Los permisos de LiteKia en Ajustes de Android (para dar o quitar ubicación). */
 private fun openAppSettings(context: Context) {
     val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.fromParts("package", context.packageName, null))
     runCatching { context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }

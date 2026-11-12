@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.dashboard
+package com.vieyra28.litekia.feature.dashboard
 
 import androidx.compose.animation.core.animateIntOffsetAsState
 import androidx.compose.animation.core.tween
@@ -37,12 +37,12 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Icon
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.LocalPlainCard
-import com.irvingguerra.litedash.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Icon
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.LocalPlainCard
+import com.vieyra28.litekia.core.ui.Radius
 import kotlin.math.roundToInt
 import kotlinx.coroutines.withTimeoutOrNull
 

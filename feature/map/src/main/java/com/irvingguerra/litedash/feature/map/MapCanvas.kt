@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.map
+package com.vieyra28.litekia.feature.map
 
 import android.graphics.Matrix as AndroidMatrix
 import androidx.compose.foundation.background
@@ -35,10 +35,10 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Radius
-import com.irvingguerra.litedash.core.ui.Typography
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Typography
 import kotlin.math.roundToInt
 
 private const val TILE = 256

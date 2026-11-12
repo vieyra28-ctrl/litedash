@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -28,16 +28,16 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.TextInput
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.dashboard.DashboardState
-import com.irvingguerra.litedash.feature.music.AppProbe
-import com.irvingguerra.litedash.feature.music.MusicRepository
-import com.irvingguerra.litedash.feature.music.SystemSource
-import com.irvingguerra.litedash.feature.obd.ObdRepository
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.TextInput
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.dashboard.DashboardState
+import com.vieyra28.litekia.feature.music.AppProbe
+import com.vieyra28.litekia.feature.music.MusicRepository
+import com.vieyra28.litekia.feature.music.SystemSource
+import com.vieyra28.litekia.feature.obd.ObdRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -266,7 +266,7 @@ private fun volumeInfo(context: Context): String = runCatching {
 private fun systemInfo(context: Context, pro: Boolean, layout: String, musicInfo: String, silent: List<String>): String {
     val m = context.resources.displayMetrics
     return buildString {
-        appendLine("LiteDash ${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE}) · ${BuildConfig.CHANNEL}")
+        appendLine("LiteKia ${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE}) · ${BuildConfig.CHANNEL}")
         appendLine("Equipo: ${Build.MANUFACTURER} ${Build.MODEL} (${Build.DEVICE})")
         appendLine("Plataforma: ${Build.HARDWARE} · ${Build.BOARD}")
         appendLine("Android ${Build.VERSION.RELEASE} (API ${Build.VERSION.SDK_INT})")

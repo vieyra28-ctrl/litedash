@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.player
+package com.vieyra28.litekia.feature.player
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -8,7 +8,7 @@ import android.location.Location
 import android.location.LocationManager
 import android.net.Uri
 import android.security.NetworkSecurityPolicy
-import com.irvingguerra.litedash.core.ui.Https
+import com.vieyra28.litekia.core.ui.Https
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.ByteArrayOutputStream
@@ -76,14 +76,14 @@ class Here(val latitude: Double, val longitude: Double)
  */
 object Radio {
     private val SERVERS = listOf("https://de1.api.radio-browser.info", "https://nl1.api.radio-browser.info", "https://at1.api.radio-browser.info", "https://fi1.api.radio-browser.info")
-    private const val USER_AGENT = "LiteDash/1.4 (+https://litedash.dev)"
+    private const val USER_AGENT = "LiteKia/1.4 (+https://github.com/vieyra28-ctrl/litedash)"
     private const val LIMIT = 150
     private const val ROUNDS = 2
 
     /** Hasta dónde cuenta como "de aquí" (metros): el alcance típico de una FM potente. */
     const val NEARBY_METERS = 120_000
 
-    /** La última ubicación que tenga Android (GPS o red), si LiteDash tiene permiso; sin pedir nada. */
+    /** La última ubicación que tenga Android (GPS o red), si LiteKia tiene permiso; sin pedir nada. */
     @SuppressLint("MissingPermission") // se revisa justo antes
     fun here(context: Context): Here? {
         val fine = context.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED

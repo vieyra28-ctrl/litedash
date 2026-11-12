@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.car
+package com.vieyra28.litekia.feature.car
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures

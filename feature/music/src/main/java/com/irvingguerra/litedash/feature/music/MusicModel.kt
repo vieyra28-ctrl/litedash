@@ -1,20 +1,20 @@
-package com.irvingguerra.litedash.feature.music
+package com.vieyra28.litekia.feature.music
 
 import android.graphics.Bitmap
 import android.os.SystemClock
 import androidx.compose.runtime.Immutable
 
 /**
- * Fuentes de música, como en un estéreo: USB es siempre el reproductor propio de LiteDash;
+ * Fuentes de música, como en un estéreo: USB es siempre el reproductor propio de LiteKia;
  * Bluetooth y la radio FM son apps del sistema de la pantalla que el usuario enlaza en Ajustes
  * (los paquetes cambian con la marca: `com.microntek.bt`, `com.ts.radio`…). La radio también
- * puede ser la de internet de LiteDash.
+ * puede ser la de internet de LiteKia.
  */
 enum class SourceKind { USB, BLUETOOTH, RADIO }
 
 /**
  * Cómo se escucha música en la pieza Música, uno solo a la vez (Ajustes → Apps → Música): los
- * archivos de una memoria con el reproductor de LiteDash, el celular por Bluetooth o una app.
+ * archivos de una memoria con el reproductor de LiteKia, el celular por Bluetooth o una app.
  */
 enum class MusicMode { FILES, BLUETOOTH, APP }
 
@@ -45,11 +45,11 @@ data class Song(
     /** Lo que la app dice que falló; null si nada. */
     val error: String?,
     /**
-     * No viene de una sesión que obedezca (un aviso de la app o lo que LiteDash mandó): play y
-     * pausa van como teclas del volante, explícitas, y el estado es el que LiteDash supone.
+     * No viene de una sesión que obedezca (un aviso de la app o lo que LiteKia mandó): play y
+     * pausa van como teclas del volante, explícitas, y el estado es el que LiteKia supone.
      */
     val blind: Boolean = false,
-    /** Viene del celular por LiteDash Connect: los botones van por el enlace ([MusicRepository.phoneControl]). */
+    /** Viene del celular por LiteKia Connect: los botones van por el enlace ([MusicRepository.phoneControl]). */
     val phone: Boolean = false,
 ) {
     fun currentPosition(): Long {

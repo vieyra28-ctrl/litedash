@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.music
+package com.vieyra28.litekia.feature.music
 
 import android.content.ComponentName
 import android.content.Context
@@ -11,7 +11,7 @@ import android.service.media.MediaBrowserService
 /**
  * El Bluetooth de Android como receptor (A2DP *sink*): el propio sistema trae un
  * `MediaBrowserService` (`…avrcpcontroller.BluetoothMediaBrowserService`) exportado y sin permiso.
- * Al conectarse, LiteDash recibe título, artista, álbum, duración y estado, y manda
+ * Al conectarse, LiteKia recibe título, artista, álbum, duración y estado, y manda
  * play/pausa/siguiente/anterior (AVRCP hacia el celular), sin app externa ni acceso a
  * notificaciones. Así lo hacen Car Media y FytBt.
  *

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -13,14 +13,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Segmented
-import com.irvingguerra.litedash.feature.music.MusicExpanded
-import com.irvingguerra.litedash.feature.music.RadioExpanded
-import com.irvingguerra.litedash.feature.player.PlayerBrowser
-import com.irvingguerra.litedash.feature.player.PlayerSource
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Segmented
+import com.vieyra28.litekia.feature.music.MusicExpanded
+import com.vieyra28.litekia.feature.music.RadioExpanded
+import com.vieyra28.litekia.feature.player.PlayerBrowser
+import com.vieyra28.litekia.feature.player.PlayerSource
 
 /** Qué se ve en la pantalla Música: lo que suena (con la biblioteca de Archivos) o la radio. */
 enum class MediaTab { MUSIC, RADIO }

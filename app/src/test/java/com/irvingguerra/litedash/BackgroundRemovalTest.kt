@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import java.util.Random
 import org.junit.Assert.assertEquals

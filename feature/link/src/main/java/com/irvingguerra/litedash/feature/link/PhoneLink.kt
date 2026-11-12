@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.link
+package com.vieyra28.litekia.feature.link
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -52,13 +52,13 @@ class PhoneSong(
 )
 
 /**
- * El enlace con el celular (LiteDash Connect), lado pantalla de Link v1 (PROTOCOLO_LINK.md): el
+ * El enlace con el celular (LiteKia Connect), lado pantalla de Link v1 (PROTOCOLO_LINK.md): el
  * celular es el servidor y la pantalla lo busca en la puerta de enlace de la red, en la última
  * dirección que funcionó y por NSD.
  *
- * Ya vinculada intenta al abrir LiteDash ([start]), al cambiar la red y cuando NSD encuentra al
+ * Ya vinculada intenta al abrir LiteKia ([start]), al cambiar la red y cuando NSD encuentra al
  * celular; si la conexión se cae, reintenta cada vez más espaciado (5 s… hasta 1 min): Android puede
- * cerrar y volver a abrir LiteDash Connect sin que cambie la red. Con su panel abierto ([watch])
+ * cerrar y volver a abrir LiteKia Connect sin que cambie la red. Con su panel abierto ([watch])
  * intenta cada 2 s. Apagado ([stop]) no deja hilos, receptores ni sockets.
  *
  * El estado se maneja en el hilo principal; la red, en un hilo por intento.
@@ -84,7 +84,7 @@ class PhoneLink(context: Context, private val screen: () -> ScreenInfo) {
     var phoneApp by mutableStateOf(store.getString(PHONE_APP, null))
         private set
 
-    /** El celular dijo que no puede leer su música (falta "Permitir la música" en LiteDash Connect). */
+    /** El celular dijo que no puede leer su música (falta "Permitir la música" en LiteKia Connect). */
     var musicBlocked by mutableStateOf(false)
         private set
 
@@ -125,7 +125,7 @@ class PhoneLink(context: Context, private val screen: () -> ScreenInfo) {
 
     private val active get() = running && (paired || watching)
 
-    /** LiteDash volvió al frente: si hay celular vinculado, lo busca. */
+    /** LiteKia volvió al frente: si hay celular vinculado, lo busca. */
     fun start() {
         running = true
         sync()

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.app.role.RoleManager
 import android.content.Context
@@ -43,25 +43,25 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Icon
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.MorseMark
-import com.irvingguerra.litedash.core.ui.TextInput
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.car.CarDrawing
-import com.irvingguerra.litedash.feature.dashboard.DashboardState
-import com.irvingguerra.litedash.feature.dashboard.Template
-import com.irvingguerra.litedash.feature.dashboard.size
-import com.irvingguerra.litedash.feature.dashboard.coarse
-import com.irvingguerra.litedash.feature.dashboard.suggestedTemplate
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Icon
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.MorseMark
+import com.vieyra28.litekia.core.ui.TextInput
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.car.CarDrawing
+import com.vieyra28.litekia.feature.dashboard.DashboardState
+import com.vieyra28.litekia.feature.dashboard.Template
+import com.vieyra28.litekia.feature.dashboard.size
+import com.vieyra28.litekia.feature.dashboard.coarse
+import com.vieyra28.litekia.feature.dashboard.suggestedTemplate
 
-/** ¿LiteDash ya es la pantalla de inicio? */
+/** ¿LiteKia ya es la pantalla de inicio? */
 fun isHomeApp(context: Context): Boolean {
     // Android 10+: el rol del sistema. Sin esto, desde Android 11 las otras apps de
-    // inicio no se ven y LiteDash creería que es la única.
+    // inicio no se ven y LiteKia creería que es la única.
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
         runCatching { return context.getSystemService(RoleManager::class.java).isRoleHeld(RoleManager.ROLE_HOME) }
     }

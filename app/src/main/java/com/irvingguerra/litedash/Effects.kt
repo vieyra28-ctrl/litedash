@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.Manifest
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -12,7 +12,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.compose.LifecycleStartEffect
-import com.irvingguerra.litedash.feature.obd.ObdRepository
+import com.vieyra28.litekia.feature.obd.ObdRepository
 
 /**
  * Para las piezas que no tienen nada que cargar: avisa [onReady] una sola vez, en

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.core.ui
+package com.vieyra28.litekia.core.ui
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.runtime.Composable
@@ -19,7 +19,7 @@ import kotlin.math.pow
 const val MORSE_ASPECT = 184f / 36f
 
 /**
- * La marca suelta —·· (brand/logo/litedash-marca-*.svg), dibujada sin imágenes.
+ * La marca suelta —·· (brand/logo/litekia-marca-*.svg), dibujada sin imágenes.
  * Mismas proporciones que el SVG: lienzo de 184 × 48 unidades.
  */
 @Composable

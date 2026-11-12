@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.car
+package com.vieyra28.litekia.feature.car
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size

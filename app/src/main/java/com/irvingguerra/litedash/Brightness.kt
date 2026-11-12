@@ -1,6 +1,6 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
-import com.irvingguerra.litedash.core.ui.Segmented
+import com.vieyra28.litekia.core.ui.Segmented
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -20,12 +20,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import com.irvingguerra.litedash.core.ui.Icon
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Typography
+import com.vieyra28.litekia.core.ui.Icon
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Typography
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -33,14 +33,14 @@ import kotlinx.coroutines.withContext
  * Brillo de día y de noche: [night] es el mismo que decide el tema (hora del sol, sensor de
  * luz o faros, según "¿Cuándo es de noche?"). Solo cambia algo cuando cambia el día o la
  * noche (no revisa cada rato). Sin el permiso de ajustes del sistema, el brillo aplica solo
- * mientras se ve LiteDash; con él cambia el del sistema y, al apagarlo, regresa el que tenía
+ * mientras se ve LiteKia; con él cambia el del sistema y, al apagarlo, regresa el que tenía
  * el usuario. Los ajustes del sistema se escriben fuera del hilo principal.
  */
 @Composable
 fun ApplyBrightness(prefs: Preferences, night: Boolean, revision: Int) {
     val activity = LocalActivity.current ?: return
     val level = if (night) prefs.nightBrightness else prefs.dayBrightness
-    // [revision] sube al volver a LiteDash: así aplica justo después de dar el permiso.
+    // [revision] sube al volver a LiteKia: así aplica justo después de dar el permiso.
     LaunchedEffect(prefs.brightnessBySun, level, prefs.brightnessAllApps, revision) {
         val system = prefs.brightnessBySun && prefs.brightnessAllApps && Settings.System.canWrite(activity)
         windowBrightness(activity, level.takeIf { prefs.brightnessBySun && !system })
@@ -63,7 +63,7 @@ private fun setSystemBrightness(context: Context, prefs: Preferences, percent: I
     }
 }
 
-/** Regresa el brillo del sistema como estaba antes de LiteDash (automático incluido). */
+/** Regresa el brillo del sistema como estaba antes de LiteKia (automático incluido). */
 private fun restoreSystemBrightness(context: Context, prefs: Preferences) {
     val (mode, level) = prefs.brightnessOriginal ?: return
     if (!Settings.System.canWrite(context)) return
@@ -105,7 +105,7 @@ fun BrightnessSettings(prefs: Preferences, revision: Int) {
     val canWrite = remember(revision, prefs.brightnessAllApps) { Settings.System.canWrite(context) }
     Label(stringResource(R.string.brightness_all_apps_help), Typography.small, c.textMuted)
     Segmented(
-        listOf(false to stringResource(R.string.brightness_only_litedash), true to stringResource(R.string.brightness_all_apps)),
+        listOf(false to stringResource(R.string.brightness_only_litekia), true to stringResource(R.string.brightness_all_apps)),
         prefs.brightnessAllApps,
         { all ->
             prefs.brightnessAllApps = all

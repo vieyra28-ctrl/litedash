@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.updater
+package com.vieyra28.litekia.feature.updater
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

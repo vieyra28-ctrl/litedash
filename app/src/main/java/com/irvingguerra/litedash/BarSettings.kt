@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -20,16 +20,16 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Radius
-import com.irvingguerra.litedash.core.ui.Segmented
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.apps.AppIcon
-import com.irvingguerra.litedash.feature.apps.rememberApps
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Segmented
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.apps.AppIcon
+import com.vieyra28.litekia.feature.apps.rememberApps
 
 /** El nombre de cada botón que se puede agregar a la barra (Ajustes no: siempre va). */
 private fun BarItem.title(): Int? = when (this) {

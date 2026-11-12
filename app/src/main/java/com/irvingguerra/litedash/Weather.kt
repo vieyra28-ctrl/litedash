@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -21,7 +21,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.util.Locale
 import kotlin.coroutines.resume
-import com.irvingguerra.litedash.core.ui.Https
+import com.vieyra28.litekia.core.ui.Https
 
 /** Clima tal como se ve: temperaturas redondeadas en la unidad elegida (códigos WMO de Open-Meteo). */
 data class Weather(val temperature: Int, val code: Int, val day: Boolean, val days: List<WeatherDay>)
@@ -130,7 +130,7 @@ class WeatherRepository(private val context: Context, private val prefs: Prefere
         val connection = Https.open(context, url).apply {
             connectTimeout = 10_000
             readTimeout = 15_000
-            setRequestProperty("User-Agent", "LiteDash")
+            setRequestProperty("User-Agent", "LiteKia")
         }
         val json = connection.inputStream.bufferedReader().use { JSONObject(it.readText()) }
         val current = json.getJSONObject("current")

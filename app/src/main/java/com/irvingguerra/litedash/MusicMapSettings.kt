@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -19,22 +19,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Segmented
-import com.irvingguerra.litedash.core.ui.TextInput
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.apps.App
-import com.irvingguerra.litedash.feature.apps.normalize
-import com.irvingguerra.litedash.feature.apps.rememberApps
-import com.irvingguerra.litedash.feature.music.MusicMode
-import com.irvingguerra.litedash.feature.music.R as MusicR
-import com.irvingguerra.litedash.feature.music.SourceKind
-import com.irvingguerra.litedash.feature.music.label
-import com.irvingguerra.litedash.feature.player.Library
-import com.irvingguerra.litedash.feature.player.PlayerBrowser
-import com.irvingguerra.litedash.feature.player.PlayerSource
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Segmented
+import com.vieyra28.litekia.core.ui.TextInput
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.apps.App
+import com.vieyra28.litekia.feature.apps.normalize
+import com.vieyra28.litekia.feature.apps.rememberApps
+import com.vieyra28.litekia.feature.music.MusicMode
+import com.vieyra28.litekia.feature.music.R as MusicR
+import com.vieyra28.litekia.feature.music.SourceKind
+import com.vieyra28.litekia.feature.music.label
+import com.vieyra28.litekia.feature.player.Library
+import com.vieyra28.litekia.feature.player.PlayerBrowser
+import com.vieyra28.litekia.feature.player.PlayerSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -67,7 +67,7 @@ fun MusicSettings(d: Dependencies) {
 
 /**
  * Ajustes → Apps → Música: el método de música, uno solo a la vez (Irving, 2026-11-08): Archivos (el
- * reproductor de LiteDash), Bluetooth (el celular) o App. La pestaña elegida es la que suena en la
+ * reproductor de LiteKia), Bluetooth (el celular) o App. La pestaña elegida es la que suena en la
  * pieza Música; debajo, sus ajustes.
  */
 @Composable
@@ -95,7 +95,7 @@ private val LIBRARY_HEIGHT = 420.dp
 /**
  * Pestaña "Radio" de Ajustes → Apps: una sola radio a la vez, como la música (Irving, 2026-11-08):
  * la FM de la pantalla (su app, lo principal: muchas veces no hay internet en el auto) o la radio
- * por internet de LiteDash. La elegida lleva palomita y es la que suena en el widget Radio.
+ * por internet de LiteKia. La elegida lleva palomita y es la que suena en el widget Radio.
  */
 @Composable
 fun RadioSettings(d: Dependencies) {

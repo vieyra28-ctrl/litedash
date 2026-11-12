@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.Context
 import android.content.res.Configuration
@@ -11,10 +11,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.core.content.edit
-import com.irvingguerra.litedash.feature.car.CarColors
-import com.irvingguerra.litedash.feature.car.CarPaint
-import com.irvingguerra.litedash.feature.car.DEFAULT_GLOSS
-import com.irvingguerra.litedash.feature.car.PaintFinish
+import com.vieyra28.litekia.feature.car.CarColors
+import com.vieyra28.litekia.feature.car.CarPaint
+import com.vieyra28.litekia.feature.car.DEFAULT_GLOSS
+import com.vieyra28.litekia.feature.car.PaintFinish
 import java.util.Locale
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
@@ -22,7 +22,7 @@ import kotlin.reflect.KProperty
 /**
  * Claves y valores guardados en el dispositivo, en inglés desde la 1.4.47. Lo que
  * guardaron las versiones anteriores (en español) lo copia una sola vez
- * [StorageMigration]; cambiar estos nombres borraría los ajustes de quien ya tiene LiteDash.
+ * [StorageMigration]; cambiar estos nombres borraría los ajustes de quien ya tiene LiteKia.
  */
 internal object PrefKeys {
     const val FILE = "settings"
@@ -218,7 +218,7 @@ enum class NightSource(val stored: String) {
     SUN("sun"),
     /** Sensor de luz de la pantalla (si tiene): túneles, estacionamientos, nublado. */
     SENSOR("sensor"),
-    /** Los faros del auto, por el ajuste de la pantalla que LiteDash aprende ([LightsKey]). */
+    /** Los faros del auto, por el ajuste de la pantalla que LiteKia aprende ([LightsKey]). */
     LIGHTS("lights");
 
     companion object {
@@ -262,7 +262,7 @@ class Preferences(context: Context) {
 
     init {
         // Instalación nueva: tus favoritas de la barra empiezan vacías (antes se sugerían las instaladas, y quien
-        // ya tenía LiteDash las conserva).
+        // ya tenía LiteKia las conserva).
         if (!p.contains(PrefKeys.WELCOME_SEEN) && !p.contains(PrefKeys.DOCK)) p.edit { putString(PrefKeys.DOCK, "") }
     }
 
@@ -351,19 +351,19 @@ class Preferences(context: Context) {
     /** El usuario pidió no volver a ver el aviso de "hazlo tu pantalla de inicio". */
     var dontAskHome by bool(PrefKeys.DONT_ASK_HOME, false)
 
-    /** Abrir LiteDash al encender la pantalla ([BootLaunch]); apagado de fábrica. */
+    /** Abrir LiteKia al encender la pantalla ([BootLaunch]); apagado de fábrica. */
     var openOnBoot by bool(PrefKeys.OPEN_ON_BOOT, false)
 
     /** "" (sistema), "es" o "en". Cambiarlo recrea la actividad: se escribe al instante (commit). */
     var language by Stored(p.getString(PrefKeys.LANGUAGE, "") ?: "") { p.edit(commit = true) { putString(PrefKeys.LANGUAGE, it) } }
 
-    /** Apps que no salen en el cajón ([com.irvingguerra.litedash.feature.apps.App.key]). */
+    /** Apps que no salen en el cajón ([com.vieyra28.litekia.feature.apps.App.key]). */
     var hidden by Stored(p.getStringSet(PrefKeys.HIDDEN, emptySet())!!.toSet()) { p.edit { putStringSet(PrefKeys.HIDDEN, it) } }
 
-    /** Apps fijas en el dock ([com.irvingguerra.litedash.feature.apps.App.key]); null = las sugeridas. */
+    /** Apps fijas en el dock ([com.vieyra28.litekia.feature.apps.App.key]); null = las sugeridas. */
     var dock by mapped(PrefKeys.DOCK, { v -> v?.split('\n')?.filter { it.isNotBlank() } }, { it?.joinToString("\n") })
 
-    /** App de navegación elegida ([com.irvingguerra.litedash.feature.apps.App.key]); null = la primera instalada. */
+    /** App de navegación elegida ([com.vieyra28.litekia.feature.apps.App.key]); null = la primera instalada. */
     var mapApp by string(PrefKeys.MAP_APP)
 
     /** La app de música de antes de la 1.4.116: solo se lee una vez para pasarla a `MusicRepository.preferred`, que es la que vale. */
@@ -476,7 +476,7 @@ class Preferences(context: Context) {
     /** Con el OBD conectado: avisar de motor caliente o batería que no carga. */
     var engineAlerts by bool(PrefKeys.ENGINE_ALERTS, true)
 
-    /** Al abrir LiteDash, el logo se arma (o aparece tu imagen) unos instantes; prendida de fábrica (Irving, 2026-11-11). */
+    /** Al abrir LiteKia, el logo se arma (o aparece tu imagen) unos instantes; prendida de fábrica (Irving, 2026-11-11). */
     var logoIntro by bool(PrefKeys.LOGO_INTRO, true)
 
     /** Ajuste de la pantalla que dice si los faros están prendidos ("tabla/nombre"); null = sin aprender. */
@@ -513,8 +513,8 @@ class Preferences(context: Context) {
     var brightnessAllApps by bool(PrefKeys.BRIGHTNESS_ALL_APPS, false)
 
     /**
-     * El brillo del sistema como estaba antes de que LiteDash lo cambiara ("modo,nivel"):
-     * se regresa al apagar el brillo en todas las apps. null = LiteDash no lo ha tocado.
+     * El brillo del sistema como estaba antes de que LiteKia lo cambiara ("modo,nivel"):
+     * se regresa al apagar el brillo en todas las apps. null = LiteKia no lo ha tocado.
      */
     var brightnessOriginal: Pair<Int, Int>?
         get() = p.getString(PrefKeys.BRIGHTNESS_ORIGINAL, null)?.split(',')?.mapNotNull { it.toIntOrNull() }

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.clickable
@@ -39,18 +39,18 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.LocalPlainCard
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.core.vehicle.Signal
-import com.irvingguerra.litedash.core.vehicle.watch
-import com.irvingguerra.litedash.feature.car.CAR_ASPECT
-import com.irvingguerra.litedash.feature.car.CarPackage
-import com.irvingguerra.litedash.feature.car.CarStill
-import com.irvingguerra.litedash.feature.car.REAR_TURN
-import com.irvingguerra.litedash.feature.obd.ObdState
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.LocalPlainCard
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.core.vehicle.Signal
+import com.vieyra28.litekia.core.vehicle.watch
+import com.vieyra28.litekia.feature.car.CAR_ASPECT
+import com.vieyra28.litekia.feature.car.CarPackage
+import com.vieyra28.litekia.feature.car.CarStill
+import com.vieyra28.litekia.feature.car.REAR_TURN
+import com.vieyra28.litekia.feature.obd.ObdState
 import kotlin.math.cos
 import kotlin.math.sin
 

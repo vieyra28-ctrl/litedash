@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.app.Activity
 import android.content.Context
@@ -18,14 +18,14 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import com.irvingguerra.litedash.core.ui.LiteDashTheme
+import com.vieyra28.litekia.core.ui.LiteKiaTheme
 
 class MainActivity : ComponentActivity() {
-    private val dependencies get() = (application as LiteDashApp).dependencies
+    private val dependencies get() = (application as LiteKiaApp).dependencies
 
     // Sube cada vez que se vuelve a la app (p. ej. después de dar un permiso en Ajustes).
     private val revision = mutableIntStateOf(0)
-    // Sube al tocar el botón de inicio estando ya en LiteDash: cierra lo que esté abierto.
+    // Sube al tocar el botón de inicio estando ya en LiteKia: cierra lo que esté abierto.
     private val homePressed = mutableIntStateOf(0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
             override fun handleOnBackPressed() = Unit
         })
         setContent {
-            LiteDashContent(dependencies, revision.intValue) { Home(dependencies, revision.intValue, homePressed.intValue) }
+            LiteKiaContent(dependencies, revision.intValue) { Home(dependencies, revision.intValue, homePressed.intValue) }
         }
     }
 
@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
         if (intent.hasCategory(Intent.CATEGORY_HOME)) homePressed.intValue++
     }
 
-    // Mandos al volante: llegan como teclas normales de Android mientras LiteDash está al frente.
+    // Mandos al volante: llegan como teclas normales de Android mientras LiteKia está al frente.
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean =
         dependencies.wheel.onKey(event, dependencies.music) || super.onKeyDown(keyCode, event)
 
@@ -58,7 +58,7 @@ class MainActivity : ComponentActivity() {
         super.onResume()
         inFront = true
         dependencies.music.cancelReturn()
-        // Al abrir LiteDash se busca al celular vinculado (sin celular, no hace nada).
+        // Al abrir LiteKia se busca al celular vinculado (sin celular, no hace nada).
         dependencies.phone.start()
         revision.intValue++
     }
@@ -75,7 +75,7 @@ class MainActivity : ComponentActivity() {
     }
 
     companion object {
-        /** LiteDash está al frente (para no traerlo de nuevo si ya lo está). */
+        /** LiteKia está al frente (para no traerlo de nuevo si ya lo está). */
         @Volatile var inFront = false
             private set
 
@@ -87,7 +87,7 @@ class MainActivity : ComponentActivity() {
         fun restart(activity: Activity) {
             restarted = true
             // Como inicio si así se abrió (si no, Android hacía otro al tocar Inicio) y en una tarea limpia:
-            // con otro LiteDash abierto como app, Android le entregaba la orden a ese y no cambiaba el idioma.
+            // con otro LiteKia abierto como app, Android le entregaba la orden a ese y no cambiaba el idioma.
             val intent = Intent(Intent.ACTION_MAIN).setClass(activity, MainActivity::class.java)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NO_ANIMATION)
             if (activity.intent?.hasCategory(Intent.CATEGORY_HOME) == true) intent.addCategory(Intent.CATEGORY_HOME)
@@ -102,7 +102,7 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        // La actividad nueva viene de [restart] (no de abrir LiteDash): sin animación de entrada.
+        // La actividad nueva viene de [restart] (no de abrir LiteKia): sin animación de entrada.
         @Volatile private var restarted = false
 
         /** ¿Se reinició por [restart]? Lo dice una sola vez. */
@@ -117,9 +117,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-/** El tema (claro, oscuro o por la noche), el brillo y la escala de LiteDash alrededor de [content]. */
+/** El tema (claro, oscuro o por la noche), el brillo y la escala de LiteKia alrededor de [content]. */
 @Composable
-internal fun ComponentActivity.LiteDashContent(d: Dependencies, revision: Int, content: @Composable () -> Unit) {
+internal fun ComponentActivity.LiteKiaContent(d: Dependencies, revision: Int, content: @Composable () -> Unit) {
     // Una sola cuenta de la noche (sol o sensor de luz) para el tema y el brillo.
     val night = rememberIsNight(d.prefs, needed = d.prefs.theme == ThemeMode.SUN || d.prefs.brightnessBySun)
     val dark = isDark(d, night)
@@ -130,13 +130,13 @@ internal fun ComponentActivity.LiteDashContent(d: Dependencies, revision: Int, c
         enableEdgeToEdge(style, style)
     }
     // La barra de Android de arriba, oculta si se pidió: deslizando desde arriba se asoma un momento.
-    // También al volver a LiteDash ([revision]): otra app o el apagado de pantalla la regresan.
+    // También al volver a LiteKia ([revision]): otra app o el apagado de pantalla la regresan.
     val hideStatusBar = d.prefs.hideStatusBar
     LaunchedEffect(hideStatusBar, revision) { applyStatusBar(window, hideStatusBar) }
     ApplyBrightness(d.prefs, night, revision)
     // La temporada activa tiñe el realce (Navidad, Halloween…); sin ella, el color elegido.
     val accent = d.prefs.seasonAccent() ?: d.prefs.accentColor
-    LiteDashTheme(dark = dark, scale = d.prefs.scale, accent = accent, content = content)
+    LiteKiaTheme(dark = dark, scale = d.prefs.scale, accent = accent, content = content)
 }
 
 /** ¿Tema oscuro? Según lo elegido en Ajustes; [night] es la cuenta del sol o del sensor de luz. */

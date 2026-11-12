@@ -4,7 +4,7 @@ plugins {
 
 // Mide el arranque y la fluidez de :app (variante play, tipo benchmark = release firmable).
 android {
-    namespace = "com.irvingguerra.litedash.benchmark"
+    namespace = "com.vieyra28.litekia.benchmark"
     compileSdk = 37
     defaultConfig {
         minSdk = 28

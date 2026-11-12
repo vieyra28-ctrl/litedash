@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.map
+package com.vieyra28.litekia.feature.map
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -60,7 +60,7 @@ object OsmTiles : TileSource {
 
 /**
  * El mapa minimalista: los datos de OpenFreeMap (vectoriales, esquema OpenMapTiles, sin cuenta ni
- * límites) dibujados por LiteDash con solo calles, agua y parques, en los colores de [palette].
+ * límites) dibujados por LiteKia con solo calles, agua y parques, en los colores de [palette].
  * Nítido a cualquier zoom: del 15 al 17 se dibuja la parte que toca de la tesela del 14.
  */
 class VectorTiles(

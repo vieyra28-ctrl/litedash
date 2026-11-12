@@ -1,6 +1,6 @@
 // Ajustes → Apps → Música → "Vincular celular": el Bluetooth de Android de la pantalla, sin
 // app externa. Emparejar (o quitar) el celular, hacerse visible y buscar celulares cerca.
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -35,12 +35,12 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.core.content.IntentCompat
 import androidx.lifecycle.compose.LifecycleStartEffect
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.apps.rememberApps
-import com.irvingguerra.litedash.feature.music.SourceKind
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.apps.rememberApps
+import com.vieyra28.litekia.feature.music.SourceKind
 
 /**
  * Vincular (o quitar) el celular por el Bluetooth de Android de la pantalla. En pantallas con

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.obd
+package com.vieyra28.litekia.feature.obd
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -22,9 +22,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.core.content.ContextCompat
 import androidx.core.content.IntentCompat
-import com.irvingguerra.litedash.core.vehicle.Signal
-import com.irvingguerra.litedash.core.vehicle.Source
-import com.irvingguerra.litedash.core.vehicle.VehicleBus
+import com.vieyra28.litekia.core.vehicle.Signal
+import com.vieyra28.litekia.core.vehicle.Source
+import com.vieyra28.litekia.core.vehicle.VehicleBus
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -594,9 +594,9 @@ class ObdRepository(private val context: Context, private val bus: VehicleBus) {
     private fun looksLikeObd(name: String) = OBD_NAMES.containsMatchIn(name)
 
     companion object {
-        /** Archivo de ajustes (la app lo escucha para ofrecer LiteDash al conectar el cable). */
+        /** Archivo de ajustes (la app lo escucha para ofrecer LiteKia al conectar el cable). */
         const val PREFS = "obd"
-        private const val ACTION_USB_PERMISSION = "com.irvingguerra.litedash.USB_PERMISSION"
+        private const val ACTION_USB_PERMISSION = "com.vieyra28.litekia.USB_PERMISSION"
         /** Cuánto dura una búsqueda de adaptadores Bluetooth LE. */
         private const val SCAN_MS = 10_000L
         /** Voltaje del módulo de control (el de la batería con el motor andando). */

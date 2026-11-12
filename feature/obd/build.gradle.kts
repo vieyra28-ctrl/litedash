@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.irvingguerra.litedash.feature.obd"
+    namespace = "com.vieyra28.litekia.feature.obd"
     compileSdk = 37
     defaultConfig { minSdk = 23 }
     compileOptions {

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.obd
+package com.vieyra28.litekia.feature.obd
 
 /**
  * Las partes del auto que se señalan en la vista aérea del Taller. [x] y [y] son dónde va

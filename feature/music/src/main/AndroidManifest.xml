@@ -45,7 +45,7 @@
             de las apps de Bluetooth y radio enlazadas (qué suena); no se guarda nada.
         -->
         <service
-            android:name="com.irvingguerra.litedash.feature.musica.ServicioMusica"
+            android:name="com.vieyra28.litekia.feature.musica.ServicioMusica"
             android:exported="false"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>

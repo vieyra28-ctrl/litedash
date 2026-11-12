@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.core.vehicle
+package com.vieyra28.litekia.core.vehicle
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect

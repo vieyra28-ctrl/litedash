@@ -14,7 +14,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "litedash"
+rootProject.name = "litekia"
 
 include(":app")
 include(":core:ui")

@@ -40,11 +40,11 @@ fun signingValue(key: String, env: String): String? = signing.getProperty(key) ?
 // Publicado en el release "catalogo" (prerelease). Para probar uno local en el
 // emulador: ./gradlew ... -Pcatalog=http://10.0.2.2:8765/catalogo.json
 val CATALOG_URL = (findProperty("catalog") as String?)
-    ?: "https://github.com/IrvingGuerra/litedash/releases/download/catalogo/catalogo.json"
-val hasSigning = signingValue("storeFile", "LITEDASH_STORE_FILE") != null
+    ?: "https://github.com/vieyra28-ctrl/litedash/releases/download/catalogo/catalogo-rio.json"
+val hasSigning = signingValue("storeFile", "LITEKIA_STORE_FILE") != null
 
 android {
-    namespace = "com.irvingguerra.litedash"
+    namespace = "com.vieyra28.litekia"
     compileSdk = 37
 
     defaultConfig {
@@ -58,16 +58,16 @@ android {
     signingConfigs {
         if (hasSigning) {
             create("release") {
-                storeFile = file(signingValue("storeFile", "LITEDASH_STORE_FILE")!!)
-                storePassword = signingValue("storePassword", "LITEDASH_STORE_PASSWORD")
-                keyAlias = signingValue("keyAlias", "LITEDASH_KEY_ALIAS")
-                keyPassword = signingValue("keyPassword", "LITEDASH_KEY_PASSWORD")
+                storeFile = file(signingValue("storeFile", "LITEKIA_STORE_FILE")!!)
+                storePassword = signingValue("storePassword", "LITEKIA_STORE_PASSWORD")
+                keyAlias = signingValue("keyAlias", "LITEKIA_KEY_ALIAS")
+                keyPassword = signingValue("keyPassword", "LITEKIA_KEY_PASSWORD")
             }
         }
     }
 
     // Mismo código, dos canales. Mismo applicationId y versionCode.
-    // Solo los idiomas de LiteDash: sin esto vienen los ~80 idiomas de las librerías de AndroidX.
+    // Solo los idiomas de LiteKia: sin esto vienen los ~80 idiomas de las librerías de AndroidX.
     androidResources {
         localeFilters += listOf("es", "en")
     }
@@ -89,7 +89,7 @@ android {
             dimension = "channel"
             buildConfigField("String", "CHANNEL", "\"github\"")
             buildConfigField("String", "CATALOG_URL", "\"$CATALOG_URL\"")
-            // LiteKia: sin actualizador propio (no debe bajar releases de LiteDash).
+            // LiteKia: sin actualizador propio (no debe bajar releases de LiteKia).
             buildConfigField("String", "UPDATES_URL", "\"\"")
         }
     }

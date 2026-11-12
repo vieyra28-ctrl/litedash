@@ -1,5 +1,5 @@
 <resources>
-    <string name="player_name">Reproductor de LiteDash</string>
+    <string name="player_name">Reproductor de LiteKia</string>
     <string name="player_channel">Música</string>
     <string name="player_play">Reproducir</string>
     <string name="player_pause">Pausa</string>
@@ -8,7 +8,7 @@
     <string name="player_cannot_play">No se pudo reproducir. Prueba otra estación o revisa la conexión.</string>
     <string name="player_timeout">La estación no responde. Prueba otra.</string>
     <string name="library_no_drive">Conecta una memoria USB con música</string>
-    <string name="library_no_permission">LiteDash necesita permiso para leer la música de la memoria</string>
+    <string name="library_no_permission">LiteKia necesita permiso para leer la música de la memoria</string>
     <string name="library_grant">Dar permiso</string>
     <string name="library_loading">Leyendo la memoria…</string>
     <string name="library_folders">Carpetas</string>
@@ -35,7 +35,7 @@
     <string name="radio_km">%1$d km</string>
     <string name="library_pick_folder">Elegir carpeta</string>
     <string name="library_clear_folder">Quitar carpeta</string>
-    <string name="library_pick_folder_help">Si tu música está en la memoria pero no aparece, elige su carpeta: LiteDash la recordará.</string>
-    <string name="library_unreadable">Veo la memoria %1$s, pero tu pantalla no deja leer sus canciones. Elige su carpeta y LiteDash la recordará.</string>
+    <string name="library_pick_folder_help">Si tu música está en la memoria pero no aparece, elige su carpeta: LiteKia la recordará.</string>
+    <string name="library_unreadable">Veo la memoria %1$s, pero tu pantalla no deja leer sus canciones. Elige su carpeta y LiteKia la recordará.</string>
     <string name="library_browse_memory">¿No se abrió? Buscar en la memoria</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.tpms
+package com.vieyra28.litekia.feature.tpms
 
 import android.Manifest
 import android.annotation.SuppressLint

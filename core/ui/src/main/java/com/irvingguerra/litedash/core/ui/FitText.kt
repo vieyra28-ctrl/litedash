@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.core.ui
+package com.vieyra28.litekia.core.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalDensity

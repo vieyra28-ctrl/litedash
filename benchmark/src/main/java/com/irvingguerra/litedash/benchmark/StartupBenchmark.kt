@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.benchmark
+package com.vieyra28.litekia.benchmark
 
 import androidx.benchmark.macro.FrameTimingMetric
 import androidx.benchmark.macro.StartupMode
@@ -11,7 +11,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-internal const val PACKAGE = "com.irvingguerra.litedash"
+internal const val PACKAGE = "com.vieyra28.litekia"
 
 /** Arranque y fluidez. Correr: ./gradlew :benchmark:connectedBenchmarkAndroidTest */
 @RunWith(AndroidJUnit4::class)

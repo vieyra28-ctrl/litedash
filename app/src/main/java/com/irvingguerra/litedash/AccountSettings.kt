@@ -1,5 +1,5 @@
-// Ajustes → Cuenta: el QR para vincular LiteDash Connect (donde vive la cuenta) y, ya vinculado, cómo va el enlace.
-package com.irvingguerra.litedash
+// Ajustes → Cuenta: el QR para vincular LiteKia Connect (donde vive la cuenta) y, ya vinculado, cómo va el enlace.
+package com.vieyra28.litekia
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -28,14 +28,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleResumeEffect
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Radius
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.link.Pairing
-import com.irvingguerra.litedash.feature.link.PhoneLink
-import com.irvingguerra.litedash.feature.link.QrCode
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.link.Pairing
+import com.vieyra28.litekia.feature.link.PhoneLink
+import com.vieyra28.litekia.feature.link.QrCode
 
 /** Lado del QR a lo ancho; angosto se ajusta a lo que haya. */
 private val QR_SIZE = 320.dp
@@ -48,7 +48,7 @@ private const val QUIET_ZONE = 4
 
 /**
  * La sección Cuenta. Mientras está a la vista el enlace intenta conectarse cada 2 s
- * y mantiene vigente el QR; al salir (o irse LiteDash al fondo) deja de intentar.
+ * y mantiene vigente el QR; al salir (o irse LiteKia al fondo) deja de intentar.
  */
 @Composable
 internal fun AccountSettings(link: PhoneLink) {

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.tpms
+package com.vieyra28.litekia.feature.tpms
 
 enum class TireAlertKind {
     /** Abajo del umbral respecto a la recomendada. */

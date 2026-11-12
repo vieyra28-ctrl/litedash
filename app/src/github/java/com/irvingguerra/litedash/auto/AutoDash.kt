@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.auto
+package com.vieyra28.litekia.auto
 
 import android.app.Presentation
 import android.content.Intent
@@ -48,16 +48,16 @@ import androidx.lifecycle.setViewTreeViewModelStoreOwner
 import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
-import com.irvingguerra.litedash.Home
-import com.irvingguerra.litedash.LiteDashApp
-import com.irvingguerra.litedash.R
-import com.irvingguerra.litedash.contextWithLanguage
-import com.irvingguerra.litedash.core.ui.LiteDashTheme
-import com.irvingguerra.litedash.isDark
-import com.irvingguerra.litedash.rememberIsNight
+import com.vieyra28.litekia.Home
+import com.vieyra28.litekia.LiteKiaApp
+import com.vieyra28.litekia.R
+import com.vieyra28.litekia.contextWithLanguage
+import com.vieyra28.litekia.core.ui.LiteKiaTheme
+import com.vieyra28.litekia.isDark
+import com.vieyra28.litekia.rememberIsNight
 
 /*
- * Experimento (solo la versión de GitHub): el tablero de LiteDash dentro de Android Auto.
+ * Experimento (solo la versión de GitHub): el tablero de LiteKia dentro de Android Auto.
  * Android Auto solo da lienzo libre a las apps de navegación (su "mapa"); ahí se dibuja el
  * inicio de siempre en una pantalla virtual y se le pasan los toques. Aparece en Android Auto
  * solo con "Fuentes desconocidas" prendido en sus ajustes de desarrollador.
@@ -90,7 +90,7 @@ private class AutoScreen(car: CarContext) : Screen(car) {
         .build()
 }
 
-/** El inicio de LiteDash dibujado en la superficie que da Android Auto. */
+/** El inicio de LiteKia dibujado en la superficie que da Android Auto. */
 private class DashSurface(private val car: CarContext, private val screen: Lifecycle) : SurfaceCallback {
     private var display: VirtualDisplay? = null
     private var presentation: Presentation? = null
@@ -104,11 +104,11 @@ private class DashSurface(private val car: CarContext, private val screen: Lifec
     override fun onSurfaceAvailable(container: SurfaceContainer) {
         val surface = container.surface ?: return
         release()
-        val d = (car.applicationContext as LiteDashApp).dependencies
+        val d = (car.applicationContext as LiteKiaApp).dependencies
         val vd = car.getSystemService(DisplayManager::class.java)
-            .createVirtualDisplay("LiteDash", container.width, container.height, container.dpi, surface, 0)
+            .createVirtualDisplay("LiteKia", container.width, container.height, container.dpi, surface, 0)
         val owner = Host(screen)
-        val p = Presentation(contextWithLanguage(car), vd.display, R.style.Theme_LiteDash)
+        val p = Presentation(contextWithLanguage(car), vd.display, R.style.Theme_LiteKia)
         val view = ComposeView(p.context).apply {
             setViewTreeLifecycleOwner(owner)
             setViewTreeSavedStateRegistryOwner(owner)
@@ -116,8 +116,8 @@ private class DashSurface(private val car: CarContext, private val screen: Lifec
             setViewTreeOnBackPressedDispatcherOwner(owner)
             setContent {
                 CompositionLocalProvider(LocalActivityResultRegistryOwner provides owner) {
-                    val night = rememberIsNight(d.prefs, needed = d.prefs.theme == com.irvingguerra.litedash.ThemeMode.SUN)
-                    LiteDashTheme(dark = isDark(d, night), scale = d.prefs.scale, accent = d.prefs.accentColor) {
+                    val night = rememberIsNight(d.prefs, needed = d.prefs.theme == com.vieyra28.litekia.ThemeMode.SUN)
+                    LiteKiaTheme(dark = isDark(d, night), scale = d.prefs.scale, accent = d.prefs.accentColor) {
                         val r = visible.value
                         val pad = if (r == null) Modifier else with(LocalDensity.current) {
                             Modifier.padding(

@@ -1,6 +1,6 @@
-package com.irvingguerra.litedash.feature.obd
+package com.vieyra28.litekia.feature.obd
 
-import com.irvingguerra.litedash.core.vehicle.Signal
+import com.vieyra28.litekia.core.vehicle.Signal
 
 /**
  * Un dato que el auto no da tal cual y se calcula de otros: [needs] son los que hacen

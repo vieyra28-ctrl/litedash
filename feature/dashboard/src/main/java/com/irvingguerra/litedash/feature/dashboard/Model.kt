@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.dashboard
+package com.vieyra28.litekia.feature.dashboard
 
 import androidx.compose.runtime.Immutable
 import kotlin.math.roundToInt
@@ -190,7 +190,7 @@ object TileTypes {
     /** Una foto tuya; [Tile.data] es el nombre de su archivo (vacío = sin foto todavía). */
     const val IMAGE = "image"
     const val MUSIC = "music"
-    /** La radio de la pantalla (FM) o la de LiteDash por internet. */
+    /** La radio de la pantalla (FM) o la de LiteKia por internet. */
     const val RADIO = "radio"
     /** Mapa de OpenStreetMap con tu posición (feature/map). */
     const val MAP = "map"

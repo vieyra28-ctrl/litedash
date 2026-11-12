@@ -1,1 +1,1 @@
-# Reglas de R8 para LiteDash. Por ahora no hace falta ninguna.
+# Reglas de R8 para LiteKia. Por ahora no hace falta ninguna.

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.Context
 import android.os.SystemClock
@@ -18,7 +18,7 @@ import java.security.MessageDigest
 enum class ProResult { ACTIVE, INVALID, TAKEN, OFFLINE }
 
 /**
- * LiteDash Pro en prueba: se activa con un código que el dueño guarda en Firestore como
+ * LiteKia Pro en prueba: se activa con un código que el dueño guarda en Firestore como
  * `pro_codes/{sha256}` (el código nunca sale de la pantalla, solo su huella). Un código se liga
  * a una sola pantalla (un id al azar propio, aparte del de estadísticas, que se puede apagar).
  * Se revisa a lo más cada 12 h; sin internet sigue hasta 30 días desde la última revisión.

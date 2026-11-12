@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.irvingguerra.litedash.core.ui"
+    namespace = "com.vieyra28.litekia.core.ui"
     compileSdk = 37
     defaultConfig { minSdk = 23 }
     buildFeatures { compose = true }

@@ -1,6 +1,6 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
-import com.irvingguerra.litedash.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Radius
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -39,8 +39,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.feature.car.CarColors
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.feature.car.CarColors
 
 /** Arcoíris del círculo "otro color" y de la barra de tono. */
 private val RAINBOW = listOf(Color.Red, Color.Yellow, Color.Green, Color.Cyan, Color.Blue, Color.Magenta, Color.Red)

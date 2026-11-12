@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 /** Kilómetros que hay en una milla. */
 const val KM_PER_MILE = 1.609344f

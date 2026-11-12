@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.irvingguerra.litedash.feature.map"
+    namespace = "com.vieyra28.litekia.feature.map"
     compileSdk = 37
     defaultConfig { minSdk = 23 }
     buildFeatures { compose = true }

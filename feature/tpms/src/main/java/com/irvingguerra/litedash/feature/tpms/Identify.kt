@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.tpms
+package com.vieyra28.litekia.feature.tpms
 
 /**
  * "¿Cuál sensor es este?": se toma la presión de todos al empezar; el que cambie ≥ 7 kPa

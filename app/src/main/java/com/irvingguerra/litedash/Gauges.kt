@@ -1,19 +1,19 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.vehicle.Signal
-import com.irvingguerra.litedash.core.vehicle.Source
-import com.irvingguerra.litedash.core.vehicle.watch
-import com.irvingguerra.litedash.feature.car.CarStill
-import com.irvingguerra.litedash.feature.obd.CHARGING_MAX_V
-import com.irvingguerra.litedash.feature.obd.HOT_COOLANT_C
-import com.irvingguerra.litedash.feature.obd.ObdState
-import com.irvingguerra.litedash.feature.obd.RESTING_MIN_V
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.vehicle.Signal
+import com.vieyra28.litekia.core.vehicle.Source
+import com.vieyra28.litekia.core.vehicle.watch
+import com.vieyra28.litekia.feature.car.CarStill
+import com.vieyra28.litekia.feature.obd.CHARGING_MAX_V
+import com.vieyra28.litekia.feature.obd.HOT_COOLANT_C
+import com.vieyra28.litekia.feature.obd.ObdState
+import com.vieyra28.litekia.feature.obd.RESTING_MIN_V
 import java.util.Locale
 
 /**

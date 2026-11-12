@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -10,7 +10,7 @@ import android.media.session.PlaybackState
  * Solo en debug: una sesión de música como la del Bluetooth de muchas pantallas
  * (sonando, sin título ni artista), para probar la pieza Música sin el auto.
  *
- * adb shell am broadcast -n com.irvingguerra.litedash/.TestMediaSession -a com.irvingguerra.litedash.TEST_SESSION
+ * adb shell am broadcast -n com.vieyra28.litekia/.TestMediaSession -a com.vieyra28.litekia.TEST_SESSION
  * (con --ez detener true la quita)
  */
 class TestMediaSession : BroadcastReceiver() {

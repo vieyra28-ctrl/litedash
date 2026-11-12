@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.link
+package com.vieyra28.litekia.feature.link
 
 import java.io.ByteArrayInputStream
 import java.net.URI
@@ -118,7 +118,7 @@ class LinkProtocolTest {
     /** Lee el texto del QR como lo haría el celular. */
     private fun parse(text: String): Map<String, String> {
         val uri = URI(text)
-        assertEquals("litedash", uri.scheme)
+        assertEquals("litekia", uri.scheme)
         assertEquals("link", uri.host)
         return uri.rawQuery.split('&').associate { part ->
             // URLDecoder cambia "+" por espacio: el QR nunca lleva "+" (va como %2B).
@@ -130,7 +130,7 @@ class LinkProtocolTest {
     @Test
     fun qrTextOfTheVector() {
         val text = LinkProtocol.qrText("0011223344556677", key, "Lancer Evolution X", "SRNUBI")
-        assertEquals("litedash://link?v=1&id=0011223344556677&k=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8&n=Lancer%20Evolution%20X&s=SRNUBI", text)
+        assertEquals("litekia://link?v=1&id=0011223344556677&k=AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8&n=Lancer%20Evolution%20X&s=SRNUBI", text)
         assertEquals(mapOf("v" to "1", "id" to "0011223344556677", "k" to "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8", "n" to "Lancer Evolution X", "s" to "SRNUBI"), parse(text))
     }
 

@@ -1,13 +1,13 @@
 // El paquete y el nombre de la clase NO se traducen: Android guarda el acceso a
 // notificaciones con el nombre completo del componente
-// (com.irvingguerra.litedash/com.irvingguerra.litedash.feature.musica.ServicioMusica).
+// (com.vieyra28.litekia/com.vieyra28.litekia.feature.musica.ServicioMusica).
 // Cambiarlo le quitaría el permiso a quien ya lo dio. En el código se usa como
-// [com.irvingguerra.litedash.feature.music.NotificationService].
-package com.irvingguerra.litedash.feature.musica
+// [com.vieyra28.litekia.feature.music.NotificationService].
+package com.vieyra28.litekia.feature.musica
 
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
-import com.irvingguerra.litedash.feature.music.NotificationListener
+import com.vieyra28.litekia.feature.music.NotificationListener
 import java.lang.ref.WeakReference
 
 /**

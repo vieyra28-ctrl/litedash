@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.apps
+package com.vieyra28.litekia.feature.apps
 
 import android.content.BroadcastReceiver
 import android.content.ComponentName
@@ -30,7 +30,7 @@ data class App(val name: String, val pkg: String, val activity: String) {
 /**
  * Lista de apps abribles e íconos, siempre fuera del hilo principal. La lista es un estado
  * compartido: el cajón, el dock y los widgets leen la misma y se actualiza sola al instalar,
- * quitar o actualizar una app mientras LiteDash está a la vista (ver [watch]).
+ * quitar o actualizar una app mientras LiteKia está a la vista (ver [watch]).
  */
 class AppRepository(context: Context) {
     private val appContext = context.applicationContext
@@ -58,7 +58,7 @@ class AppRepository(context: Context) {
 
     /**
      * Empieza a escuchar cambios de apps (una llamada por cada pantalla que las muestra, mientras
-     * se ve). El primero registra el receptor y recarga: lo que cambió con LiteDash en segundo
+     * se ve). El primero registra el receptor y recarga: lo que cambió con LiteKia en segundo
      * plano también se ve. Siempre en el hilo principal.
      */
     fun watch() {

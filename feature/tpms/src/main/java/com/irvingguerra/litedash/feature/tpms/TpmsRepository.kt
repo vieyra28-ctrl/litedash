@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.tpms
+package com.vieyra28.litekia.feature.tpms
 
 import android.app.PendingIntent
 import android.bluetooth.BluetoothAdapter
@@ -18,8 +18,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.core.content.ContextCompat
 import androidx.core.content.IntentCompat
-import com.irvingguerra.litedash.core.vehicle.VehicleBus
-import com.irvingguerra.litedash.feature.obd.UsbLink
+import com.vieyra28.litekia.core.vehicle.VehicleBus
+import com.vieyra28.litekia.feature.obd.UsbLink
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -31,7 +31,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import com.irvingguerra.litedash.feature.obd.FactoryTires
+import com.vieyra28.litekia.feature.obd.FactoryTires
 import java.io.File
 import java.io.IOException
 
@@ -997,7 +997,7 @@ class TpmsRepository(context: Context, private val bus: VehicleBus) {
         private const val KEY_ALERTS = "alerts"
         private const val KEY_ASSIGN = "assign_"
         private const val HISTORY_FILE = "tire_history.bin"
-        private const val ACTION_USB_PERMISSION = "com.irvingguerra.litedash.TPMS_USB_PERMISSION"
+        private const val ACTION_USB_PERMISSION = "com.vieyra28.litekia.TPMS_USB_PERMISSION"
 
         /** Chips USB‑serie que usan los receptores (CH340, FTDI ×2, CP210x, PL2303). */
         val USB_IDS = listOf(0x1A86 to 0x7523, 0x0403 to 0x6001, 0x0403 to 0x6015, 0x10C4 to 0xEA60, 0x067B to 0x2303)

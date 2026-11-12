@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.player
+package com.vieyra28.litekia.feature.player
 
 import android.annotation.SuppressLint
 import android.app.PendingIntent
@@ -24,7 +24,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.core.content.ContextCompat
-import com.irvingguerra.litedash.feature.music.Drives
+import com.vieyra28.litekia.feature.music.Drives
 import java.util.concurrent.Executors
 
 /** Una canción de la memoria USB o una estación de radio: lo que el reproductor sabe tocar. */
@@ -63,7 +63,7 @@ private const val ART_SIDE = 512
 private const val LOAD_TIMEOUT_MS = 25_000L
 
 /**
- * El reproductor propio de LiteDash: toca las canciones de la memoria USB y las estaciones
+ * El reproductor propio de LiteKia: toca las canciones de la memoria USB y las estaciones
  * de radio por internet con [MediaPlayer], publica una sesión de medios (así la pieza Música
  * y la vista en grande lo ven como a cualquier app, y el volante lo controla) y pide el foco
  * de audio como manda Android. Mientras suena, [PlaybackService] lo mantiene en primer plano
@@ -207,7 +207,7 @@ object Player {
         aac = AacStream(app, item.uri.toString(), object : AacStream.Listener {
             override fun onStarted() { main.post { if (myLoad == load) update(playing = true, buffering = false) } }
             override fun onNotAac() { main.post { if (myLoad == load) { aac = null; startMediaPlayer(item, myLoad) } } }
-            override fun onError(message: String) { main.post { if (myLoad == load) { Log.w("LiteDash", "Radio AAC: $message"); fail(app.getString(R.string.player_cannot_play)) } } }
+            override fun onError(message: String) { main.post { if (myLoad == load) { Log.w("LiteKia", "Radio AAC: $message"); fail(app.getString(R.string.player_cannot_play)) } } }
         }).also { it.start() }
     }
 
@@ -226,7 +226,7 @@ object Player {
             setOnCompletionListener { if (myLoad == load && state.current is Track) next() }
             setOnSeekCompleteListener { if (myLoad == load) publishState() }
             setOnErrorListener { _, what, extra ->
-                if (myLoad == load) { Log.w("LiteDash", "MediaPlayer: $what/$extra ${item.uri}"); fail(app.getString(R.string.player_cannot_play)) }
+                if (myLoad == load) { Log.w("LiteKia", "MediaPlayer: $what/$extra ${item.uri}"); fail(app.getString(R.string.player_cannot_play)) }
                 true
             }
             setOnInfoListener { _, what, _ ->
@@ -243,7 +243,7 @@ object Player {
                 p.setDataSource(app, item.uri)
                 p.prepareAsync()
             } catch (x: Exception) {
-                main.post { if (myLoad == load) { Log.w("LiteDash", "MediaPlayer: ${x.message}"); fail(app.getString(R.string.player_cannot_play)) } }
+                main.post { if (myLoad == load) { Log.w("LiteKia", "MediaPlayer: ${x.message}"); fail(app.getString(R.string.player_cannot_play)) } }
             }
         }
     }
@@ -267,7 +267,7 @@ object Player {
 
     private fun ensureSession() {
         if (session != null) return
-        session = MediaSession(app, "LiteDash").apply {
+        session = MediaSession(app, "LiteKia").apply {
             setCallback(object : MediaSession.Callback() {
                 override fun onPlay() = resume()
                 override fun onPause() = pause()

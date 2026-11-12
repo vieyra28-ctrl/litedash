@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.car
+package com.vieyra28.litekia.feature.car
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -12,8 +12,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.toArgb
-import com.irvingguerra.litedash.core.ui.Https
-import com.irvingguerra.litedash.core.ui.scaledDecode
+import com.vieyra28.litekia.core.ui.Https
+import com.vieyra28.litekia.core.ui.scaledDecode
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Deferred

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.music
+package com.vieyra28.litekia.feature.music
 
 import android.annotation.SuppressLint
 import android.app.Notification
@@ -36,7 +36,7 @@ import androidx.compose.runtime.setValue
 import androidx.core.content.ContextCompat
 import androidx.core.os.BundleCompat
 import java.util.concurrent.Executors
-import com.irvingguerra.litedash.feature.musica.ServicioMusica
+import com.vieyra28.litekia.feature.musica.ServicioMusica
 
 /** Recibe los avisos que pasa el [NotificationService] (la app solo mira los de navegación). */
 interface NotificationListener {
@@ -87,7 +87,7 @@ private const val KEY_TOPWAY_OPENING = "topway_opening"
 private const val TOPWAY_XT_BIND = "com.tw.service.xt.CommandService.Bind"
 /** Lo que tarda el sintonizador de fábrica (TopWay, NWD) en contestar (la estación o que ya tiene el audio). */
 private const val FACTORY_ANSWER_MS = 2_000L
-/** Lo que LiteDash supone de una app de fábrica (suena / en pausa) deja de valer tras este rato (p. ej. apagaron el auto). */
+/** Lo que LiteKia supone de una app de fábrica (suena / en pausa) deja de valer tras este rato (p. ej. apagaron el auto). */
 private const val ASSUME_MAX_MS = 3 * 60 * 60_000L
 /** Tras un play a una app de música, cuánto se espera a que suene antes de abrirla. */
 private const val PLAY_CHECK_MS = 4_000L
@@ -138,7 +138,7 @@ class MusicRepository(private val context: Context) {
     var usbDrive by mutableStateOf<String?>(null)
         private set
 
-    // La última app que sonó (nunca LiteDash): sin app elegida, play la despierta aunque ya no esté abierta.
+    // La última app que sonó (nunca LiteKia): sin app elegida, play la despierta aunque ya no esté abierta.
     private val store = context.getSharedPreferences(STORE, Context.MODE_PRIVATE)
     // Spotify avisa a cada rato: solo se escribe al disco cuando cambia la app.
     private var lastSavedApp: String? = store.getString(KEY_LAST_APP, null)
@@ -163,7 +163,7 @@ class MusicRepository(private val context: Context) {
 
     /**
      * El método de música, uno solo a la vez (Ajustes → Apps → Música): Archivos (el reproductor de
-     * LiteDash), Bluetooth (el celular) o App (tu app de música; sin elegir, la que suene). Se guarda.
+     * LiteKia), Bluetooth (el celular) o App (tu app de música; sin elegir, la que suene). Se guarda.
      */
     var mode: MusicMode
         get() = modeState
@@ -181,7 +181,7 @@ class MusicRepository(private val context: Context) {
         }
     private var modeState by mutableStateOf(store.getString(KEY_MODE, null)?.let { m -> MusicMode.entries.firstOrNull { it.name == m } } ?: MusicMode.APP)
 
-    /** La app que toca [m]: LiteDash, la del Bluetooth o tu app de música (null = la que suene). */
+    /** La app que toca [m]: LiteKia, la del Bluetooth o tu app de música (null = la que suene). */
     private fun pkgFor(m: MusicMode): String? = when (m) {
         MusicMode.FILES -> ownPackage
         MusicMode.BLUETOOTH -> bluetoothApp()
@@ -196,7 +196,7 @@ class MusicRepository(private val context: Context) {
 
     /**
      * Apps de la pantalla enlazadas: la de radio FM (Ajustes → Apps → Radio) y, en pantallas con chip de
-     * Bluetooth propio, la de Bluetooth; se guardan en [store]. Archivos no se enlaza: es el reproductor de LiteDash.
+     * Bluetooth propio, la de Bluetooth; se guardan en [store]. Archivos no se enlaza: es el reproductor de LiteKia.
      */
     var sourceApps by mutableStateOf(SourceKind.entries.filter { it != SourceKind.USB }.mapNotNull { k -> store.getString(k.key, null)?.let { k to it } }.toMap())
         private set
@@ -251,12 +251,12 @@ class MusicRepository(private val context: Context) {
     /** Qué fuente propia está sonando ahora; null si el reproductor propio no suena. */
     var ownSourceNow: (() -> SourceKind?)? = null
 
-    /** El paquete de LiteDash: el "app" de las fuentes que toca el reproductor propio. */
+    /** El paquete de LiteKia: el "app" de las fuentes que toca el reproductor propio. */
     val ownPackage: String get() = context.packageName
 
     fun isOwn(pkg: String) = pkg == ownPackage
 
-    /** La app que toca la radio escogida: LiteDash si es la de internet, si no la FM enlazada (null = ninguna). */
+    /** La app que toca la radio escogida: LiteKia si es la de internet, si no la FM enlazada (null = ninguna). */
     val radioApp: String? get() = if (radioInternet) ownPackage else sourceApps[SourceKind.RADIO]
 
     /**
@@ -291,7 +291,7 @@ class MusicRepository(private val context: Context) {
     }
 
     /**
-     * La radio escogida (Ajustes → Apps → Radio): la de internet de LiteDash (true) o la FM de la
+     * La radio escogida (Ajustes → Apps → Radio): la de internet de LiteKia (true) o la FM de la
      * pantalla. Una sola a la vez; se guarda.
      */
     var radioInternet: Boolean
@@ -322,7 +322,7 @@ class MusicRepository(private val context: Context) {
     /**
      * Deja una sola fuente sonando: calla la USB propia (salvo [keep]) y toda sesión de la pieza
      * Música que esté sonando (salvo [keep] y la radio, que vive en su propia pieza). La música
-     * "a ciegas" (Bluetooth/FM sin sesión que LiteDash da por sonando) se calla con la tecla de
+     * "a ciegas" (Bluetooth/FM sin sesión que LiteKia da por sonando) se calla con la tecla de
      * pausa a su receptor.
      */
     private fun stopOthers(keep: String?) {
@@ -361,7 +361,7 @@ class MusicRepository(private val context: Context) {
     private val devices = DeviceWatcher(context, onBluetooth = ::phoneChanged, onUsb = { usbDrive = it })
 
     // El Bluetooth de Android como receptor (A2DP sink): si la pantalla trae el servicio AVRCP,
-    // LiteDash lee y controla la música del celular sin app externa. Conectado mientras la música
+    // LiteKia lee y controla la música del celular sin app externa. Conectado mientras la música
     // esté a la vista (sin celular, su sesión simplemente no trae canción). No depende de poder ver
     // el nombre del celular: sin el permiso BLUETOOTH_CONNECT nunca se conectaba.
     private var avrcp: BluetoothAvrcp? = null
@@ -638,14 +638,14 @@ class MusicRepository(private val context: Context) {
         private fun notifiedTitle(n: StatusBarNotification) = n.notification.extras.getCharSequence(Notification.EXTRA_TITLE)?.toString()
     }
 
-    /** ¿[pkg] es la radio: la app FM enlazada de la pantalla o LiteDash tocando radio por internet? */
+    /** ¿[pkg] es la radio: la app FM enlazada de la pantalla o LiteKia tocando radio por internet? */
     fun isRadio(pkg: String): Boolean =
         pkg == sourceApps[SourceKind.RADIO] || (isOwn(pkg) && ownSourceNow?.invoke() == SourceKind.RADIO)
 
     /** La pieza Música: todo menos la radio; sigue la app del método elegido ([modeApp]) o, sin ella, lo que suene. */
     val music = Lens(accepts = { !isRadio(it) }, fixed = { modeApp }, remembersLast = true, anyApp = { mode == MusicMode.APP })
 
-    /** La pieza Radio: solo la radio de la pantalla (FM) o la de LiteDash (internet). */
+    /** La pieza Radio: solo la radio de la pantalla (FM) o la de LiteKia (internet). */
     val radio = Lens(accepts = { isRadio(it) }, fixed = { null }, remembersLast = false, anyApp = { true })
 
     init {
@@ -654,7 +654,7 @@ class MusicRepository(private val context: Context) {
     }
 
     /**
-     * Lo que suena en el celular por LiteDash Connect (Link); null = nada o sin conexión. Entra en el método
+     * Lo que suena en el celular por LiteKia Connect (Link); null = nada o sin conexión. Entra en el método
      * Bluetooth (y en App sin app elegida o con la de Bluetooth, si no suena nada en la pantalla) y manda
      * sobre AVRCP y los avisos de la marca: el dato sale del celular, igual en todas las pantallas.
      */
@@ -698,7 +698,7 @@ class MusicRepository(private val context: Context) {
 
     /** Cada pieza elige su sesión de la misma lista. */
     private fun choose(list: List<MediaController>) {
-        // Otra app empezó a sonar: lo que LiteDash suponía de la de Bluetooth o FM ya no vale.
+        // Otra app empezó a sonar: lo que LiteKia suponía de la de Bluetooth o FM ya no vale.
         val playing = list.filter { it.playbackState?.state == PlaybackState.STATE_PLAYING }.map { it.packageName }
         for (lens in listOf(music, radio)) if (lens.assumedPkg != null && playing.any { it != lens.assumedPkg }) lens.forget()
         music.choose(list)
@@ -731,7 +731,7 @@ class MusicRepository(private val context: Context) {
         internal var controller: MediaController? = null
 
         /**
-         * La app de la pantalla (Bluetooth, FM) a la que LiteDash le mandó play o pausa sin que
+         * La app de la pantalla (Bluetooth, FM) a la que LiteKia le mandó play o pausa sin que
          * una sesión diga qué hace: se supone que obedeció ([assumedPlaying]) hasta que otra app
          * suene o se cambie de fuente. Así el botón pasa a pausa y la pieza muestra la fuente.
          */
@@ -850,18 +850,18 @@ class MusicRepository(private val context: Context) {
                 song = fromBroadcast() ?: fromAssumed()
                 return
             }
-            // La sesión de LiteDash cambia de USB a radio (o al revés): que la tome la otra pieza.
+            // La sesión de LiteKia cambia de USB a radio (o al revés): que la tome la otra pieza.
             if (!accepts(c.packageName)) return this@MusicRepository.choose(sessions())
         val state = c.playbackState
         val reported = state?.state.let { it == PlaybackState.STATE_PLAYING || it == PlaybackState.STATE_PAUSED || it == PlaybackState.STATE_BUFFERING || it == PlaybackState.STATE_CONNECTING }
-        // Una sesión que no dice si suena (con o sin título): lo que LiteDash le mandó.
+        // Una sesión que no dice si suena (con o sin título): lo que LiteKia le mandó.
         val assumed = if (reported) null else assumedFor(c.packageName)
         val playing = assumed ?: (state?.state == PlaybackState.STATE_PLAYING)
         val app = appLabel(c.packageName)
         val shown = notified(c.packageName)
         val named = m.text(MediaMetadata.METADATA_KEY_TITLE, MediaMetadata.METADATA_KEY_DISPLAY_TITLE).ifBlank { shown?.first.orEmpty() }
         // Sesión vacía que ni siquiera dice si suena (la abren las apps de Bluetooth y FM de fábrica
-        // solo para atrapar el volante): manda lo que avisó la app o lo que LiteDash le pidió.
+        // solo para atrapar el volante): manda lo que avisó la app o lo que LiteKia le pidió.
         if (named.isBlank() && !reported) {
             val blind = fromBroadcast() ?: fromAssumed()
             if (blind != null) {
@@ -915,7 +915,7 @@ class MusicRepository(private val context: Context) {
             val h = heard?.takeIf { SystemClock.elapsedRealtime() - heardAt < BROADCAST_FRESH_MS } ?: return null
             val pkg = h.pkg ?: sourceApps[SourceKind.BLUETOOTH]?.takeIf { h.bluetooth }
             val app = pkg?.let(::appLabel).orEmpty()
-            // Si LiteDash le mandó play o pausa después del último aviso, eso manda; si el aviso no dice, suena.
+            // Si LiteKia le mandó play o pausa después del último aviso, eso manda; si el aviso no dice, suena.
             val sent = assumedFor(pkg ?: assumedPkg)?.takeIf { assumedAt > heardAt }
             val playing = sent ?: h.playing ?: true
             if (h.title == null && !playing) return null
@@ -923,7 +923,7 @@ class MusicRepository(private val context: Context) {
             return withCover(blindSong(title, h.artist.orEmpty(), app, playing, pkg.orEmpty(), pkg?.let(::sourceOf) ?: SourceKind.BLUETOOTH.takeIf { h.bluetooth }))
         }
 
-        /** Lo que LiteDash supone de la app a la que le mandó play o pausa ([assume]). */
+        /** Lo que LiteKia supone de la app a la que le mandó play o pausa ([assume]). */
         private fun fromAssumed(): Song? {
             val pkg = assumedPkg ?: return null
             val playing = assumedFor(pkg) ?: return null
@@ -982,7 +982,7 @@ class MusicRepository(private val context: Context) {
          * que obedece, por la sesión. Si no (la música Bluetooth y la radio FM de muchas
          * pantallas: sin sesión, vacía o que no anuncia play), como el botón del volante pero
          * explícito: PAUSA si se cree que suena y PLAY si no (con play/pausa alternado, varias
-         * apps de fábrica no hacen nada); y LiteDash recuerda que lo mandó ([assume]).
+         * apps de fábrica no hacen nada); y LiteKia recuerda que lo mandó ([assume]).
          */
         fun toggle() {
             val s = song ?: return onWake()
@@ -1058,7 +1058,7 @@ class MusicRepository(private val context: Context) {
         internal var onWake: () -> Unit = {}
     }
 
-    /** La fuente a la que está enlazada [pkg] (o la que toca LiteDash); null = una app normal. */
+    /** La fuente a la que está enlazada [pkg] (o la que toca LiteKia); null = una app normal. */
     fun sourceOf(pkg: String): SourceKind? = when {
         isOwn(pkg) -> ownSourceNow?.invoke()
         pkg == avrcpPackage || pkg == knownBluetooth -> SourceKind.BLUETOOTH
@@ -1186,7 +1186,7 @@ class MusicRepository(private val context: Context) {
 
     /**
      * Play de la pieza Radio: sigue la radio que suena; si no, despierta la FM de la pantalla
-     * o la radio por internet de LiteDash. Sin con qué (sin app enlazada ni estación), [onIdle]:
+     * o la radio por internet de LiteKia. Sin con qué (sin app enlazada ni estación), [onIdle]:
      * la pieza abre sus ajustes o la lista de estaciones.
      */
     fun resumeRadio(onIdle: () -> Unit = {}) {
@@ -1241,7 +1241,7 @@ class MusicRepository(private val context: Context) {
 
     /**
      * Radios de fábrica que no dejan nada por fuera (p. ej. las TopWay, `com.tw.radio`): solo suenan
-     * al abrirlas. Se abre la radio y, si quedó encima de LiteDash, se regresa al inicio en
+     * al abrirlas. Se abre la radio y, si quedó encima de LiteKia, se regresa al inicio en
      * [RADIO_RETURN_MS] (Android deja a la app volver al frente unos segundos después de abrir otra).
      * Lo que pasa con el audio queda en el registro, para los reportes.
      */
@@ -1268,7 +1268,7 @@ class MusicRepository(private val context: Context) {
         mainHandler.removeCallbacks(factoryConfirm)
         factoryConfirm = Runnable {
             lens.starting = null
-            // Cambiaron de radio o LiteDash se fue: ya no toca.
+            // Cambiaron de radio o LiteKia se fue: ya no toca.
             if (run != factoryRun || factory !== f) return@Runnable
             // El perfil se cerró solo (su servicio no contestó): la radio se abre como antes.
             if (!f.open) {
@@ -1298,15 +1298,15 @@ class MusicRepository(private val context: Context) {
         if (active && factoryFor(radio) == null && pkg != null && !radioInternet && !othersPlaying(pkg)) radio.assume(pkg, true)
     }
     private val returnFromRadio = Runnable {
-        trace("regreso a LiteDash: audio=${yes(musicActive())}")
+        trace("regreso a LiteKia: audio=${yes(musicActive())}")
         returnHome?.invoke()
         factoryFor(radio)?.started()
         mainHandler.postDelayed(radioCheck, RADIO_RETURN_MS)
     }
 
     /**
-     * LiteDash volvió al frente por su cuenta (el usuario regresó o abrió otra app desde el inicio):
-     * ya no se regresa solo. No va en [stop]: al abrir la radio, LiteDash se detiene y eso lo cancelaría.
+     * LiteKia volvió al frente por su cuenta (el usuario regresó o abrió otra app desde el inicio):
+     * ya no se regresa solo. No va en [stop]: al abrir la radio, LiteKia se detiene y eso lo cancelaría.
      */
     fun cancelReturn() {
         mainHandler.removeCallbacks(returnFromRadio)
@@ -1351,7 +1351,7 @@ class MusicRepository(private val context: Context) {
     private fun isSystem(pkg: String, unknown: Boolean = false) =
         runCatching { context.packageManager.getApplicationInfo(pkg, 0).flags and ApplicationInfo.FLAG_SYSTEM != 0 }.getOrDefault(unknown)
 
-    /** Trae LiteDash al frente si otra app lo tapa (lo pone la app). */
+    /** Trae LiteKia al frente si otra app lo tapa (lo pone la app). */
     var returnHome: (() -> Unit)? = null
 
     /**
@@ -1385,7 +1385,7 @@ class MusicRepository(private val context: Context) {
     private fun canKey(lens: Lens): Boolean = lens !== radio || keyReceiver(target(lens)) != null
 
     /**
-     * El receptor del botón de play de [pkg] (nunca el de LiteDash: su reproductor tiene sesión).
+     * El receptor del botón de play de [pkg] (nunca el de LiteKia: su reproductor tiene sesión).
      * Se pregunta una vez por app (es una llamada al sistema y la pieza lo consulta al pintarse).
      */
     private fun keyReceiver(pkg: String?): ComponentName? =
@@ -1496,7 +1496,7 @@ class MusicRepository(private val context: Context) {
     }
 
     /**
-     * Lo que LiteDash ve de la música en esta pantalla, para los reportes: las fuentes enlazadas
+     * Lo que LiteKia ve de la música en esta pantalla, para los reportes: las fuentes enlazadas
      * (con su receptor, servicio y aviso), cada sesión con su estado, acciones y si trae canción,
      * qué suponen las piezas, si Android tiene audio sonando y lo último que pasó. Sin nombres
      * de canciones ni del celular.
@@ -1580,7 +1580,7 @@ class MusicRepository(private val context: Context) {
     /** Si devuelve true, ya abrió la app a su manera (p. ej. en pantalla dividida). */
     var opener: ((Context, Intent, String) -> Boolean)? = null
 
-    /** True = se abrió encima de LiteDash (no a un lado en pantalla dividida). */
+    /** True = se abrió encima de LiteKia (no a un lado en pantalla dividida). */
     private fun open(pkg: String): Boolean {
         val intent = context.packageManager.getLaunchIntentForPackage(pkg)?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ?: return false
         if (opener?.invoke(context, intent, pkg) == true) return false

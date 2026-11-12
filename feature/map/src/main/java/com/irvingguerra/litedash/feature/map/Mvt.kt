@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.map
+package com.vieyra28.litekia.feature.map
 
 /**
  * Lo poco que el mapa minimalista necesita de una tesela vectorial (formato Mapbox Vector Tile,

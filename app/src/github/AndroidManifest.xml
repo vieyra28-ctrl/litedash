@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <!--
-        Solo la versión de GitHub: buscar y bajar versiones nuevas de LiteDash cuando
+        Solo la versión de GitHub: buscar y bajar versiones nuevas de LiteKia cuando
         el usuario toca "Buscar actualizaciones", e instalarlas con su confirmación.
     -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
@@ -11,7 +11,7 @@
 
     <application>
         <receiver
-            android:name="com.irvingguerra.litedash.feature.updater.InstallReceiver"
+            android:name="com.vieyra28.litekia.feature.updater.InstallReceiver"
             android:exported="false" />
         <!-- Respaldo: abrir el APK descargado con el instalador de siempre. -->
         <provider
@@ -25,7 +25,7 @@
         </provider>
         <!-- Experimento: el tablero en Android Auto (solo con "Fuentes desconocidas" en Android Auto). -->
         <service
-            android:name="com.irvingguerra.litedash.auto.AutoService"
+            android:name="com.vieyra28.litekia.auto.AutoService"
             android:exported="true">
             <intent-filter>
                 <action android:name="androidx.car.app.CarAppService" />

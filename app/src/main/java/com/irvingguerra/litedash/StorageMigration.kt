@@ -1,16 +1,16 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 import androidx.core.content.edit
-import com.irvingguerra.litedash.feature.car.CarFiles
+import com.vieyra28.litekia.feature.car.CarFiles
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
 
 /**
- * 1.4.47: todo lo que LiteDash guarda pasó de nombres en español a inglés. Corre una sola vez, al
+ * 1.4.47: todo lo que LiteKia guarda pasó de nombres en español a inglés. Corre una sola vez, al
  * arrancar la app y antes de leer cualquier ajuste: COPIA lo viejo a lo nuevo y deja lo viejo donde
  * estaba (salvo los autos, que se mueven porque pesan y se pueden volver a bajar). Una versión
  * futura borrará lo viejo (la lista de abajo).
@@ -29,7 +29,7 @@ import java.io.File
  * - En `settings`: `car_view` (lo lee [carTiles]) e `intro_image_migrated` (la bandera de [introImage]).
  */
 internal object StorageMigration {
-    private const val TAG = "LiteDash"
+    private const val TAG = "LiteKia"
     private const val ATTEMPTS = "storage_attempts"
     private const val MAX_ATTEMPTS = 3
 
@@ -94,7 +94,7 @@ internal object StorageMigration {
             }
         }
         if (view == "road" && !settings.contains(PrefKeys.SPLIT_ROAD)) settings.edit(commit = true) { putBoolean(PrefKeys.SPLIT_ROAD, true) }
-        // La foto al final y por su lado: si no se puede copiar, la pieza ya es de imagen y muestra el logo de LiteDash.
+        // La foto al final y por su lado: si no se puede copiar, la pieza ya es de imagen y muestra el logo de LiteKia.
         if (view == "logo") runCatching {
             val source = File(context.filesDir, "logo.png")
             val target = File(context.filesDir, "images/${LegacyNames.LOGO_IMAGE}.png")

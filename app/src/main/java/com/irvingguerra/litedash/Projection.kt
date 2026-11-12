@@ -1,12 +1,12 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.feature.apps.App
-import com.irvingguerra.litedash.feature.apps.AppIcon
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.feature.apps.App
+import com.vieyra28.litekia.feature.apps.AppIcon
 
 // Apps conocidas para usar el celular en la pantalla (Android Auto / CarPlay con o sin cable).
 private val PROJECTION_PACKAGES = listOf(

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.core.ui
+package com.vieyra28.litekia.core.ui
 
 import android.content.Context
 import android.os.Build
@@ -38,7 +38,7 @@ object Https {
     }
 
     /**
-     * GET de una descarga de LiteDash (catálogo, autos, actualizaciones); truena si no contesta 2xx.
+     * GET de una descarga de LiteKia (catálogo, autos, actualizaciones); truena si no contesta 2xx.
      * Si el servidor falla un momento (5xx, como los "504 Gateway Time-out" de GitHub) o se corta la
      * red, se reintenta solo ([retrying]); un 4xx no (no va a cambiar). Llamar fuera del hilo principal.
      */
@@ -49,7 +49,7 @@ object Https {
             connectTimeout = 15_000
             readTimeout = 30_000
             instanceFollowRedirects = true
-            setRequestProperty("User-Agent", "LiteDash")
+            setRequestProperty("User-Agent", "LiteKia")
             accept?.let { setRequestProperty("Accept", it) }
             val code = responseCode
             if (code in 500..599) {

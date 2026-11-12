@@ -1,5 +1,5 @@
-// Abrir LiteDash al encender el auto (Ajustes → Inicio y apariencia → Hazlo tu inicio).
-package com.irvingguerra.litedash
+// Abrir LiteKia al encender el auto (Ajustes → Inicio y apariencia → Hazlo tu inicio).
+package com.vieyra28.litekia
 
 import android.content.BroadcastReceiver
 import android.content.ComponentName
@@ -15,9 +15,9 @@ import androidx.core.content.edit
 import androidx.core.net.toUri
 
 /**
- * Varias pantallas de auto regresan su launcher de fábrica cada vez que encienden (aunque LiteDash
- * sea el inicio elegido) o lo abren solas al dar contacto. Con "Abrir LiteDash al encender", al
- * arrancar o despertar la pantalla LiteDash se pone al frente unos segundos después.
+ * Varias pantallas de auto regresan su launcher de fábrica cada vez que encienden (aunque LiteKia
+ * sea el inicio elegido) o lo abren solas al dar contacto. Con "Abrir LiteKia al encender", al
+ * arrancar o despertar la pantalla LiteKia se pone al frente unos segundos después.
  *
  * Avisos de encendido: el de Android (BOOT_COMPLETED), el encendido rápido de MediaTek y los de
  * cada marca (FYT, GLSX, Microntek) según la guía de arranque de HeadUnit Revived
@@ -78,7 +78,7 @@ object BootLaunch {
     fun allowed(context: Context): Boolean =
         Build.VERSION.SDK_INT < Build.VERSION_CODES.Q || Settings.canDrawOverlays(context)
 
-    /** La pantalla de Android para dar "Mostrar sobre otras apps" a LiteDash. */
+    /** La pantalla de Android para dar "Mostrar sobre otras apps" a LiteKia. */
     fun permissionIntent(context: Context): Intent =
         Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, "package:${context.packageName}".toUri()).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 
@@ -104,7 +104,7 @@ object BootLaunch {
         val default = runCatching { pm.resolveActivity(home, PackageManager.MATCH_DEFAULT_ONLY)?.activityInfo?.packageName }.getOrNull()
         val all = runCatching { pm.queryIntentActivities(home, 0).map { it.activityInfo.packageName }.distinct() }.getOrDefault(emptyList())
         // "android" = no hay uno elegido (Android pregunta cuál usar).
-        appendLine("Inicio: ${if (isHomeApp(context)) "LiteDash" else "otro"} (predeterminado=${default ?: "-"}; inicios=${all.joinToString().ifEmpty { "-" }})")
+        appendLine("Inicio: ${if (isHomeApp(context)) "LiteKia" else "otro"} (predeterminado=${default ?: "-"}; inicios=${all.joinToString().ifEmpty { "-" }})")
         val log = context.getSharedPreferences(LOG, Context.MODE_PRIVATE)
         val at = log.getLong(BootReceiver.KEY_OPENED_AT, 0L)
         // "hace" puede salir raro si el reloj de la pantalla se movió desde entonces (sin pila de reloj).

@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.Manifest
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -26,17 +26,17 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.irvingguerra.litedash.core.ui.Card
-import com.irvingguerra.litedash.core.ui.Colors
-import com.irvingguerra.litedash.core.ui.Icon
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.LocalPlainCard
-import com.irvingguerra.litedash.core.ui.SwitchRow
-import com.irvingguerra.litedash.core.ui.TilePadding
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.core.ui.fitFont
+import com.vieyra28.litekia.core.ui.Card
+import com.vieyra28.litekia.core.ui.Colors
+import com.vieyra28.litekia.core.ui.Icon
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.LocalPlainCard
+import com.vieyra28.litekia.core.ui.SwitchRow
+import com.vieyra28.litekia.core.ui.TilePadding
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.core.ui.fitFont
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
@@ -80,7 +80,7 @@ fun rememberEnableWeather(repo: WeatherRepository): () -> Unit {
 
 /**
  * Mantiene el clima al día mientras el inicio se ve: al volver ([revision]) y cada
- * [WeatherRepository.STALE_MS] con LiteDash al frente. Apagado o en segundo plano, nada.
+ * [WeatherRepository.STALE_MS] con LiteKia al frente. Apagado o en segundo plano, nada.
  */
 @Composable
 fun WeatherRefresh(repo: WeatherRepository, revision: Int) {

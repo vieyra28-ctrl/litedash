@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.content.Context
 import androidx.compose.foundation.background
@@ -28,30 +28,30 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleStartEffect
-import com.irvingguerra.litedash.core.ui.Card
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Radius
-import com.irvingguerra.litedash.core.ui.Segmented
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.core.vehicle.Signal
-import com.irvingguerra.litedash.core.vehicle.watch
-import com.irvingguerra.litedash.feature.apps.App
-import com.irvingguerra.litedash.feature.map.MapDetail
-import com.irvingguerra.litedash.feature.map.MapCanvas
-import com.irvingguerra.litedash.feature.map.MapLook
-import com.irvingguerra.litedash.feature.map.MapOrientation
-import com.irvingguerra.litedash.feature.map.MapStyle
-import com.irvingguerra.litedash.feature.map.MapView
-import com.irvingguerra.litedash.feature.map.MapZoom
-import com.irvingguerra.litedash.feature.map.MinimalPalette
-import com.irvingguerra.litedash.feature.map.OsmTiles
-import com.irvingguerra.litedash.feature.map.TileStore
-import com.irvingguerra.litedash.feature.map.VectorTiles
-import com.irvingguerra.litedash.feature.map.tilePx
-import com.irvingguerra.litedash.feature.music.NotificationService
+import com.vieyra28.litekia.core.ui.Card
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Segmented
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.core.vehicle.Signal
+import com.vieyra28.litekia.core.vehicle.watch
+import com.vieyra28.litekia.feature.apps.App
+import com.vieyra28.litekia.feature.map.MapDetail
+import com.vieyra28.litekia.feature.map.MapCanvas
+import com.vieyra28.litekia.feature.map.MapLook
+import com.vieyra28.litekia.feature.map.MapOrientation
+import com.vieyra28.litekia.feature.map.MapStyle
+import com.vieyra28.litekia.feature.map.MapView
+import com.vieyra28.litekia.feature.map.MapZoom
+import com.vieyra28.litekia.feature.map.MinimalPalette
+import com.vieyra28.litekia.feature.map.OsmTiles
+import com.vieyra28.litekia.feature.map.TileStore
+import com.vieyra28.litekia.feature.map.VectorTiles
+import com.vieyra28.litekia.feature.map.tilePx
+import com.vieyra28.litekia.feature.music.NotificationService
 
 /**
  * Widget Mapa: tu posición del GPS en el mapa (minimalista de OpenFreeMap o completo de OpenStreetMap),
@@ -149,7 +149,7 @@ private fun LiveMap(d: Dependencies, look: MapLook, modifier: Modifier, onTap: (
 }
 
 private fun newTileStore(context: Context, detail: MapDetail, dark: Boolean, density: Float): TileStore {
-    val userAgent = "LiteDash/${BuildConfig.VERSION_NAME} (+https://litedash.dev)"
+    val userAgent = "LiteKia/${BuildConfig.VERSION_NAME} (+https://github.com/vieyra28-ctrl/litedash)"
     val source = when (detail) {
         MapDetail.FULL -> OsmTiles
         MapDetail.MINIMAL -> VectorTiles(context, if (dark) MinimalPalette.DARK else MinimalPalette.LIGHT, tilePx(density).toInt(), density, userAgent)

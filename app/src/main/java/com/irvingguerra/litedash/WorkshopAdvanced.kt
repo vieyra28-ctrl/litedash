@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import android.os.SystemClock
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -43,21 +43,21 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.irvingguerra.litedash.core.ui.Button
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.SwitchRow
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.core.vehicle.Signal
-import com.irvingguerra.litedash.core.vehicle.watch
-import com.irvingguerra.litedash.feature.obd.AccelState
-import com.irvingguerra.litedash.feature.obd.AccelTimer
-import com.irvingguerra.litedash.feature.obd.DerivedSignals
-import com.irvingguerra.litedash.feature.obd.ObdState
-import com.irvingguerra.litedash.feature.obd.Pids
-import com.irvingguerra.litedash.feature.obd.TripRecorder
-import com.irvingguerra.litedash.feature.obd.TripStore
-import com.irvingguerra.litedash.feature.obd.TripSummary
+import com.vieyra28.litekia.core.ui.Button
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.SwitchRow
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.core.vehicle.Signal
+import com.vieyra28.litekia.core.vehicle.watch
+import com.vieyra28.litekia.feature.obd.AccelState
+import com.vieyra28.litekia.feature.obd.AccelTimer
+import com.vieyra28.litekia.feature.obd.DerivedSignals
+import com.vieyra28.litekia.feature.obd.ObdState
+import com.vieyra28.litekia.feature.obd.Pids
+import com.vieyra28.litekia.feature.obd.TripRecorder
+import com.vieyra28.litekia.feature.obd.TripStore
+import com.vieyra28.litekia.feature.obd.TripSummary
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -253,7 +253,7 @@ fun TripsCard(d: Dependencies) {
             Label(stringResource(R.string.trips_none), Typography.small, c.textMuted)
             return@SettingsCard
         }
-        Button(stringResource(R.string.trips_export), { export.launch("litedash-trips.csv") }, primary = true)
+        Button(stringResource(R.string.trips_export), { export.launch("litekia-trips.csv") }, primary = true)
         val dates = remember(locale) { DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT, locale) }
         for (t in trips.take(30)) TripRow(t, dates, units, locale)
     }
@@ -322,7 +322,7 @@ fun TripRecorderEffect(d: Dependencies) {
             )
         }
     }
-    // Al desconectarse (o salir de LiteDash del todo) se guarda lo que se juntó.
+    // Al desconectarse (o salir de LiteKia del todo) se guarda lo que se juntó.
     DisposableEffect(recorder) {
         onDispose {
             recorder.summary()?.let { trip ->

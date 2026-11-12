@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.irvingguerra.litedash.feature.dashboard"
+    namespace = "com.vieyra28.litekia.feature.dashboard"
     compileSdk = 37
     defaultConfig { minSdk = 23 }
     buildFeatures { compose = true }

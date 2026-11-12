@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash.feature.obd
+package com.vieyra28.litekia.feature.obd
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice

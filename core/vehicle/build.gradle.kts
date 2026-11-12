@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.irvingguerra.litedash.core.vehicle"
+    namespace = "com.vieyra28.litekia.core.vehicle"
     compileSdk = 37
     defaultConfig { minSdk = 23 }
     buildFeatures { compose = true }

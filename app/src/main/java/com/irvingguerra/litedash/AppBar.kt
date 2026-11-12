@@ -1,4 +1,4 @@
-package com.irvingguerra.litedash
+package com.vieyra28.litekia
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -45,17 +45,17 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
-import com.irvingguerra.litedash.core.ui.Icon
-import com.irvingguerra.litedash.core.ui.IconButton
-import com.irvingguerra.litedash.core.ui.Icons
-import com.irvingguerra.litedash.core.ui.Label
-import com.irvingguerra.litedash.core.ui.LocalColors
-import com.irvingguerra.litedash.core.ui.Radius
-import com.irvingguerra.litedash.core.ui.Typography
-import com.irvingguerra.litedash.feature.apps.App
-import com.irvingguerra.litedash.feature.apps.AppIcon
-import com.irvingguerra.litedash.feature.apps.AppRepository
-import com.irvingguerra.litedash.feature.dashboard.longPress
+import com.vieyra28.litekia.core.ui.Icon
+import com.vieyra28.litekia.core.ui.IconButton
+import com.vieyra28.litekia.core.ui.Icons
+import com.vieyra28.litekia.core.ui.Label
+import com.vieyra28.litekia.core.ui.LocalColors
+import com.vieyra28.litekia.core.ui.Radius
+import com.vieyra28.litekia.core.ui.Typography
+import com.vieyra28.litekia.feature.apps.App
+import com.vieyra28.litekia.feature.apps.AppIcon
+import com.vieyra28.litekia.feature.apps.AppRepository
+import com.vieyra28.litekia.feature.dashboard.longPress
 
 /** Lo que hacen los botones de la barra (los arma el inicio). */
 class BarActions(
