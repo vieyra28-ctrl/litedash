@@ -89,6 +89,10 @@ internal object PrefKeys {
     const val OBD_MODULE = "obd_module"
     const val SPEED_UNITS = "speed_units"
     const val TEMP_UNITS = "temp_units"
+    /** Float 0–1: opacidad del fondo de las tarjetas de los widgets. */
+    const val WIDGET_OPACITY = "widget_opacity"
+    /** Decoración de temporada ([SeasonTheme.stored]). */
+    const val SEASON_THEME = "season_theme"
     /** Int: versión del almacenamiento ([StorageMigration]: 1 = nombres en inglés, 2 = tres piezas del auto). */
     const val STORAGE_VERSION = "storage_version"
 }
@@ -189,6 +193,25 @@ enum class ThemeMode(val stored: String) {
     }
 }
 
+/**
+ * Decoración de temporada del inicio: automática (sigue la fecha, [SeasonTheme.resolve]),
+ * ninguna o una elegida. [nameRes] es su nombre en Ajustes.
+ */
+enum class SeasonTheme(val stored: String, val nameRes: Int) {
+    AUTO("auto", R.string.season_auto),
+    NONE("none", R.string.season_none),
+    CHRISTMAS("christmas", R.string.season_christmas),
+    HALLOWEEN("halloween", R.string.season_halloween),
+    DAY_OF_DEAD("day_of_dead", R.string.season_day_of_dead),
+    NEW_YEAR("new_year", R.string.season_new_year),
+    VALENTINE("valentine", R.string.season_valentine),
+    INDEPENDENCE("independence", R.string.season_independence);
+
+    companion object {
+        fun fromStored(value: String?) = entries.firstOrNull { it.stored == value } ?: AUTO
+    }
+}
+
 /** Cómo se sabe si es de noche (para el tema "Día y noche" y el brillo). */
 enum class NightSource(val stored: String) {
     /** Hora del sol: funciona en cualquier pantalla. */
@@ -255,6 +278,23 @@ class Preferences(context: Context) {
     var nightSource by mapped(PrefKeys.NIGHT_SOURCE, { NightSource.fromStored(it) ?: NightSource.SUN }, { it.stored })
 
     var scale by float(PrefKeys.SCALE, 1f)
+
+    private var _widgetOpacity by mutableFloatStateOf(p.getFloat(PrefKeys.WIDGET_OPACITY, 1f))
+    /** Opacidad del fondo de las tarjetas de los widgets (0–1); 1 = opaco, como siempre. */
+    var widgetOpacity: Float
+        get() = _widgetOpacity
+        set(v) {
+            _widgetOpacity = v.coerceIn(0f, 1f)
+            p.edit { putFloat(PrefKeys.WIDGET_OPACITY, _widgetOpacity) }
+        }
+
+    /** Mientras se arrastra el deslizador: cambia en vivo y se guarda al soltar ([widgetOpacity]). */
+    fun previewWidgetOpacity(v: Float) {
+        _widgetOpacity = v.coerceIn(0f, 1f)
+    }
+
+    /** Decoración de temporada del inicio (de fábrica, automática según la fecha). */
+    var seasonTheme by mapped(PrefKeys.SEASON_THEME, SeasonTheme::fromStored) { it.stored }
 
     /** null = todavía no lo nombra (se muestra "Mi auto"). */
     var carName by string(PrefKeys.CAR_NAME)
