@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="es">
-    <string name="app_name" translatable="false">LiteDash</string>
+    <string name="app_name" translatable="false">LiteKia</string>
     <string name="your_car">Tu auto</string>
     <string name="my_car">Mi auto</string>
     <string name="name">Nombre</string>
