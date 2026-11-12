@@ -23,6 +23,14 @@ jobs:
           java-version: 17
       - uses: gradle/actions/setup-gradle@v4
 
+      - name: Memoria de Gradle
+        run: |
+          mkdir -p ~/.gradle
+          touch ~/.gradle/gradle.properties
+          sed -i '/^org.gradle.jvmargs=/d' ~/.gradle/gradle.properties
+          printf 'org.gradle.jvmargs=-Xmx4g -XX:MaxMetaspaceSize=1g -Dfile.encoding=UTF-8\n' >> ~/.gradle/gradle.properties
+          cat ~/.gradle/gradle.properties
+
       - name: Compilar, lint y pruebas
         run: ./gradlew assemblePlayDebug assembleGithubRelease :benchmark:assembleBenchmark lint test --console=plain
 
