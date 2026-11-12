@@ -10,6 +10,7 @@ import android.hardware.SensorManager
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
@@ -87,6 +88,22 @@ private fun InterfaceSettings(d: Dependencies) {
     val c = LocalColors.current
     val context = LocalContext.current
     SettingsCard(stringResource(R.string.accent_title), stringResource(R.string.accent_help)) { AccentSettings(prefs) }
+    SettingsCard(stringResource(R.string.widget_opacity_title), stringResource(R.string.widget_opacity_help)) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Box(Modifier.weight(1f)) { LevelSlider(prefs.widgetOpacity, prefs::previewWidgetOpacity) { prefs.widgetOpacity = it } }
+            Label("${(prefs.widgetOpacity * 100).toInt()} %", Typography.title, modifier = Modifier.widthIn(min = 64.dp))
+        }
+    }
+    SettingsCard(stringResource(R.string.season_title), stringResource(R.string.season_help)) {
+        FlowRow(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            for (theme in SeasonTheme.entries) {
+                Button(stringResource(theme.nameRes), { prefs.seasonTheme = theme }, primary = prefs.seasonTheme == theme)
+            }
+        }
+        if (prefs.seasonTheme == SeasonTheme.AUTO) {
+            Label(stringResource(R.string.season_auto_now, stringResource(prefs.seasonTheme.resolve().nameRes)), Typography.small, c.textMuted)
+        }
+    }
     SettingsCard(stringResource(R.string.scale), stringResource(R.string.scale_help)) {
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             IconButton(Icons.minus, { prefs.scale = (prefs.scale - 0.1f).coerceAtLeast(0.8f).roundToTenth() }, background = c.surfaceHigh)
