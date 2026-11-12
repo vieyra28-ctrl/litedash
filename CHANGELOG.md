@@ -1,27 +1,27 @@
 # Cambios
 
-Todos los cambios que nota quien usa LiteDash. Formato
+Todos los cambios que nota quien usa LiteKia. Formato
 [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/), versiones
 [SemVer](https://semver.org/lang/es/).
 
 ## [1.4.136] - 2026-11-11
 
 ### Agregado
-- **Experimento: LiteDash en Android Auto** (solo la versión de GitHub). Instala LiteDash en tu celular, prende en
-  Android Auto los ajustes de desarrollador → **Fuentes desconocidas**, y LiteDash aparece entre sus apps con tu
+- **Experimento: LiteKia en Android Auto** (solo la versión de GitHub). Instala LiteKia en tu celular, prende en
+  Android Auto los ajustes de desarrollador → **Fuentes desconocidas**, y LiteKia aparece entre sus apps con tu
   tablero de siempre. Por ahora solo con toques (sin deslizar) y sin lo que viene del equipo del auto (OBD, llantas,
   radio). Es una prueba: cuéntanos cómo se ve en tu auto.
 
 ## [1.4.135] - 2026-11-11
 
 ### Cambiado
-- **La animación de entrada viene prendida:** al abrir LiteDash se arma su logo (o aparece tu imagen). Si ya la habías
+- **La animación de entrada viene prendida:** al abrir LiteKia se arma su logo (o aparece tu imagen). Si ya la habías
   apagado, sigue apagada. Se cambia en Inicio y apariencia → Inicio → Animación de entrada; un toque la salta.
 
 ## [1.4.134] - 2026-11-11
 
 ### Cambiado
-- **Animación de entrada nueva:** sin imagen propia, el logo de LiteDash se arma al abrir: el guion entra desde la
+- **Animación de entrada nueva:** sin imagen propia, el logo de LiteKia se arma al abrir: el guion entra desde la
   izquierda y los dos puntos caen saltando hasta su lugar. Con tu imagen sigue como antes. Se prende en Inicio y
   apariencia → Inicio → Animación de entrada; un toque la salta.
 
@@ -29,7 +29,7 @@ Todos los cambios que nota quien usa LiteDash. Formato
 
 ### Cambiado
 - **Elegir imagen, un solo camino:** en Android 12 o anterior (casi todas las pantallas de auto) se abre siempre el
-  explorador de LiteDash, ahora con **fotos en miniatura** y **Recientes** (las últimas fotos de tu pantalla) antes de
+  explorador de LiteKia, ahora con **fotos en miniatura** y **Recientes** (las últimas fotos de tu pantalla) antes de
   las memorias. En Android 13 o más nuevo se abre el selector de fotos del sistema. Ya no hay que probar varios
   selectores ni el botón "¿No se abrió?".
 
@@ -40,8 +40,8 @@ Todos los cambios que nota quien usa LiteDash. Formato
 
 ### Corregido
 - **Elegir imagen (fondo, logo de entrada, widget Imagen) en pantallas con Android 12 o anterior:** te mandaba a
-  Play Store ("No es posible acceder") y LiteDash se quedaba trabado hasta forzar su cierre. Ahora abre el
-  selector de archivos de tu pantalla o el explorador de LiteDash.
+  Play Store ("No es posible acceder") y LiteKia se quedaba trabado hasta forzar su cierre. Ahora abre el
+  selector de archivos de tu pantalla o el explorador de LiteKia.
 
 ## [1.4.131] - 2026-11-11
 
@@ -53,14 +53,14 @@ Todos los cambios que nota quien usa LiteDash. Formato
 
 ### Corregido
 - **Llantas: ya no avisa "fuga" cuando la llanta solo se enfría.** Al manejar el aire se calienta y la presión
-  sube; al estacionarte baja sin perder aire. Ahora LiteDash compara las presiones a la misma temperatura, así que
+  sube; al estacionarte baja sin perder aire. Ahora LiteKia compara las presiones a la misma temperatura, así que
   solo avisa cuando de verdad pierde aire.
 - El reporte de la pantalla trae más datos para leer la canción de ZLINK en pantallas Hengchen.
 
 ## [1.4.130] - 2026-11-10
 
 ### Agregado
-- **La música de tu celular en la pantalla** (con LiteDash Connect 0.3.0): lo que suena en tu celular (Spotify,
+- **La música de tu celular en la pantalla** (con LiteKia Connect 0.3.0): lo que suena en tu celular (Spotify,
   YouTube Music…) se ve en el widget Música con su carátula, título y avance, y lo controlas desde la pantalla
   (play, pausa, siguiente, anterior y adelantar). Llega por el enlace con tu celular, así que funciona aunque tu
   pantalla no muestre la canción por Bluetooth. Se ve con el método Bluetooth (y con App si no eliges una app).
@@ -74,15 +74,15 @@ Todos los cambios que nota quien usa LiteDash. Formato
 ## [1.4.129] - 2026-11-10
 
 ### Cambiado
-- **Ajustes → Cuenta** (nuevo): ahí está el código QR para vincular tu pantalla con la app **LiteDash Connect** de
-  tu celular, donde ahora creas tu cuenta de LiteDash (con Google o con tu correo). Ya vinculado, ves si están
+- **Ajustes → Cuenta** (nuevo): ahí está el código QR para vincular tu pantalla con la app **LiteKia Connect** de
+  tu celular, donde ahora creas tu cuenta de LiteKia (con Google o con tu correo). Ya vinculado, ves si están
   conectados y puedes desvincular. Siempre está disponible: sin celular vinculado no usa la red ni corre nada.
 - Ya no hay módulo Celular en Ajustes → Módulos (pasó a Cuenta). Si ya tenías tu celular vinculado, sigue igual.
 
 ## [1.4.128] - 2026-11-10
 
 ### Agregado
-- **Módulo Celular** (Ajustes → Módulos, apagado de fábrica): vincula tu pantalla con la app **LiteDash Connect**
+- **Módulo Celular** (Ajustes → Módulos, apagado de fábrica): vincula tu pantalla con la app **LiteKia Connect**
   de tu celular escaneando un código QR. El enlace va cifrado por la red local (el hotspot de tu celular o el
   mismo Wi-Fi), sin cuenta y sin internet. Es el primer paso: por ahora la pantalla y el celular se reconocen y
   muestran si están conectados.
@@ -140,7 +140,7 @@ Todos los cambios que nota quien usa LiteDash. Formato
 ## [1.4.124] - 2026-11-09
 
 ### Corregido
-- **Widgets que no se podían quitar ni mover**: con LiteDash abierto dos veces (como inicio y como app), después
+- **Widgets que no se podían quitar ni mover**: con LiteKia abierto dos veces (como inicio y como app), después
   de cambiar el tamaño de la interfaz el inicio quedaba con el acomodo de otro tamaño y, al acomodar, la ✕, mover
   y cambiar de tamaño no hacían nada. Ahora el acomodo lo decide la ventana que estás usando.
 
@@ -183,7 +183,7 @@ Todos los cambios que nota quien usa LiteDash. Formato
 
 ### Corregido
 - **Escáner OBD que solo mostraba el voltaje**: algunos adaptadores ELM327 (clones) mandan cada respuesta con
-  su encabezado aunque se les pida que no; LiteDash no entendía esas respuestas y solo leía el voltaje del
+  su encabezado aunque se les pida que no; LiteKia no entendía esas respuestas y solo leía el voltaje del
   adaptador. Ahora las entiende. Con los adaptadores que ya funcionaban no cambia nada.
 - **Música y Radio a media altura sin carátula**: en ese tamaño el widget dejaba de mostrar la carátula; ahora
   se achica para caber.
@@ -234,8 +234,8 @@ Todos los cambios que nota quien usa LiteDash. Formato
 ## [1.4.118] - 2026-11-09
 
 ### Corregido
-- **La radio FM de las pantallas NWD ya se controla desde LiteDash** (Allwinner K2401, T3 y otras con la
-  app `com.nwd.radio`): LiteDash ahora le habla directo al sintonizador de la pantalla, como Radio+ y
+- **La radio FM de las pantallas NWD ya se controla desde LiteKia** (Allwinner K2401, T3 y otras con la
+  app `com.nwd.radio`): LiteKia ahora le habla directo al sintonizador de la pantalla, como Radio+ y
   OpenRadioFM. Siguiente y anterior buscan la estación, se ve la frecuencia y el nombre de la estación, y
   play/pausa cambian a la radio sin abrir su app. Antes ningún botón hacía nada y play solo abría la app.
 - Si tu pantalla NWD no deja hacerlo, todo sigue como antes (play abre la radio). Si te pasa, manda un
@@ -245,7 +245,7 @@ Todos los cambios que nota quien usa LiteDash. Formato
 
 ### Mejorado
 - **Actualizar ya no falla por un tropiezo de GitHub**: si GitHub no responde un momento (como los
-  "504" de hoy) o se corta la red, LiteDash lo vuelve a intentar solo, hasta tres veces. Lo mismo al bajar
+  "504" de hoy) o se corta la red, LiteKia lo vuelve a intentar solo, hasta tres veces. Lo mismo al bajar
   autos del catálogo.
 - Si la descarga sí falla, el aviso lo dice ("No se pudo descargar") en vez de "No se pudo revisar".
 
@@ -262,7 +262,7 @@ Auditoría de música y radio: arreglos y limpieza.
 ### Corregido
 - **La música del celular por Bluetooth (sin app) ya no se pierde** después de abrir la música o la radio
   en grande: se vuelve a conectar sola.
-- **La pausa de la radio ya no pausa tu música**: si suena otra app, LiteDash no da la radio por sonando
+- **La pausa de la radio ya no pausa tu música**: si suena otra app, LiteKia no da la radio por sonando
   ni le manda la pausa al sistema.
 - **Con Archivos o App, la pieza Música ya no muestra el Bluetooth** de la pantalla, y al dejar Archivos
   la USB se detiene (antes un play podía hacerla sonar con otro método).
@@ -292,7 +292,7 @@ Auditoría de música y radio: arreglos y limpieza.
 ## [1.4.112] - 2026-11-09
 
 ### Corregido
-- **Abrir LiteDash al encender** ahora funciona en pantallas sin pila de reloj (las que prenden con la
+- **Abrir LiteKia al encender** ahora funciona en pantallas sin pila de reloj (las que prenden con la
   fecha en 1970 o 2015 hasta tener internet): antes podía no abrirse nunca.
 - **Ajustes nunca se sale de la barra**, aunque la barra sea grande y la pantalla baja: si no cabe todo,
   se recorta lo demás.
@@ -319,7 +319,7 @@ Auditoría de música y radio: arreglos y limpieza.
 
 ### Corregido
 - **Los botones de volumen de la barra** ahora funcionan en pantallas que manejan el volumen con su
-  propio chip (pasaba en una NWD): si Android no cambia el volumen, LiteDash aprieta la tecla de
+  propio chip (pasaba en una NWD): si Android no cambia el volumen, LiteKia aprieta la tecla de
   volumen como el botón físico. Ahí no se muestra el número, porque el de Android no es el real.
 
 ## [1.4.109] - 2026-11-09
@@ -332,8 +332,8 @@ Auditoría de música y radio: arreglos y limpieza.
 ## [1.4.108] - 2026-11-09
 
 ### Nuevo
-- **Abrir LiteDash al encender** (Ajustes → Inicio y apariencia → Hazlo tu inicio): para pantallas que
-  regresan su launcher de fábrica cada vez que apagas y prendes el auto. Al encender, LiteDash se pone
+- **Abrir LiteKia al encender** (Ajustes → Inicio y apariencia → Hazlo tu inicio): para pantallas que
+  regresan su launcher de fábrica cada vez que apagas y prendes el auto. Al encender, LiteKia se pone
   al frente solo. Desde Android 10 pide el permiso "Mostrar sobre otras apps". Apagado de fábrica.
 - El reporte dice cuál es el inicio predeterminado de tu pantalla y qué pasó al encender, para saber
   qué marca lo cambia.
@@ -342,15 +342,15 @@ Auditoría de música y radio: arreglos y limpieza.
 
 ### Cambiado
 - **Música: un solo método.** En Ajustes → Apps → Música eliges cómo escuchas: **Archivos** (antes
-  "USB": la música de tus memorias con el reproductor de LiteDash), **Bluetooth** (tu celular) o
+  "USB": la música de tus memorias con el reproductor de LiteKia), **Bluetooth** (tu celular) o
   **App** (tu app de música). Solo ese suena en el widget Música; al cambiar, el anterior se pausa.
 
 ### Corregido
 - **Ya no se cierra la app al elegir una imagen** en pantallas sin galería ni "Archivos": si tu
-  pantalla no trae el selector, LiteDash abre su propio explorador de la memoria.
+  pantalla no trae el selector, LiteKia abre su propio explorador de la memoria.
 - **"Elegir carpeta" de la música ya abre** en pantallas sin el selector de Android (antes no pasaba
   nada): se abre el explorador propio.
-- **Bluetooth con título y artista en pantallas TopWay** (y otras con varias sesiones): LiteDash ahora
+- **Bluetooth con título y artista en pantallas TopWay** (y otras con varias sesiones): LiteKia ahora
   toma la sesión que sí trae la canción, no la primera vacía. Si la música por Bluetooth estaba
   enlazada a otra app (como ZLink), se cambia sola a la app de Bluetooth de tu pantalla.
 - La música por el Bluetooth de Android ya no depende del permiso de ver el nombre del celular.
@@ -370,10 +370,10 @@ Auditoría de música y radio: arreglos y limpieza.
   tu celular"; ahora solo está "Vincular celular", que se adapta a tu pantalla: con el Bluetooth
   de Android te deja emparejar (o quitar) el celular, y con su propia app de Bluetooth te abre esa
   app (y, si no la reconoce, te deja elegirla). Se aclara que el título y el artista los manda la
-  pantalla, no LiteDash.
+  pantalla, no LiteKia.
 
 ### Corregido
-- En pantallas con chip de Bluetooth propio, LiteDash ya no confunde la app de música con la de
+- En pantallas con chip de Bluetooth propio, LiteKia ya no confunde la app de música con la de
   radio: prefiere las apps de Bluetooth de marca conocida.
 
 ## [1.4.104] - 2026-11-07
@@ -385,14 +385,14 @@ Auditoría de música y radio: arreglos y limpieza.
 
 ### Nuevo
 - **Carátula para la música por Bluetooth:** si el celular no manda la carátula de la canción (pasa
-  con el Bluetooth), LiteDash la busca por el título y el artista en iTunes Search y la guarda para
+  con el Bluetooth), LiteKia la busca por el título y el artista en iTunes Search y la guarda para
   volver a verla sin internet. Si no hay carátula, todo queda igual que antes.
 
 ## [1.4.101] - 2026-11-07
 
 ### Nuevo
 - **Bluetooth sin app externa (Bluetooth de Android):** en pantallas que usan el Bluetooth de
-  Android, LiteDash ahora lee la música del celular directo (título, artista, álbum y duración) y
+  Android, LiteKia ahora lee la música del celular directo (título, artista, álbum y duración) y
   la controla desde la música en grande — play, pausa, siguiente y anterior — sin abrir la app de la
   pantalla. Ajustes → Apps → Música → "Vincular celular" para emparejar (u olvidar) tu celular,
   hacer visible la pantalla y buscar celulares cerca. En pantallas con chip propio todo queda igual:
@@ -407,7 +407,7 @@ Auditoría de música y radio: arreglos y limpieza.
 
 ### Corregido
 - **El acomodo del inicio ya no "se reinicia"** cuando la pantalla cambia un poco de tamaño (una barra
-  del sistema que aparece o se va): LiteDash usa tu último acomodo, ajustado, en vez de la plantilla.
+  del sistema que aparece o se va): LiteKia usa tu último acomodo, ajustado, en vez de la plantilla.
 
 ## [1.4.99] - 2026-11-06
 
@@ -451,7 +451,7 @@ Auditoría de música y radio: arreglos y limpieza.
 ## [1.4.93] - 2026-11-05
 
 ### Arreglado
-- **Cambiar de idioma con LiteDash abierto dos veces** (como inicio y como app) ya cambia el idioma
+- **Cambiar de idioma con LiteKia abierto dos veces** (como inicio y como app) ya cambia el idioma
   de verdad: antes a veces solo cambiaban las unidades y los textos se quedaban en el idioma anterior.
 
 ## [1.4.92] - 2026-11-05
@@ -471,7 +471,7 @@ Auditoría de música y radio: arreglos y limpieza.
 ### Arreglado (auditoría de la 1.4.86 a la 1.4.90)
 - Radio TopWay: si pausas, cambias a internet o quitas la FM justo después de dar play, ya no se
   vuelve a abrir la radio ni dice "sonando" con el audio apagado. La radio solo se da por encendida
-  cuando el sintonizador lo dice (antes se podía confundir con la propia orden de LiteDash).
+  cuando el sintonizador lo dice (antes se podía confundir con la propia orden de LiteKia).
 - Prender o apagar la radio por internet ya no borra la estación FM si la FM sigue siendo la escogida.
 - Música: el play de respaldo ya no se confunde si cambias de app en esos segundos, ya no se salta
   la app si el widget mostraba otra en pausa, y la app se abre una sola vez.
@@ -481,7 +481,7 @@ Auditoría de música y radio: arreglos y limpieza.
 ### Arreglado
 - **Música: play ya despierta a Spotify (y apps parecidas) aunque esté dormida.** A veces la app
   decía que reproducía pero no sonaba hasta abrirla. Ahora, si a los 4 segundos no suena nada,
-  LiteDash la abre, regresa solo al inicio y le vuelve a dar play.
+  LiteKia la abre, regresa solo al inicio y le vuelve a dar play.
 - Los reportes guardan más eventos (60) y la lista de estaciones de la radio ya no los llena.
 
 ## [1.4.89] - 2026-11-05
@@ -500,7 +500,7 @@ Auditoría de música y radio: arreglos y limpieza.
 ## [1.4.87] - 2026-11-05
 
 ### Cambiado
-- **Radio de pantallas TopWay: play ya no abre la app de radio.** LiteDash le pide el audio al
+- **Radio de pantallas TopWay: play ya no abre la app de radio.** LiteKia le pide el audio al
   sintonizador como lo hace la radio de fábrica, y la estación suena desde el inicio. Si tu pantalla
   no contesta en 2 segundos, abre la radio como antes y regresa sola. Pausa usa el mismo código que
   tu pantalla manda.
@@ -560,7 +560,7 @@ Auditoría de música y radio: arreglos y limpieza.
 
 ### Arreglado (auditoría de la 1.4.79 y la 1.4.80)
 - Radio de fábrica sin control: si das play y te vas a otra app desde el inicio antes de 3 segundos,
-  LiteDash ya no te saca de ella para regresar. Dos toques seguidos dan un solo regreso.
+  LiteKia ya no te saca de ella para regresar. Dos toques seguidos dan un solo regreso.
 - Mapa sin GPS: la ubicación por red ya no apaga el velocímetro; solo mueve el punto del mapa.
 - Radio TopWay: se conecta sin trabar el inicio, y la estación ya no parpadea cada 10 minutos.
 - Los reportes ya no pueden fallar con apps de radio de manifiesto raro.
@@ -626,7 +626,7 @@ Auditoría de música y radio: arreglos y limpieza.
 ### Mejorado
 - **Mucha menos memoria con imágenes**: el fondo, la imagen de estacionado y las de los widgets se
   cargan al tamaño en que se ven (el fondo de una pantalla de 7" pasó de ~11 MB a ~1.5 MB). Una foto
-  muy grande ya no puede cerrar la app en Android 6 y 7, y al irte a otra app LiteDash suelta la
+  muy grande ya no puede cerrar la app en Android 6 y 7, y al irte a otra app LiteKia suelta la
   memoria del auto.
 
 ## [1.4.75] - 2026-11-04
@@ -723,8 +723,8 @@ Auditoría de música y radio: arreglos y limpieza.
 
 ### Agregado
 - **Mapa minimalista** (Personalizar mapa → Mapa → Minimalista): solo calles, agua y parques, sin
-  íconos ni nombres, en los colores de LiteDash (claro u oscuro), nítido a cualquier zoom y también
-  inclinado. Datos de OpenFreeMap (gratis, sin cuenta); LiteDash los dibuja. De fábrica sigue el completo.
+  íconos ni nombres, en los colores de LiteKia (claro u oscuro), nítido a cualquier zoom y también
+  inclinado. Datos de OpenFreeMap (gratis, sin cuenta); LiteKia los dibuja. De fábrica sigue el completo.
 
 ## [1.4.67] - 2026-11-04
 
@@ -749,11 +749,11 @@ Auditoría de música y radio: arreglos y limpieza.
 - **Quitar el fondo de tu foto** en el widget Imagen: separa el auto de un fondo liso (pared, cielo,
   estudio), con 4 intensidades y vista previa.
 - **Qué suena en el Bluetooth de fábrica**: en pantallas cuya app de música Bluetooth no lo comparte,
-  LiteDash lo lee de los avisos que mandan (Autochips, Microntek, Syu, Clinkway y otras).
+  LiteKia lo lee de los avisos que mandan (Autochips, Microntek, Syu, Clinkway y otras).
 
 ### Cambiado
 - Tocar el auto con Llantas activo abre las llantas directo con un fundido suave (la animación de la
-  cámara se rehace más adelante). LiteDash usa la mitad de memoria con Llantas activo.
+  cámara se rehace más adelante). LiteKia usa la mitad de memoria con Llantas activo.
 
 Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 
@@ -802,7 +802,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 - Tocar el auto para ver las llantas usa mucha menos memoria (pantallas de 1 GB sin cerrarse) y el giro
   con el dedo ya no se degrada después.
 - El reflejo del auto en Carretera ya no se asoma debajo de los widgets de abajo.
-- Con las llantas o el OBD apagados, Android ya no ofrece abrir LiteDash al conectar un chip USB.
+- Con las llantas o el OBD apagados, Android ya no ofrece abrir LiteKia al conectar un chip USB.
 
 ## [1.4.61] - 2026-11-04
 
@@ -833,9 +833,9 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 ### Arreglado
 - **Música: cambiar de Spotify a USB y regresar**: el primer toque a USB ya toca la música (antes abría la
   biblioteca y Spotify seguía sonando), tocar tu app pausa la USB y regresa a ella, y nada se traba.
-- La actualización anterior podía dejar como "tu app de música" una app de la pantalla que LiteDash solo
+- La actualización anterior podía dejar como "tu app de música" una app de la pantalla que LiteKia solo
   había adivinado; ya no.
-- **Llantas por Bluetooth**: si el Bluetooth se apaga y se prende (al dar marcha), LiteDash lo dice y vuelve a
+- **Llantas por Bluetooth**: si el Bluetooth se apaga y se prende (al dar marcha), LiteKia lo dice y vuelve a
   escuchar solo; ya no muestra presiones viejas como si fueran actuales.
 - Llantas: cambiar la calibración ya no dispara avisos falsos de fuga; el receptor USB puede quedarse con
   "usar siempre" (no pide permiso en cada encendido); el historial se guarda sin trabar la pantalla.
@@ -858,7 +858,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 ## [1.4.57] - 2026-11-03
 
 ### Cambiado
-- **Música más simple**: en la música en grande, **USB** es siempre el reproductor de LiteDash (lee tu
+- **Música más simple**: en la música en grande, **USB** es siempre el reproductor de LiteKia (lee tu
   memoria), **Bluetooth** la música de tu celular y **Apps** lo que suene en cualquier app; tu app de
   música sale como botón con su nombre. Ya no se "enlaza una app de USB": si tenías una, se queda
   como tu app de música y no pierdes nada.
@@ -870,19 +870,19 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 ### Arreglado
 - **Música USB en pantallas que no dejan leer la memoria** (p. ej. AC8227L con Android 13): la
   biblioteca ahora tiene **"Elegir carpeta"**. Eliges la carpeta de tu música con el selector de
-  Android y LiteDash la recuerda; funciona aunque la pantalla no indexe ni deje leer el USB.
-- Con **dos puertos USB**, LiteDash busca la música en todas las memorias, no solo en la primera.
+  Android y LiteKia la recuerda; funciona aunque la pantalla no indexe ni deje leer el USB.
+- Con **dos puertos USB**, LiteKia busca la música en todas las memorias, no solo en la primera.
 
 ### Cambiado
 - Más claro: el botón "Sistema" ahora se llama **"Apps"** (la música de tus apps), y el aviso dice
-  "Memoria USB conectada (…): toca USB para escucharla". Si LiteDash ve la memoria pero no puede
+  "Memoria USB conectada (…): toca USB para escucharla". Si LiteKia ve la memoria pero no puede
   leerla, lo dice así y ofrece elegir la carpeta.
 
 ## [1.4.55] - 2026-11-03
 
 ### Arreglado
 - **Música USB que no sonaba**: en pantallas donde Android no indexa la memoria USB, el reproductor
-  de LiteDash ahora busca las canciones en sus carpetas. La primera vez que tocas USB se abre la
+  de LiteKia ahora busca las canciones en sus carpetas. La primera vez que tocas USB se abre la
   biblioteca (con tus canciones o un aviso claro si no hay), en vez de quedarse en "Sistema" sin hacer nada.
 - **Música por Bluetooth de la pantalla**: anterior, siguiente y play/pausa ahora funcionan con las
   apps de Bluetooth que no comparten qué suena (se mandan como los botones del volante), y la pieza
@@ -899,14 +899,14 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 - Las vistas de llantas se abren con un fundido simple (sin números que cuentan ni tarjetas que salen).
 - **Música en grande**: las fuentes (Sistema, USB, Bluetooth) van arriba junto a los botones; ya no
   queda una franja vacía.
-- Con el reproductor USB de LiteDash prendido, la "app de USB" de Ajustes → Apps → Música se ve gris
+- Con el reproductor USB de LiteKia prendido, la "app de USB" de Ajustes → Apps → Música se ve gris
   y explica que no se usa.
 - Las pastillas de llantas ya no salen en piezas de auto o imagen muy chicas (se amontonaban).
 
 ## [1.4.54] - 2026-11-03
 
 ### Nuevo
-- **Llantas (TPMS)**: LiteDash lee la presión y la temperatura de tus llantas sin la app del
+- **Llantas (TPMS)**: LiteKia lee la presión y la temperatura de tus llantas sin la app del
   fabricante. Funciona con los **kits con receptor USB** que se venden para pantallas Android
   (los genéricos de 433 MHz con chip CH340, FTDI, CP210x o PL2303) y con las familias más comunes
   de **sensores Bluetooth** (BR/SYTPMS, ZEEPIN/Sysgration, Bekubee y otras). Modo Demo para verlo
@@ -914,7 +914,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 - **Tu auto desde arriba con sus cuatro llantas**: presión grande, temperatura, estado y su línea
   de los últimos 30 minutos; la que tiene problema brilla. Toca una y ves sus últimas 24 horas.
 - **Acomodar llantas**: toca una rueda para emparejar su sensor (receptor USB), asignarlo o dejar
-  que LiteDash lo identifique (Bluetooth: desinfla un poco esa llanta), o intercambiarla con otra.
+  que LiteKia lo identifique (Bluetooth: desinfla un poco esa llanta), o intercambiarla con otra.
   **Rotar llantas** con un toque: adelante↔atrás, en cruz o izquierda↔derecha.
 - **En el inicio, a tu gusto**: la presión en las esquinas de la pieza del auto (también sobre tu
   logo o foto), la pieza **Llantas** en tres tamaños, un aviso arriba y un testigo en la barra
@@ -968,7 +968,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 ## [1.4.51] - 2026-11-03
 
 ### Nuevo
-- **Reproductor USB propio** (Ajustes → Módulos, apagado de fábrica): LiteDash toca la música de
+- **Reproductor USB propio** (Ajustes → Módulos, apagado de fábrica): LiteKia toca la música de
   tu memoria USB por carpetas, artistas y álbumes, con carátulas, y sigue sonando con Waze encima.
   Se abre desde la música en grande: toca "USB" y, con el botón de lista, su biblioteca. Recuerda
   dónde ibas y para solo si sacas la memoria.
@@ -985,7 +985,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 ## [1.4.50] - 2026-11-03
 
 ### Nuevo
-- **Fuentes de música como en un estéreo**: USB, Bluetooth y Radio. LiteDash enlaza cada fuente
+- **Fuentes de música como en un estéreo**: USB, Bluetooth y Radio. LiteKia enlaza cada fuente
   con la app de tu pantalla que la reproduce (la adivina por su nombre; en Ajustes → Apps →
   Música la cambias) y en la música en grande aparecen como botones: un toque y suena esa fuente.
 - **Bluetooth con nombre**: cuando el celular no manda la canción, la pieza muestra qué celular
@@ -1016,7 +1016,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
   poner las que quieras juntas (por ejemplo, el auto 3D y la carretera lado a lado). Cada una
   crece a pantalla completa con un toque.
 - **Pieza Imagen** con su propia foto: cada pieza de imagen tiene la suya (se elige con el botón
-  de ajustes al acomodar, o tocándola si aún no tiene). Sin foto muestra el logo de LiteDash.
+  de ajustes al acomodar, o tocándola si aún no tiene). Sin foto muestra el logo de LiteKia.
 - **Pantalla dividida**: nuevo ajuste "Al lado del mapa" para elegir el auto 3D o la carretera.
 
 ### Cambiado
@@ -1028,19 +1028,19 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 
 ### Nuevo
 - **Funciona desde Android 6.0** (antes pedía Android 8): pantallas viejas y con poca memoria
-  ya pueden usar LiteDash completo. Lo que ese Android no tiene, como la pantalla dividida
+  ya pueden usar LiteKia completo. Lo que ese Android no tiene, como la pantalla dividida
   (Android 12L o más nuevo), aparece como no disponible.
   - En Android 6 y 7.0 las descargas (autos, actualizaciones) y el clima funcionan aunque el
     equipo no traiga los certificados más nuevos.
   - Ícono propio para Android 6 y 7.
 
 ### Arreglado
-- El ícono de Wi-Fi o datos de la barra ahora sale desde que abres LiteDash en todos los equipos.
+- El ícono de Wi-Fi o datos de la barra ahora sale desde que abres LiteKia en todos los equipos.
 
 ## [1.4.47] - 2026-11-03
 
 ### Cambiado
-- Por dentro, todo lo que LiteDash guarda en tu pantalla (ajustes, acomodos, recordatorios,
+- Por dentro, todo lo que LiteKia guarda en tu pantalla (ajustes, acomodos, recordatorios,
   viajes, autos) ahora usa nombres en inglés. Al actualizar se copia solo: no pierdes nada ni
   tienes que volver a acomodar. El CSV de viajes que exportas trae los encabezados en inglés.
 
@@ -1060,8 +1060,8 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 
 ### Nuevo
 - **Ocultar la barra de Android** de arriba (Ajustes → Apariencia → Pantalla, apagado de
-  fábrica): LiteDash ya trae su hora y señal. Para verla un momento, desliza desde arriba.
-- **Estadísticas anónimas** (Ajustes → Acerca de): una vez al día LiteDash cuenta tu pantalla
+  fábrica): LiteKia ya trae su hora y señal. Para verla un momento, desliza desde arriba.
+- **Estadísticas anónimas** (Ajustes → Acerca de): una vez al día LiteKia cuenta tu pantalla
   con un número al azar, la versión, Android, el idioma y el tamaño de pantalla, para saber cuánta
   gente la usa. Nada de ubicación, cuentas ni datos tuyos, sin librerías extra (+1 KB). Se apaga
   con un toque. Detalle en litedash.web.app/privacidad.
@@ -1087,7 +1087,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 
 ### Nuevo
 - **Pantalla dividida para mapa y música** (Ajustes → Apps → Pantalla dividida, apagada de
-  fábrica): al abrir Waze, Maps, Spotify u otra app de mapa o de música desde LiteDash, se abre en
+  fábrica): al abrir Waze, Maps, Spotify u otra app de mapa o de música desde LiteKia, se abre en
   una mitad y **tu auto** (3D o en carretera) en la otra, sin las demás piezas. Solo con la pantalla
   acostada y en Android 12L o más nuevo. Tu inicio no cambia: al regresar está como lo dejaste.
   - Eliges si el auto va a la **izquierda o a la derecha**, en Ajustes o ahí mismo con el botón de
@@ -1111,7 +1111,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 
 ### Cambiado
 - La **animación de entrada** pasó a **Apariencia → Pantalla** y tiene **su propia imagen**, aparte
-  de la de la pieza del auto. Sin imagen sale el logo de LiteDash. Si ya la tenías prendida, se
+  de la de la pieza del auto. Sin imagen sale el logo de LiteKia. Si ya la tenías prendida, se
   queda con la imagen que usabas.
 - El velocímetro marca **0** en vez de un guion mientras todavía no hay velocidad.
 
@@ -1189,11 +1189,11 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 
 ### Nuevo
 - **Luces del auto como señal de noche** (Apariencia → Pantalla → ¿Cuándo es de noche?):
-  LiteDash aprende el ajuste con el que tu pantalla avisa de los faros (una foto de los
+  LiteKia aprende el ajuste con el que tu pantalla avisa de los faros (una foto de los
   ajustes con las luces apagadas y otra con las luces prendidas) y desde entonces el tema
   Día y noche y el brillo siguen a los faros. Si tu pantalla no avisa, lo dice.
 - **Escáner OBD por cable USB**: cables con chip CH340, CP210x, FTDI, PL2303 o puerto serie
-  estándar; aparecen en el Taller al conectarlos, Android pide permiso una vez y LiteDash
+  estándar; aparecen en el Taller al conectarlos, Android pide permiso una vez y LiteKia
   prueba las velocidades comunes. (Por probar con un cable real.)
 - **Nueve datos más del motor** en el Taller: acelerador, gasto de gasolina (L/h), ajustes
   de mezcla corto y largo, presión de gasolina, avance del encendido, tiempo con el motor
@@ -1207,7 +1207,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 ## [1.4.33] - 2026-11-02
 
 ### Mejorado
-- **Arranque más rápido en pantallas lentas:** LiteDash trae su Baseline Profile (lo que
+- **Arranque más rápido en pantallas lentas:** LiteKia trae su Baseline Profile (lo que
   se usa al abrir y en el inicio ya viene compilado al instalar, en vez de interpretarse
   las primeras veces). Pesa 32 bytes más.
 
@@ -1297,7 +1297,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 
 ### Mejorado
 - **Más ligera:** la app ya no carga textos de ~80 idiomas que traían las librerías de
-  Android y que LiteDash no usa (solo español e inglés): de 1.52 a 1.36 MB.
+  Android y que LiteKia no usa (solo español e inglés): de 1.52 a 1.36 MB.
 
 ## [1.4.24] - 2026-11-01
 
@@ -1332,7 +1332,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 - **Acerca de renovado:** la versión en grande, todas sus novedades y tu auto de fondo.
 
 ### Cambiado
-- La **animación de entrada** sin imagen propia muestra el logo de LiteDash.
+- La **animación de entrada** sin imagen propia muestra el logo de LiteKia.
 
 ## [1.4.21] - 2026-11-01
 
@@ -1349,8 +1349,8 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 ### Agregado
 - **Logo en vez del auto** (Ajustes → Tu auto → Auto o logo): para quien prefiere no ver
   un auto, el inicio muestra el logo de tu marca. La imagen la eliges de tu galería
-  (LiteDash no trae logos de marcas); sin imagen se muestra el nombre de la marca.
-- **Animación de entrada:** al abrir LiteDash el logo aparece unos segundos y pasa al
+  (LiteKia no trae logos de marcas); sin imagen se muestra el nombre de la marca.
+- **Animación de entrada:** al abrir LiteKia el logo aparece unos segundos y pasa al
   inicio. Un toque la salta.
 
 ## [1.4.19] - 2026-11-01
@@ -1416,7 +1416,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 ### Cambiado
 - **Fluidez del giro: Ligera y Media.** La Máxima (96 vueltas) no cabía en
   memoria en pantallas grandes y el giro se iba trabando con el tiempo; si la
-  tenías, LiteDash libera ese espacio solo.
+  tenías, LiteKia libera ese espacio solo.
 - **El auto se ve nítido mientras lo giras** (ya no baja de calidad al moverlo).
 - Más memoria para el giro en equipos que la tienen, para que no se trabe.
 
@@ -1427,7 +1427,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 
 ### Arreglado
 - **Play con la música cerrada**: el botón de play ya no se queda sin hacer nada.
-  LiteDash despierta tu app de música como lo hace Android Auto o el botón del
+  LiteKia despierta tu app de música como lo hace Android Auto o el botón del
   volante (desde Android 12, mandarle play directo lo bloquea el sistema), avisa
   "Abriendo Spotify…" mientras tanto y, si no logra que suene, abre la app.
 - **Se quedaba en "Abriendo instalador"**: la confirmación de Android ahora la
@@ -1438,7 +1438,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 - **Música → Otra app**: puedes elegir cualquier app como tu música (por
   ejemplo, el reproductor de USB o de Bluetooth de tu pantalla).
 - **Copiar info de mi pantalla** incluye qué apps de música y qué sesiones ve
-  LiteDash, para ayudarnos a revisar problemas de música.
+  LiteKia, para ayudarnos a revisar problemas de música.
 
 ## [1.4.11] - 2026-11-01
 
@@ -1493,7 +1493,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 ### Mejorado
 - **Autos en alta calidad**: Lancer Evolution, Lancer Cedia, Altima, March y City
   tienen un modelo 3D nuevo, más nítido (se nota al verlo en grande, sobre todo
-  en pantallas grandes), con su sombra y su reflejo en cada vuelta. LiteDash
+  en pantallas grandes), con su sombra y su reflejo en cada vuelta. LiteKia
   avisa para bajarlo con un toque.
 - La sombra y el reflejo se dibujan a más resolución.
 
@@ -1504,7 +1504,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 
 ### Nuevo
 - **Modelo 3D nuevo de tu auto**: si el catálogo trae una versión mejor del auto
-  que ya bajaste (como el piso con sombra y reflejo), LiteDash avisa en el inicio
+  que ya bajaste (como el piso con sombra y reflejo), LiteKia avisa en el inicio
   y en Ajustes → Tu auto; un toque la baja con la fluidez que tenías.
 
 ### Arreglado
@@ -1515,13 +1515,13 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 
 ### Nuevo
 - **Mandos al volante** (Ajustes → Mandos al volante): presiona "Aprender
-  botón" y luego el botón del volante; LiteDash lo reconoce y eliges qué hace
+  botón" y luego el botón del volante; LiteKia lo reconoce y eliges qué hace
   (play/pausa, siguiente, anterior, volumen, silencio, abrir el mapa, música en
   grande, voz, volver al inicio o nada). Usa las teclas estándar de Android, así
   que funciona en la mayoría de las pantallas sin configurar nada; los botones
   sin cambiar hacen lo de siempre. Cualquier botón quita el modo estacionado.
 - **Brillo de día y de noche** (Ajustes → Apariencia → Brillo): según la hora
-  del sol, sin sensores. Solo en LiteDash, o en todas las apps con el permiso de
+  del sol, sin sensores. Solo en LiteKia, o en todas las apps con el permiso de
   "Modificar ajustes del sistema".
 - **Gira tu auto en el inicio**: arrástralo a los lados y gira como en Ajustes,
   con su reflejo en el piso, y se queda hacia donde lo dejes. **Un toque** lo
@@ -1559,7 +1559,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 ## [1.4.1] - 2026-10-31
 
 ### Nuevo
-- **Aviso de versión nueva** (descarga de GitHub): al abrir LiteDash revisa
+- **Aviso de versión nueva** (descarga de GitHub): al abrir LiteKia revisa
   sola si hay una versión nueva (a lo más dos veces al día, sin quedarse
   revisando) y la avisa arriba del inicio. "Ver" la abre lista para instalar;
   "Después" no vuelve a avisar de esa versión.
@@ -1656,7 +1656,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 ## [1.3.0] - 2026-10-31
 
 ### Nuevo
-- **Pieza Mapa**: un mapa propio dentro de LiteDash, oscuro o claro según tu
+- **Pieza Mapa**: un mapa propio dentro de LiteKia, oscuro o claro según tu
   tema, centrado en tu auto y girando hacia donde vas. Tócalo para abrir Waze o
   Google Maps; mientras navegas, encima muestra la siguiente vuelta. Se agrega
   en Ajustes → Módulos o con "Agregar" al acomodar; pide tu ubicación solo al
@@ -1668,14 +1668,14 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
   y Navegar.
 
 ### Quitado
-- La vista dividida de la 1.2.0 (LiteDash encima del mapa) y su permiso
-  "Mostrar sobre otras apps": el mapa ahora vive dentro de LiteDash.
+- La vista dividida de la 1.2.0 (LiteKia encima del mapa) y su permiso
+  "Mostrar sobre otras apps": el mapa ahora vive dentro de LiteKia.
 
 ## [1.2.0] - 2026-10-31
 
 ### Nuevo
-- **Mapa + LiteDash (vista dividida)**: toca Navegar y Waze o Google Maps se
-  abre junto a una columna de LiteDash con tu auto y tu música. Toca el mapa
+- **Mapa + LiteKia (vista dividida)**: toca Navegar y Waze o Google Maps se
+  abre junto a una columna de LiteKia con tu auto y tu música. Toca el mapa
   para verlo completo; una pestañita en la orilla lo vuelve a dividir o te
   lleva al inicio. El botón de inicio siempre regresa a tu tablero. La primera
   vez te pregunta si lo quieres así o solo el mapa (pide "Mostrar sobre otras
@@ -1687,7 +1687,7 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 - Ajustes → Mapa: qué app de navegación usar, vista dividida o solo el mapa,
   mapa a la izquierda o a la derecha, y mapa grande (2/3) o mitad y mitad.
 - **Música en grande**: toca la pieza de música para ampliarla sin salir de
-  LiteDash: carátula, barra para adelantar, los botones propios de la app (en
+  LiteKia: carátula, barra para adelantar, los botones propios de la app (en
   Spotify: me gusta, aleatorio, repetir), elegir qué app controlar si suenan
   varias, y "Reanudar" lo último que escuchaste sin abrir la app.
 
@@ -1695,10 +1695,10 @@ Ideas tomadas del launcher abierto StradaOS (GPL-3.0).
 
 ### Nuevo
 - **Buscar actualizaciones** (versión de GitHub): en Ajustes → Acerca de,
-  LiteDash revisa si hay una versión nueva, la baja, verifica que llegó completa
+  LiteKia revisa si hay una versión nueva, la baja, verifica que llegó completa
   y la instala con tu confirmación. La versión de Play se actualiza desde Play.
 - **Idioma** en Ajustes: como el sistema, español o inglés.
-- Si LiteDash no es tu pantalla de inicio, un aviso arriba te ofrece elegirla
+- Si LiteKia no es tu pantalla de inicio, un aviso arriba te ofrece elegirla
   (o no volver a preguntar). También está en Ajustes → Inicio.
 - **Inicio que tú acomodas**: deja presionado cualquier lugar para mover,
   agrandar, achicar, quitar o agregar piezas. Entre más grande la pantalla, más
@@ -1725,7 +1725,7 @@ Versión de prueba con lo mismo que 1.1.0, menos el botón de actualizaciones.
 ## [1.0.0] - 2026-10-31
 
 ### Nuevo
-- LiteDash funciona como pantalla de inicio: reloj, fecha y el cajón con todas
+- LiteKia funciona como pantalla de inicio: reloj, fecha y el cajón con todas
   tus apps, en modo oscuro.
 - Se acomoda solo en horizontal, vertical y en pantallas de 6" a 11" o más.
 - El reloj respeta el formato de 24 horas de tu equipo.
