@@ -142,9 +142,9 @@ val TilePadding = 10.dp
 
 object Radius {
     /** Tarjetas del tablero y de Ajustes. */
-    val card = 14.dp
+    val card = 18.dp
     /** Cosas dentro de una tarjeta: portadas, botones, campos, filas. */
-    val inner = 10.dp
+    val inner = 12.dp
     /** Detalles chicos (barras, indicadores). */
     val small = 6.dp
 }
@@ -166,7 +166,7 @@ fun LiteDashTheme(dark: Boolean = true, scale: Float = 1f, accent: Color? = null
 
 object Typography {
     val clock = TextStyle(fontSize = 56.sp, fontWeight = FontWeight.Medium, letterSpacing = (-1).sp)
-    val title = TextStyle(fontSize = 22.sp, fontWeight = FontWeight.SemiBold)
+    val title = TextStyle(fontSize = 24.sp, fontWeight = FontWeight.SemiBold)
     val subtitle = TextStyle(fontSize = 18.sp, fontWeight = FontWeight.Medium)
     val body = TextStyle(fontSize = 16.sp)
     val small = TextStyle(fontSize = 13.sp)
@@ -189,6 +189,9 @@ fun Label(
 /** La pieza del tablero va sin fondo de tarjeta: [Card] queda transparente (lo de adentro se ve igual). */
 val LocalPlainCard = compositionLocalOf { false }
 
+/** Opacidad del fondo de las tarjetas de los widgets (1 = opaco); la pone el inicio desde los ajustes. */
+val LocalWidgetAlpha = compositionLocalOf { 1f }
+
 /** Tarjeta base del tablero: superficie lisa, sin borde, con esquinas [Radius.card]. */
 @Composable
 fun Card(
@@ -198,7 +201,7 @@ fun Card(
 ) {
     val c = LocalColors.current
     val shape = RoundedCornerShape(Radius.card)
-    var m = modifier.clip(shape).background(if (LocalPlainCard.current) Color.Transparent else c.surface)
+    var m = modifier.clip(shape).background(if (LocalPlainCard.current) Color.Transparent else c.surface.copy(alpha = LocalWidgetAlpha.current))
     if (onClick != null) m = m.clickable(onClick = onClick)
     Box(m, content = content)
 }
