@@ -134,7 +134,9 @@ internal fun ComponentActivity.LiteDashContent(d: Dependencies, revision: Int, c
     val hideStatusBar = d.prefs.hideStatusBar
     LaunchedEffect(hideStatusBar, revision) { applyStatusBar(window, hideStatusBar) }
     ApplyBrightness(d.prefs, night, revision)
-    LiteDashTheme(dark = dark, scale = d.prefs.scale, accent = d.prefs.accentColor, content = content)
+    // La temporada activa tiñe el realce (Navidad, Halloween…); sin ella, el color elegido.
+    val accent = d.prefs.seasonAccent() ?: d.prefs.accentColor
+    LiteDashTheme(dark = dark, scale = d.prefs.scale, accent = accent, content = content)
 }
 
 /** ¿Tema oscuro? Según lo elegido en Ajustes; [night] es la cuenta del sol o del sensor de luz. */
